@@ -1,0 +1,621 @@
+[
+ {
+  "issuer": "Strategy Inc",
+  "kind": "cross_market_pd",
+  "long": "debt",
+  "short": "equity",
+  "metric": "market / model 5y PD",
+  "value": 11.330127138459341,
+  "unit": "x",
+  "read": "Debt markets imply 9.7% 5-year default (out-of-the-money converts, option ignored (upper bound)); the structural model (observed assets (bitcoin + cash)) 0.9%. Ratio 11.33.",
+  "flags": [
+   "structural_inputs",
+   "recovery_sensitive"
+  ],
+  "confidence": "medium",
+  "score": 4.854930592753441
+ },
+ {
+  "issuer": "Nebius Group N.V.",
+  "kind": "cross_market_pd",
+  "long": "equity",
+  "short": "debt",
+  "metric": "market / model 5y PD",
+  "value": 0.38214188476116034,
+  "unit": "x",
+  "read": "Debt markets imply 28.1% 5-year default (out-of-the-money converts, option ignored (upper bound)); the structural model (equity-calibrated Black-Cox) 73.5%. Ratio 0.38.",
+  "flags": [
+   "structural_inputs",
+   "recovery_sensitive"
+  ],
+  "confidence": "medium",
+  "score": 1.9239266265216308
+ },
+ {
+  "issuer": "Nebius Group N.V.",
+  "kind": "convert_vs_options",
+  "long": "cv_2033_03",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -19.22749455820869,
+  "unit": "points",
+  "read": "Market 69.85 vs 89.08 (jump-to-default tree at listed vol 107%, hazard 25.0%, recovery 38%); implied vol at that hazard n/a (below the zero-volatility value). Option-ignoring bound: hazard <= 7.1%.",
+  "flags": [
+   "model_dependent",
+   "short_equity_borrow"
+  ],
+  "confidence": "low",
+  "score": 1.1536496734925215
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "convert_vs_options",
+  "long": "cv_2031",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -19.006946268367557,
+  "unit": "points",
+  "read": "Market 62.80 vs 81.81 (jump-to-default tree at listed vol 94%, hazard 18.7%, recovery 35%); implied vol at that hazard 15%. Option-ignoring bound: hazard <= 12.3%.",
+  "flags": [
+   "model_dependent",
+   "restricted_access",
+   "short_equity_borrow"
+  ],
+  "confidence": "low",
+  "score": 1.1404167761020534
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "bond_vs_puts",
+  "long": "notes_2031a",
+  "short": "equity put 2029-01-19 5",
+  "metric": "bond-implied PD minus put upper bound",
+  "value": 0.16692803186578212,
+  "unit": "probability",
+  "read": "At the waterfall recovery the bond implies 33% default by 2029-01-19, but the 2029-01-19 $5 put bid caps the risk-neutral default probability at 16% (stock assumed worthless at default). Long bond + long puts is the classic structure; the gap closes if recovery is higher than assumed.",
+  "flags": [
+   "recovery_sensitive",
+   "restricted_access"
+  ],
+  "confidence": "medium",
+  "score": 1.0015681911946925
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "convert_vs_options",
+  "long": "cv_2033",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -15.983177767995656,
+  "unit": "points",
+  "read": "Market 64.91 vs 80.89 (jump-to-default tree at listed vol 94%, hazard 19.4%, recovery 35%); implied vol at that hazard n/a (below the zero-volatility value). Option-ignoring bound: hazard <= 9.5%.",
+  "flags": [
+   "model_dependent",
+   "restricted_access",
+   "short_equity_borrow"
+  ],
+  "confidence": "low",
+  "score": 0.9589906660797393
+ },
+ {
+  "issuer": "Strategy Inc",
+  "kind": "convert_vs_options",
+  "long": "cv_2031",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -7.915120307080528,
+  "unit": "points",
+  "read": "Market 91.55 vs 99.47 (jump-to-default tree at listed vol 91%, hazard 4.0%, recovery 77%); implied vol at that hazard n/a (below the zero-volatility value). Option-ignoring bound: hazard <= 5.0%.",
+  "flags": [
+   "short_equity_borrow"
+  ],
+  "confidence": "medium",
+  "score": 0.9498144368496633
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "bond_vs_puts",
+  "long": "notes_2030",
+  "short": "equity put 2029-01-19 5",
+  "metric": "bond-implied PD minus put upper bound",
+  "value": 0.15811790927857886,
+  "unit": "probability",
+  "read": "At the waterfall recovery the bond implies 32% default by 2029-01-19, but the 2029-01-19 $5 put bid caps the risk-neutral default probability at 16% (stock assumed worthless at default). Long bond + long puts is the classic structure; the gap closes if recovery is higher than assumed.",
+  "flags": [
+   "recovery_sensitive",
+   "restricted_access"
+  ],
+  "confidence": "medium",
+  "score": 0.9487074556714731
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "convert_vs_options",
+  "long": "cv_2032",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -14.149861212409334,
+  "unit": "points",
+  "read": "Market 58.28 vs 72.43 (jump-to-default tree at listed vol 94%, hazard 19.2%, recovery 35%); implied vol at that hazard n/a (below the zero-volatility value). Option-ignoring bound: hazard <= 12.4%.",
+  "flags": [
+   "model_dependent",
+   "restricted_access",
+   "short_equity_borrow"
+  ],
+  "confidence": "low",
+  "score": 0.84899167274456
+ },
+ {
+  "issuer": "Nebius Group N.V.",
+  "kind": "convert_vs_options",
+  "long": "cv_2031_03",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -14.128817343712313,
+  "unit": "points",
+  "read": "Market 73.22 vs 87.35 (jump-to-default tree at listed vol 107%, hazard 27.3%, recovery 38%); implied vol at that hazard 32%. Option-ignoring bound: hazard <= 7.0%.",
+  "flags": [
+   "model_dependent",
+   "short_equity_borrow"
+  ],
+  "confidence": "low",
+  "score": 0.8477290406227388
+ },
+ {
+  "issuer": "IREN Limited",
+  "kind": "cross_market_pd",
+  "long": "equity",
+  "short": "debt",
+  "metric": "market / model 5y PD",
+  "value": 0.658549252851725,
+  "unit": "x",
+  "read": "Debt markets imply 48.0% 5-year default (out-of-the-money converts, option ignored (upper bound)); the structural model (equity-calibrated Black-Cox) 72.9%. Ratio 0.66.",
+  "flags": [
+   "structural_inputs",
+   "recovery_sensitive"
+  ],
+  "confidence": "medium",
+  "score": 0.8354319301462116
+ },
+ {
+  "issuer": "Nebius Group N.V.",
+  "kind": "convert_vs_options",
+  "long": "cv_2034_02",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -11.965320246501662,
+  "unit": "points",
+  "read": "Market 62.25 vs 74.22 (jump-to-default tree at listed vol 107%, hazard 24.1%, recovery 38%); implied vol at that hazard n/a (below the zero-volatility value). Option-ignoring bound: hazard <= 14.3%.",
+  "flags": [
+   "model_dependent",
+   "short_equity_borrow"
+  ],
+  "confidence": "low",
+  "score": 0.7179192147900998
+ },
+ {
+  "issuer": "Strategy Inc",
+  "kind": "convert_vs_options",
+  "long": "cv_2032",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -11.631244803356509,
+  "unit": "points",
+  "read": "Market 94.39 vs 106.02 (jump-to-default tree at listed vol 91%, hazard 5.1%, recovery 77%); implied vol at that hazard 40%. Option-ignoring bound: hazard <= 0.0%.",
+  "flags": [
+   "model_dependent",
+   "short_equity_borrow"
+  ],
+  "confidence": "low",
+  "score": 0.6978746882013905
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "cds_basis",
+  "long": "notes_2030",
+  "short": "CDS protection (buy)",
+  "metric": "CDS minus par-equivalent bond spread",
+  "value": 113.82572697603122,
+  "unit": "bp",
+  "read": "CDS 1141bp vs the bond's par-equivalent spread 1027bp (basis +114bp) on 2026-10-22. A positive basis means protection is dear relative to the bond: long bond + buy protection earns the basis if both are held to maturity or default, but the CDS curve is a single 5Y point here.",
+  "flags": [
+   "dated_inputs",
+   "restricted_access"
+  ],
+  "confidence": "medium",
+  "score": 0.6829543618561873
+ },
+ {
+  "issuer": "Strategy Inc",
+  "kind": "convert_vs_options",
+  "long": "cv_2029",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -5.143647362639342,
+  "unit": "points",
+  "read": "Market 88.00 vs 93.14 (jump-to-default tree at listed vol 91%, hazard 2.3%, recovery 77%); implied vol at that hazard n/a (below the zero-volatility value). Option-ignoring bound: hazard <= 21.7%.",
+  "flags": [
+   "short_equity_borrow"
+  ],
+  "confidence": "medium",
+  "score": 0.617237683516721
+ },
+ {
+  "issuer": "Strategy Inc",
+  "kind": "convert_vs_options",
+  "long": "cv_2030b",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -4.934433989151572,
+  "unit": "points",
+  "read": "Market 89.75 vs 94.68 (jump-to-default tree at listed vol 91%, hazard 2.7%, recovery 77%); implied vol at that hazard n/a (below the zero-volatility value). Option-ignoring bound: hazard <= 21.2%.",
+  "flags": [
+   "short_equity_borrow"
+  ],
+  "confidence": "medium",
+  "score": 0.5921320786981885
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "bond_vs_puts",
+  "long": "notes_2031b",
+  "short": "equity put 2029-01-19 5",
+  "metric": "bond-implied PD minus put upper bound",
+  "value": 0.17696155332517452,
+  "unit": "probability",
+  "read": "At the waterfall recovery the bond implies 34% default by 2029-01-19, but the 2029-01-19 $5 put bid caps the risk-neutral default probability at 16% (stock assumed worthless at default). Long bond + long puts is the classic structure; the gap closes if recovery is higher than assumed.",
+  "flags": [
+   "price_dispersion",
+   "recovery_sensitive",
+   "restricted_access"
+  ],
+  "confidence": "low",
+  "score": 0.5308846599755235
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "bond_vs_puts",
+  "long": "notes_2032",
+  "short": "equity put 2029-01-19 5",
+  "metric": "bond-implied PD minus put upper bound",
+  "value": 0.170431654329861,
+  "unit": "probability",
+  "read": "At the waterfall recovery the bond implies 33% default by 2029-01-19, but the 2029-01-19 $5 put bid caps the risk-neutral default probability at 16% (stock assumed worthless at default). Long bond + long puts is the classic structure; the gap closes if recovery is higher than assumed.",
+  "flags": [
+   "price_dispersion",
+   "recovery_sensitive",
+   "restricted_access"
+  ],
+  "confidence": "low",
+  "score": 0.5112949629895829
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "equity_vs_credit",
+  "long": "equity (or equity puts)",
+  "short": "notes_2030",
+  "metric": "market minus structural model price",
+  "value": 8.372394624582114,
+  "unit": "points",
+  "read": "Market 82.09 vs 73.72 from the equity-calibrated Black-Cox model: the bond prices less default than the equity implies (bond rich / equity cheap).",
+  "flags": [
+   "recovery_sensitive",
+   "restricted_access",
+   "short_bond_funding",
+   "structural_inputs"
+  ],
+  "confidence": "low",
+  "score": 0.5023436774749268
+ },
+ {
+  "issuer": "Nebius Group N.V.",
+  "kind": "convert_vs_options",
+  "long": "cv_2030_02",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -7.737880808587462,
+  "unit": "points",
+  "read": "Market 64.75 vs 72.49 (jump-to-default tree at listed vol 107%, hazard 28.4%, recovery 38%); implied vol at that hazard 58%. Option-ignoring bound: hazard <= 18.0%.",
+  "flags": [
+   "model_dependent",
+   "short_equity_borrow"
+  ],
+  "confidence": "low",
+  "score": 0.46427284851524775
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "equity_vs_credit",
+  "long": "equity (or equity puts)",
+  "short": "notes_2031a",
+  "metric": "market minus structural model price",
+  "value": 6.814611320740781,
+  "unit": "points",
+  "read": "Market 78.38 vs 71.56 from the equity-calibrated Black-Cox model: the bond prices less default than the equity implies (bond rich / equity cheap).",
+  "flags": [
+   "recovery_sensitive",
+   "restricted_access",
+   "short_bond_funding",
+   "structural_inputs"
+  ],
+  "confidence": "low",
+  "score": 0.4088766792444469
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "cds_basis",
+  "long": "notes_2032",
+  "short": "CDS protection (buy)",
+  "metric": "CDS minus par-equivalent bond spread",
+  "value": 66.34796820297898,
+  "unit": "bp",
+  "read": "CDS 1141bp vs the bond's par-equivalent spread 1074bp (basis +66bp) on 2026-10-22. A positive basis means protection is dear relative to the bond: long bond + buy protection earns the basis if both are held to maturity or default, but the CDS curve is a single 5Y point here.",
+  "flags": [
+   "dated_inputs",
+   "restricted_access"
+  ],
+  "confidence": "medium",
+  "score": 0.39808780921787384
+ },
+ {
+  "issuer": "Strategy Inc",
+  "kind": "preferred_stack",
+  "long": "STRD",
+  "short": "STRK",
+  "metric": "market spread gap minus model gap",
+  "value": 263.66347115201916,
+  "unit": "bp",
+  "read": "STRD yields 11.4% over 30y Treasuries vs STRK 8.5%; liquidation priority alone explains 0.3% of the 2.9% gap at observed bitcoin value and volatility. Dividend features (cumulative or not), rate resets and liquidity explain the rest - or the junior series is cheap.",
+  "flags": [
+   "structural_inputs",
+   "model_dependent"
+  ],
+  "confidence": "low",
+  "score": 0.39549520672802874
+ },
+ {
+  "issuer": "IREN Limited",
+  "kind": "convert_vs_options",
+  "long": "listed calls",
+  "short": "cv_2030_06",
+  "metric": "market minus model price",
+  "value": 3.2486276332420942,
+  "unit": "points",
+  "read": "Market 103.05 vs 99.80 (jump-to-default tree at listed vol 106%, hazard 29.8%, recovery 13%); implied vol at that hazard 125%. Option-ignoring bound: hazard <= 0.0%.",
+  "flags": [
+   "short_equity_borrow"
+  ],
+  "confidence": "medium",
+  "score": 0.3898353159890513
+ },
+ {
+  "issuer": "Nebius Group N.V.",
+  "kind": "convert_vs_options",
+  "long": "cv_2030_09",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -6.218191598454808,
+  "unit": "points",
+  "read": "Market 94.25 vs 100.47 (jump-to-default tree at listed vol 107%, hazard 27.9%, recovery 38%); implied vol at that hazard 75%. Option-ignoring bound: hazard <= 0.0%.",
+  "flags": [
+   "model_dependent",
+   "short_equity_borrow"
+  ],
+  "confidence": "low",
+  "score": 0.3730914959072885
+ },
+ {
+  "issuer": "Strategy Inc",
+  "kind": "convert_vs_options",
+  "long": "cv_2028",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -5.970662288082011,
+  "unit": "points",
+  "read": "Market 97.02 vs 102.99 (jump-to-default tree at listed vol 87%, hazard 0.7%, recovery 77%); implied vol at that hazard 45%. Option-ignoring bound: hazard <= 0.0%.",
+  "flags": [
+   "model_dependent",
+   "short_equity_borrow"
+  ],
+  "confidence": "low",
+  "score": 0.3582397372849206
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "cds_basis",
+  "long": "notes_2031a",
+  "short": "CDS protection (buy)",
+  "metric": "CDS minus par-equivalent bond spread",
+  "value": 59.32213848664991,
+  "unit": "bp",
+  "read": "CDS 1141bp vs the bond's par-equivalent spread 1081bp (basis +59bp) on 2026-10-22. A positive basis means protection is dear relative to the bond: long bond + buy protection earns the basis if both are held to maturity or default, but the CDS curve is a single 5Y point here.",
+  "flags": [
+   "dated_inputs",
+   "restricted_access"
+  ],
+  "confidence": "medium",
+  "score": 0.35593283091989947
+ },
+ {
+  "issuer": "Strategy Inc",
+  "kind": "convert_vs_options",
+  "long": "cv_2030a",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -5.694262913788847,
+  "unit": "points",
+  "read": "Market 97.68 vs 103.38 (jump-to-default tree at listed vol 91%, hazard 2.8%, recovery 77%); implied vol at that hazard 49%. Option-ignoring bound: hazard <= 0.0%.",
+  "flags": [
+   "model_dependent",
+   "short_equity_borrow"
+  ],
+  "confidence": "low",
+  "score": 0.34165577482733084
+ },
+ {
+  "issuer": "Strategy Inc",
+  "kind": "preferred_stack",
+  "long": "STRC",
+  "short": "STRF",
+  "metric": "market spread gap minus model gap",
+  "value": 112.2841862147586,
+  "unit": "bp",
+  "read": "STRC yields 7.5% over 30y Treasuries vs STRF 5.3%; liquidation priority alone explains 1.1% of the 2.2% gap at observed bitcoin value and volatility. Dividend features (cumulative or not), rate resets and liquidity explain the rest - or the junior series is cheap.",
+  "flags": [
+   "structural_inputs"
+  ],
+  "confidence": "medium",
+  "score": 0.33685255864427577
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "equity_vs_credit",
+  "long": "equity (or equity puts)",
+  "short": "notes_2031b",
+  "metric": "market minus structural model price",
+  "value": 5.178785135155721,
+  "unit": "points",
+  "read": "Market 77.50 vs 72.32 from the equity-calibrated Black-Cox model: the bond prices less default than the equity implies (bond rich / equity cheap).",
+  "flags": [
+   "price_dispersion",
+   "recovery_sensitive",
+   "restricted_access",
+   "short_bond_funding",
+   "structural_inputs"
+  ],
+  "confidence": "low",
+  "score": 0.3107271081093433
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "equity_vs_credit",
+  "long": "equity (or equity puts)",
+  "short": "notes_2032",
+  "metric": "market minus structural model price",
+  "value": 4.732755297083173,
+  "unit": "points",
+  "read": "Market 76.00 vs 71.27 from the equity-calibrated Black-Cox model: the bond prices less default than the equity implies (bond rich / equity cheap).",
+  "flags": [
+   "price_dispersion",
+   "recovery_sensitive",
+   "restricted_access",
+   "short_bond_funding",
+   "structural_inputs"
+  ],
+  "confidence": "low",
+  "score": 0.2839653178249904
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "curve",
+  "long": "9.75% Senior Notes due 2031",
+  "short": "9.25% Senior Notes due 2030",
+  "metric": "spread residual gap vs fitted hazard curve",
+  "value": 46.396225929545984,
+  "unit": "bp",
+  "read": "9.75% Senior Notes due 2031 trades +25bp off the issuer curve, 9.25% Senior Notes due 2030 -21bp. Coupon and call differences are not modelled.",
+  "flags": [
+   "price_dispersion",
+   "recovery_sensitive",
+   "restricted_access",
+   "short_bond_funding"
+  ],
+  "confidence": "low",
+  "score": 0.2783773555772759
+ },
+ {
+  "issuer": "IREN Limited",
+  "kind": "convert_vs_options",
+  "long": "cv_2033_06",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -4.59923770470904,
+  "unit": "points",
+  "read": "Market 43.12 vs 47.72 (jump-to-default tree at listed vol 106%, hazard 23.1%, recovery 13%); implied vol at that hazard 64%. Option-ignoring bound: hazard <= 12.2%.",
+  "flags": [
+   "model_dependent",
+   "short_equity_borrow"
+  ],
+  "confidence": "low",
+  "score": 0.2759542622825424
+ },
+ {
+  "issuer": "IREN Limited",
+  "kind": "convert_vs_options",
+  "long": "cv_2032_06",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -3.990712124043469,
+  "unit": "points",
+  "read": "Market 43.49 vs 47.48 (jump-to-default tree at listed vol 106%, hazard 24.9%, recovery 13%); implied vol at that hazard 72%. Option-ignoring bound: hazard <= 13.6%.",
+  "flags": [
+   "model_dependent",
+   "short_equity_borrow"
+  ],
+  "confidence": "low",
+  "score": 0.23944272744260814
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "cds_basis",
+  "long": "notes_2031b",
+  "short": "CDS protection (buy)",
+  "metric": "CDS minus par-equivalent bond spread",
+  "value": 31.405702531208668,
+  "unit": "bp",
+  "read": "CDS 1141bp vs the bond's par-equivalent spread 1109bp (basis +31bp) on 2026-10-22. A positive basis means protection is dear relative to the bond: long bond + buy protection earns the basis if both are held to maturity or default, but the CDS curve is a single 5Y point here.",
+  "flags": [
+   "dated_inputs",
+   "restricted_access"
+  ],
+  "confidence": "medium",
+  "score": 0.188434215187252
+ },
+ {
+  "issuer": "CoreWeave, Inc.",
+  "kind": "cross_market_pd",
+  "long": "equity",
+  "short": "debt",
+  "metric": "market / model 5y PD",
+  "value": 0.915716001122338,
+  "unit": "x",
+  "read": "Debt markets imply 59.9% 5-year default (straight bonds at waterfall recovery); the structural model (equity-calibrated Black-Cox) 65.4%. Ratio 0.92.",
+  "flags": [
+   "structural_inputs",
+   "recovery_sensitive"
+  ],
+  "confidence": "medium",
+  "score": 0.17609800964792835
+ },
+ {
+  "issuer": "IREN Limited",
+  "kind": "convert_vs_options",
+  "long": "cv_2033_12",
+  "short": "listed calls / equity delta",
+  "metric": "market minus model price",
+  "value": -2.6335764730044247,
+  "unit": "points",
+  "read": "Market 37.98 vs 40.61 (jump-to-default tree at listed vol 106%, hazard 22.4%, recovery 13%); implied vol at that hazard 74%. Option-ignoring bound: hazard <= 13.8%.",
+  "flags": [
+   "model_dependent",
+   "short_equity_borrow"
+  ],
+  "confidence": "low",
+  "score": 0.15801458838026547
+ },
+ {
+  "issuer": "Strategy Inc",
+  "kind": "preferred_stack",
+  "long": "STRK",
+  "short": "STRC",
+  "metric": "market spread gap minus model gap",
+  "value": -40.76122636558765,
+  "unit": "bp",
+  "read": "STRK yields 8.5% over 30y Treasuries vs STRC 7.5%; liquidation priority alone explains 1.4% of the 1.0% gap at observed bitcoin value and volatility. Dividend features (cumulative or not), rate resets and liquidity explain the rest - or the junior series is cheap.",
+  "flags": [
+   "structural_inputs"
+  ],
+  "confidence": "medium",
+  "score": 0.12228367909676296
+ }
+]

@@ -1,0 +1,785 @@
+{
+ "id": "strategy",
+ "company": "Strategy Inc",
+ "ticker": "MSTR",
+ "currency": "USD",
+ "units": "USD millions",
+ "balance_sheet_date": "2026-09-30",
+ "market_date": "2026-11-20",
+ "settlement_date": "2026-11-23",
+ "filing": {
+  "form": "10-Q",
+  "accession": "0001050446-26-000060",
+  "filed": "2026-11-02",
+  "url": "https://www.sec.gov/Archives/edgar/data/1050446/000105044626000060/mstr-20260930.htm"
+ },
+ "sources": [
+  {
+   "label": "10-Q 9/30/26",
+   "url": "https://www.sec.gov/Archives/edgar/data/1050446/000105044626000060/mstr-20260930.htm",
+   "accession": "0001050446-26-000060"
+  },
+  {
+   "label": "8-K",
+   "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526462151/",
+   "accession": "0001193125-26-462151"
+  },
+  {
+   "label": "8-K",
+   "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526452693/",
+   "accession": "0001193125-26-452693"
+  },
+  {
+   "label": "8-K",
+   "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526442707/",
+   "accession": "0001193125-26-442707"
+  },
+  {
+   "label": "8-K",
+   "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526437776/",
+   "accession": "0001193125-26-437776"
+  },
+  {
+   "label": "8-K",
+   "url": "https://www.sec.gov/Archives/edgar/data/1050446/000105044626000047/",
+   "accession": "0001050446-26-000047"
+  },
+  {
+   "label": "8-K",
+   "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526431146/",
+   "accession": "0001193125-26-431146"
+  }
+ ],
+ "missing": [
+  "CUSIPs/ISINs for notes and preferreds (not in 10-Q)",
+  "Exact aggregate BTC cost in millions at 11/15 (8-K gives $64.20B rounded)",
+  "Bitcoin pledge/collateral status not verified",
+  "8-Ks of 10/1, 10/5, 10/13, 10/16, 10/19 and 10/28(8.01) not individually parsed; 10-Q covers through 10/25",
+  "Full preferred certificates of designation (redemption trigger details) not read; only 10-Q summaries",
+  "Lien rank of other secured debt not stated",
+  "STRE (EUR, Luxembourg-listed) price",
+  "Whether any bitcoin is pledged"
+ ],
+ "summary": "Bitcoin treasury company: convertible notes, five perpetual preferred series and common equity backed mainly by 850,849 BTC. Unusual for credit work because the asset value is observable.",
+ "entities": [
+  {
+   "id": "parent",
+   "name": "Strategy Inc",
+   "parent": null,
+   "value_share": 1.0
+  }
+ ],
+ "pools": [
+  {
+   "id": "p_nonbtc",
+   "entity": "parent",
+   "share": 0.001,
+   "description": "non-bitcoin assets securing two small loans"
+  }
+ ],
+ "claims": [
+  {
+   "id": "secured_loans",
+   "name": "Secured term loans (non-bitcoin collateral)",
+   "kind": "term_loan",
+   "entity": "parent",
+   "principal": 39.894,
+   "amount": 40.931,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_nonbtc",
+     1
+    ]
+   ],
+   "guarantors": [],
+   "maturity": "2027-06-15",
+   "coupon": 0.052,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "10-Q Sep 30 2026",
+    "accession": "0001050446-26-000060",
+    "section": "Note 6 Other long-term secured debt",
+    "quote": "aggregate outstanding principal balance of $39.9 million as of September 30, 2026"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2028",
+   "name": "0.625% Convertible Senior Notes due 2028",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 1010.0,
+   "amount": 1013.156,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2028-09-15",
+   "coupon": 0.00625,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 183.19,
+    "put_dates": [
+     "2027-09-15"
+    ],
+    "first_call": "2027-12-20"
+   },
+   "market": {
+    "cusip": "594972AQ4",
+    "clean": 97.0182,
+    "date": "2026-11-20",
+    "yield_reported": 2.315426,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 77.8,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "10-Q Sep 30 2026",
+    "accession": "0001050446-26-000060",
+    "section": "Note 6 Long-term Debt, key terms table and maturities table",
+    "quote": "0.625% Convertible Senior Notes due 2028 principal $1010.0M (maturities table, thousands)"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2029",
+   "name": "0% Convertible Senior Notes due 2029",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 1500.0,
+   "amount": 1500.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2029-12-01",
+   "coupon": 0.0,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 672.4,
+    "put_dates": [
+     "2028-06-01"
+    ],
+    "first_call": "2026-12-04"
+   },
+   "market": {
+    "cusip": "594972AS0",
+    "clean": 88,
+    "date": "2026-11-20",
+    "yield_reported": null,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 77.8,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "10-Q Sep 30 2026",
+    "accession": "0001050446-26-000060",
+    "section": "Note 6 Long-term Debt, key terms table and maturities table",
+    "quote": "0% Convertible Senior Notes due 2029 principal $1500.0M (maturities table, thousands)"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2030a",
+   "name": "0.625% Convertible Senior Notes due 2030 (2030A)",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 800.0,
+   "amount": 802.5,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2030-03-15",
+   "coupon": 0.00625,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 149.77,
+    "put_dates": [
+     "2028-09-15"
+    ],
+    "first_call": "2027-03-22"
+   },
+   "market": {
+    "cusip": "594972AJ0",
+    "clean": 97.6819,
+    "date": "2026-11-20",
+    "yield_reported": 1.343051,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 77.8,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "10-Q Sep 30 2026",
+    "accession": "0001050446-26-000060",
+    "section": "Note 6 Long-term Debt, key terms table and maturities table",
+    "quote": "0.625% Convertible Senior Notes due 2030 (2030A) principal $800.0M (maturities table, thousands)"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2030b",
+   "name": "0% Convertible Senior Notes due 2030 (2030B)",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 2000.0,
+   "amount": 2000.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2030-03-01",
+   "coupon": 0.0,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 433.43,
+    "put_dates": [
+     "2028-03-01"
+    ],
+    "first_call": "2027-03-05"
+   },
+   "market": {
+    "cusip": "594972AU5",
+    "clean": 89.75,
+    "date": "2026-11-20",
+    "yield_reported": null,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 77.8,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "10-Q Sep 30 2026",
+    "accession": "0001050446-26-000060",
+    "section": "Note 6 Long-term Debt, key terms table and maturities table",
+    "quote": "0% Convertible Senior Notes due 2030 (2030B) principal $2000.0M (maturities table, thousands)"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2031",
+   "name": "0.875% Convertible Senior Notes due 2031",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 603.659,
+   "amount": 606.3,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2031-03-15",
+   "coupon": 0.00875,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 232.72,
+    "put_dates": [
+     "2028-09-15"
+    ],
+    "first_call": "2028-03-22"
+   },
+   "market": {
+    "cusip": "594972AL5",
+    "clean": 91.5545,
+    "date": "2026-11-20",
+    "yield_reported": 2.976729,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 77.8,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "10-Q Sep 30 2026",
+    "accession": "0001050446-26-000060",
+    "section": "Note 6 Long-term Debt, key terms table and maturities table",
+    "quote": "0.875% Convertible Senior Notes due 2031 principal $603.659M (maturities table, thousands)"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2032",
+   "name": "2.25% Convertible Senior Notes due 2032",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 800.0,
+   "amount": 809.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2032-06-15",
+   "coupon": 0.0225,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 204.33,
+    "put_dates": [
+     "2029-06-15"
+    ],
+    "first_call": "2029-06-20"
+   },
+   "market": {
+    "cusip": "594972AN1",
+    "clean": 94.3852,
+    "date": "2026-11-20",
+    "yield_reported": 3.365324,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 77.8,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "10-Q Sep 30 2026",
+    "accession": "0001050446-26-000060",
+    "section": "Note 6 Long-term Debt, key terms table and maturities table",
+    "quote": "2.25% Convertible Senior Notes due 2032 principal $800.0M (maturities table, thousands)"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "strf",
+   "name": "10.00% Series A Perpetual Strife Preferred",
+   "kind": "preferred",
+   "entity": "parent",
+   "principal": 1329.807,
+   "amount": 1329.807,
+   "rank": 30,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {
+    "type": "preferred",
+    "ticker": "STRF",
+    "dividend_rate": 0.1,
+    "stated_amount": 100.0,
+    "liquidation_pref": 103.57,
+    "cumulative": true,
+    "shares_m": 12.839689,
+    "currency": "USD"
+   },
+   "market": {
+    "price": 94.0999984741211,
+    "date": "2026-11-20",
+    "source": "Yahoo Finance daily close"
+   },
+   "source": {
+    "doc": "10-Q Sep 30 2026",
+    "accession": "0001050446-26-000060",
+    "section": "Note 10 Redeemable Preferred Stock, terms table",
+    "quote": "Liquidation Preference Per Share as of September 30, 2026: STRF $103.57; aggregate $1,329,807 thousand"
+   },
+   "status": "filed",
+   "notes": "Liq pref per share adjusts (approximates greater of trading price or $100, per CoD; stated amount $100). Notional at $100 = $1,283.969M. Daily dividends from 2027-01-01. $2.50/share declared for 12/31/26."
+  },
+  {
+   "id": "strc",
+   "name": "Variable Rate Series A Perpetual Stretch Preferred",
+   "kind": "preferred",
+   "entity": "parent",
+   "principal": 9096.453,
+   "amount": 9096.453,
+   "rank": 31,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {
+    "type": "preferred",
+    "ticker": "STRC",
+    "dividend_rate": 0.12,
+    "stated_amount": 100.0,
+    "liquidation_pref": 100.0,
+    "cumulative": true,
+    "shares_m": 90.964532,
+    "currency": "USD"
+   },
+   "market": {
+    "price": 93.5999984741211,
+    "date": "2026-11-20",
+    "source": "Yahoo Finance daily close"
+   },
+   "source": {
+    "doc": "10-Q Sep 30 2026",
+    "accession": "0001050446-26-000060",
+    "section": "Note 10 Redeemable Preferred Stock, terms table",
+    "quote": "STRC Stock | 90,965 | $ 9,096,453 | 12.00 %"
+   },
+   "status": "filed",
+   "notes": "Shares are 9/30/26 issued; current count derived in derived_current (about 77.65M). Monthly rate set at issuer discretion: 12.00% for Nov and Dec 2026. Daily dividends since 2026-11-01."
+  },
+  {
+   "id": "stre",
+   "name": "10.00% Series A Perpetual Stream Preferred",
+   "kind": "preferred",
+   "entity": "parent",
+   "principal": 879.083,
+   "amount": 879.083,
+   "rank": 32,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {
+    "type": "preferred",
+    "ticker": "STRE",
+    "dividend_rate": 0.1,
+    "stated_amount": 100.0,
+    "liquidation_pref": 100.0,
+    "cumulative": true,
+    "shares_m": 7.75,
+    "currency": "EUR"
+   },
+   "market": {},
+   "source": {
+    "doc": "10-Q Sep 30 2026",
+    "accession": "0001050446-26-000060",
+    "section": "Note 10 Redeemable Preferred Stock, terms table",
+    "quote": "STRE Stock | 7,750 | EUR 775,000 | 10.00 %"
+   },
+   "status": "filed",
+   "notes": "EUR-denominated: EUR100 stated/liquidation, EUR775.0M notional; USD 879.083M is the 10-Q USD aggregate at 9/30/26 FX. Not Nasdaq-listed. EUR2.50/share declared for 12/31/26."
+  },
+  {
+   "id": "strk",
+   "name": "8.00% Series A Perpetual Strike Preferred",
+   "kind": "preferred",
+   "entity": "parent",
+   "principal": 1402.074,
+   "amount": 1402.074,
+   "rank": 33,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {
+    "type": "preferred",
+    "ticker": "STRK",
+    "dividend_rate": 0.08,
+    "stated_amount": 100.0,
+    "liquidation_pref": 100.0,
+    "cumulative": true,
+    "shares_m": 14.020744,
+    "currency": "USD"
+   },
+   "market": {
+    "price": 58.09000015258789,
+    "date": "2026-11-20",
+    "source": "Yahoo Finance daily close"
+   },
+   "source": {
+    "doc": "10-Q Sep 30 2026",
+    "accession": "0001050446-26-000060",
+    "section": "Note 10 Redeemable Preferred Stock, terms table",
+    "quote": "STRK Stock | 14,021 | $ 1,402,074 | 8.00 %"
+   },
+   "status": "filed",
+   "notes": "Only convertible series. Implied conversion price $1,000 per MSTR share at stated amount $100 (derived: 100/0.1). $2.00/share declared for 12/31/26."
+  },
+  {
+   "id": "strd",
+   "name": "10.00% Series A Perpetual Stride Preferred",
+   "kind": "preferred",
+   "entity": "parent",
+   "principal": 1402.422,
+   "amount": 1402.422,
+   "rank": 34,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {
+    "type": "preferred",
+    "ticker": "STRD",
+    "dividend_rate": 0.1,
+    "stated_amount": 100.0,
+    "liquidation_pref": 100.0,
+    "cumulative": false,
+    "shares_m": 14.024221,
+    "currency": "USD"
+   },
+   "market": {
+    "price": 59.81999969482422,
+    "date": "2026-11-20",
+    "source": "Yahoo Finance daily close"
+   },
+   "source": {
+    "doc": "10-Q Sep 30 2026",
+    "accession": "0001050446-26-000060",
+    "section": "Note 10 Redeemable Preferred Stock, terms table",
+    "quote": "STRD Stock | 14,024 | $ 1,402,422 | 10.00 %"
+   },
+   "status": "filed",
+   "notes": "Only NON-cumulative series; junior-most preferred."
+  },
+  {
+   "id": "equity",
+   "name": "Class A + B common stock",
+   "kind": "common",
+   "entity": "parent",
+   "principal": 0.0,
+   "amount": 0.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": null,
+   "instrument": {},
+   "market": {},
+   "source": {},
+   "status": "filed",
+   "notes": ""
+  }
+ ],
+ "admin_cost": 0.02,
+ "equity": {
+  "ticker": "MSTR",
+  "price": 77.80000305175781,
+  "date": "2026-11-20",
+  "price_source": "Yahoo Finance daily close",
+  "shares_m": 422.354607,
+  "shares_as_of": "2026-10-25",
+  "shares_source": "10-Q cover page",
+  "vol_1y": 0.8143278857537584,
+  "vol_6m": 0.8453790931559915,
+  "vol_3m": 0.8735663744974306,
+  "vol_ewma94": 0.8895909558901787,
+  "vol_source": "realised, daily log returns (Yahoo Finance closes)",
+  "return_1m": -0.46639230848205504,
+  "high_52w": 195.94000244140625,
+  "low_52w": 77.80000305175781,
+  "options": {
+   "source": "Yahoo Finance listed options, two-sided quotes at the 2026-11-20 close; IV from the ATM call mid (Black-Scholes, no dividends, Treasury zero rate)",
+   "atm_iv_term": [
+    {
+     "expiry": "2026-12-11",
+     "T": 0.0575,
+     "strike": 80.0,
+     "iv": 1.1733
+    },
+    {
+     "expiry": "2026-12-18",
+     "T": 0.0767,
+     "strike": 80.0,
+     "iv": 1.1413
+    },
+    {
+     "expiry": "2026-12-24",
+     "T": 0.0932,
+     "strike": 80.0,
+     "iv": 1.0916
+    },
+    {
+     "expiry": "2026-12-31",
+     "T": 0.1123,
+     "strike": 80.0,
+     "iv": 1.047
+    },
+    {
+     "expiry": "2027-01-15",
+     "T": 0.1534,
+     "strike": 80.0,
+     "iv": 1.0281
+    },
+    {
+     "expiry": "2027-03-19",
+     "T": 0.326,
+     "strike": 80.0,
+     "iv": 0.9525
+    },
+    {
+     "expiry": "2027-04-16",
+     "T": 0.4027,
+     "strike": 80.0,
+     "iv": 0.9489
+    },
+    {
+     "expiry": "2027-06-17",
+     "T": 0.5726,
+     "strike": 80.0,
+     "iv": 0.9224
+    },
+    {
+     "expiry": "2027-07-16",
+     "T": 0.6521,
+     "strike": 80.0,
+     "iv": 0.9015
+    },
+    {
+     "expiry": "2027-09-17",
+     "T": 0.8247,
+     "strike": 80.0,
+     "iv": 0.8958
+    },
+    {
+     "expiry": "2027-12-17",
+     "T": 1.074,
+     "strike": 80.0,
+     "iv": 0.8769
+    },
+    {
+     "expiry": "2028-01-21",
+     "T": 1.1699,
+     "strike": 80.0,
+     "iv": 0.8742
+    },
+    {
+     "expiry": "2028-06-16",
+     "T": 1.5726,
+     "strike": 80.0,
+     "iv": 0.8816
+    },
+    {
+     "expiry": "2028-12-15",
+     "T": 2.0712,
+     "strike": 80.0,
+     "iv": 0.8637
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.1671,
+     "strike": 80.0,
+     "iv": 0.9089
+    }
+   ],
+   "iv_1y": 0.8825101083032492,
+   "iv_2y": 0.8662561171279584,
+   "deep_put_pd_bounds": [
+    {
+     "expiry": "2027-12-17",
+     "T": 1.074,
+     "strike": 5.0,
+     "bid": 0.08,
+     "ask": 0.3,
+     "open_interest": 5217,
+     "pd_upper_bound": 0.0168
+    },
+    {
+     "expiry": "2027-12-17",
+     "T": 1.074,
+     "strike": 10.0,
+     "bid": 0.56,
+     "ask": 0.8,
+     "open_interest": 2076,
+     "pd_upper_bound": 0.0588
+    },
+    {
+     "expiry": "2028-01-21",
+     "T": 1.17,
+     "strike": 5.0,
+     "bid": 0.08,
+     "ask": 0.33,
+     "open_interest": 11255,
+     "pd_upper_bound": 0.0169
+    },
+    {
+     "expiry": "2028-01-21",
+     "T": 1.17,
+     "strike": 10.0,
+     "bid": 0.56,
+     "ask": 0.72,
+     "open_interest": 2905,
+     "pd_upper_bound": 0.059
+    },
+    {
+     "expiry": "2028-06-16",
+     "T": 1.573,
+     "strike": 5.0,
+     "bid": 0.16,
+     "ask": 0.45,
+     "open_interest": 231,
+     "pd_upper_bound": 0.0344
+    },
+    {
+     "expiry": "2028-06-16",
+     "T": 1.573,
+     "strike": 10.0,
+     "bid": 1.1,
+     "ask": 2.0,
+     "open_interest": 78,
+     "pd_upper_bound": 0.1181
+    },
+    {
+     "expiry": "2028-12-15",
+     "T": 2.071,
+     "strike": 5.0,
+     "bid": 0.3,
+     "ask": 0.49,
+     "open_interest": 2566,
+     "pd_upper_bound": 0.066
+    },
+    {
+     "expiry": "2028-12-15",
+     "T": 2.071,
+     "strike": 10.0,
+     "bid": 1.05,
+     "ask": 2.05,
+     "open_interest": 999,
+     "pd_upper_bound": 0.1155
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.167,
+     "strike": 5.0,
+     "bid": 0.32,
+     "ask": 0.69,
+     "open_interest": 90,
+     "pd_upper_bound": 0.0707
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.167,
+     "strike": 10.0,
+     "bid": 1.17,
+     "ask": 10.0,
+     "open_interest": 312,
+     "pd_upper_bound": 0.1292
+    }
+   ]
+  }
+ },
+ "assets": {
+  "btc_held": 850849,
+  "btc_as_of": "2026-11-15",
+  "btc_source": "8-K 0001193125-26-462151 filed 2026-11-16: 850,849 BTC, aggregate purchase price $64.20 billion (rounded to billions), avg $75,452",
+  "btc_price": 58352.55,
+  "btc_price_date": "2026-11-20T21:00:00+00:00",
+  "btc_price_source": "Coinbase Exchange BTC-USD hourly candle (close of 20:00-21:00 UTC)",
+  "btc_value": 49649.208814950005,
+  "btc_vol_1y": 0.3951172816253254,
+  "btc_vol_3m": 0.41728428714543286,
+  "cash_and_st_investments": 5905.9130000000005,
+  "cash_as_of": "2026-09-30",
+  "usd_reserve_11_15": 4750,
+  "total_observable_assets": 55555.121814950006,
+  "asset_vol": 0.35311344446610754
+ },
+ "assumptions": [
+  {
+   "id": "asset_value",
+   "value": 55555.1,
+   "basis": "Bitcoin held (8-K, 15 Nov) x BTC close + cash and short-term investments at 30 Sep. Ignores the software business, taxes and post-quarter cash use.",
+   "status": "derived"
+  },
+  {
+   "id": "asset_vol",
+   "value": 0.3531,
+   "basis": "1-year realised BTC volatility scaled by bitcoin's share of assets (cash has no volatility).",
+   "status": "derived"
+  },
+  {
+   "id": "admin_cost",
+   "value": 0.02,
+   "basis": "Liquidating bitcoin is cheap relative to an operating business; 2% assumed.",
+   "status": "estimate",
+   "range": [
+    0.0,
+    0.05
+   ]
+  },
+  {
+   "id": "strc_shares",
+   "value": "9/30 count",
+   "basis": "STRC shares are the 30 Sep count (90.96m); 8-K repurchases imply about 77.65m by 15 Nov (derived in the filing extract).",
+   "status": "derived"
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>engine parity: running</title>
+<style>body{font:13px/1.4 ui-monospace,Consolas,monospace;margin:20px} .FAIL{color:#b42318;font-weight:700} .PASS{color:#157347}</style>
+</head>
+<body>
+<h1>JavaScript engine vs Python engine</h1>
+<p>Vectors from <code>scripts/export_web.py</code>; tolerances are relative unless noted.</p>
+<pre id="out"></pre>
+<script type="module">
+import * as E from "../lab-engine.js";
+const out = document.getElementById("out");
+const v = await (await fetch("vectors.json")).json();
+const results = [];
+const close = (a, b, rel, abs = 0) => Math.abs(a - b) <= Math.max(abs, rel * Math.max(Math.abs(a), Math.abs(b)));
+function check(name, a, b, rel, abs = 0) { results.push({ name, a, b, ok: close(a, b, rel, abs) }); }
+
+v.normcdf.x.forEach((x, i) => check(`normCdf(${x})`, E.normCdf(x), v.normcdf.y[i], 1e-12, 1e-15));
+for (const key of ["waterfall_coreweave", "waterfall_lbo_gift"]) {
+  const w = v[key];
+  w.V.forEach((V, i) => {
+    const r = E.distribute(w.structure, V, { gift: w.gift || 0 });
+    for (const [id, arr] of Object.entries(w.payouts)) check(`${key} V=${V} ${id}`, r.payouts[id], arr[i], 1e-9, 1e-9);
+  });
+}
+const lbo = v.waterfall_lbo_gift.structure;
+const bp = E.breakpoints(lbo, { inDefault: true });
+v.breakpoints_lbo.in_default.forEach((x, i) => check(`breakpoint ${i}`, bp[i], x, 1e-6));
+for (const m of ["merton", "black_cox"]) {
+  const t = v[`pricing_lbo_${m}`];
+  const pr = E.priceStructure(lbo, { V0: t.V0, sigma: t.sigma, T: t.T, r: t.r, q: 0, model: m, H0: t.H0, defaultPoint: t.default_point });
+  for (const [id, val] of Object.entries(t.values)) check(`price ${m} ${id}`, pr.values[id], val, 1e-6, 1e-6);
+  check(`pd ${m}`, pr.pd, t.pd, 1e-6, 1e-9);
+}
+check("firstPassageProb", E.firstPassageProb(...v.first_passage.args), v.first_passage.p, 1e-10);
+check("discountedHit", E.discountedHit(...v.discounted_hit.args), v.discounted_hit.v, 1e-10);
+const bm = E.barrierPartialMoments(...v.barrier_moments.args);
+check("barrierPartialMoments p", bm.p, v.barrier_moments.p, 1e-10); check("barrierPartialMoments ev", bm.ev, v.barrier_moments.ev, 1e-10);
+const pm = E.partialMoments(...v.partial_moments.args);
+check("partialMoments p", pm.p, v.partial_moments.p, 1e-10); check("partialMoments ev", pm.ev, v.partial_moments.ev, 1e-10);
+const [V0, s, H0, g, r, q] = v.pd_term.args;
+E.pdTermStructure(V0, s, H0, g, r, q, v.pd_term.times).forEach((x, i) => check(`pdTerm t=${v.pd_term.times[i]}`, x, v.pd_term.pd[i], 1e-10));
+
+const fails = results.filter((x) => !x.ok);
+out.innerHTML = results.map((x) => `<span class="${x.ok ? "PASS" : "FAIL"}">${x.ok ? "PASS" : "FAIL"}</span> ${x.name}: js ${x.a} py ${x.b}`).join("\n");
+document.title = fails.length ? `FAIL ${fails.length}/${results.length}` : `PASS ${results.length}/${results.length}`;
+document.body.dataset.result = document.title;
+</script>
+</body>
+</html>

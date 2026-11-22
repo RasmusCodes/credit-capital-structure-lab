@@ -1,0 +1,1163 @@
+{
+ "id": "coreweave",
+ "company": "CoreWeave, Inc.",
+ "ticker": "CRWV",
+ "currency": "USD",
+ "units": "USD millions",
+ "balance_sheet_date": "2026-09-30",
+ "market_date": "2026-11-20",
+ "settlement_date": "2026-11-23",
+ "filing": {
+  "form": "10-Q",
+  "accession": "0001769628-26-000465",
+  "filed": "2026-11-12",
+  "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000465/crwv-20260930.htm"
+ },
+ "sources": [
+  {
+   "label": "10-Q Q3 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000465/crwv-20260930.htm",
+   "accession": "0001769628-26-000465"
+  },
+  {
+   "label": "8-K earnings 2026-11-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000461/coreweave3q26earningspress.htm",
+   "accession": "0001769628-26-000461"
+  },
+  {
+   "label": "8-K DDTL 5.5",
+   "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000357/crwv-20260807.htm",
+   "accession": "0001769628-26-000357"
+  },
+  {
+   "label": "8-K 2031 converts",
+   "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962825000105/crwv-20251208.htm",
+   "accession": "0001769628-25-000105"
+  },
+  {
+   "label": "8-K 2032 notes",
+   "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000291/crwv-20260618.htm",
+   "accession": "0001769628-26-000291"
+  },
+  {
+   "label": "8-K 2033 converts",
+   "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000432/crwv-20260917.htm",
+   "accession": "0001769628-26-000432"
+  },
+  {
+   "label": "10-K FY2025",
+   "url": "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000104/crwv-20251231.htm",
+   "accession": "0001769628-26-000104"
+  }
+ ],
+ "missing": [
+  "DDTL 1.0/2.0 spreads and amortization schedules not in Q3 10-Q or FY25 10-K excerpt checked",
+  "Per-instrument CUSIPs (ISINs from baseline only)",
+  "OEM vs software split for recourse tranche",
+  "Revolver pricing",
+  "2033 convert call/put details only summarised in 10-Q",
+  "Senior note call schedules rely on baseline",
+  "Collateral behind the revolver",
+  "Individual SPV asset values beyond the two aggregates in Note 10",
+  "Call schedules of the senior notes",
+  "Repo / borrow cost for shorting the notes"
+ ],
+ "summary": "AI cloud provider financed with SPV delayed-draw term loans secured on GPU fleets and customer contracts, OEM equipment financing, a secured revolver, and parent-level senior notes and convertibles guaranteed by the operating subsidiaries.",
+ "entities": [
+  {
+   "id": "parent",
+   "name": "CoreWeave, Inc. (issuer of notes, converts, revolver borrower)",
+   "parent": null,
+   "value_share": 0.0
+  },
+  {
+   "id": "opco",
+   "name": "Guarantor and other operating subsidiaries",
+   "parent": "parent",
+   "value_share": 0.595441
+  },
+  {
+   "id": "spv_r",
+   "name": "SPV borrowers of recourse DDTLs (1.0, 2.0, 2.1, 3.0, 5.0, 5.5)",
+   "parent": "opco",
+   "value_share": 0.299412
+  },
+  {
+   "id": "spv_nr",
+   "name": "CCAC VIII (DDTL 4.0 borrower, non-recourse)",
+   "parent": "opco",
+   "value_share": 0.091585
+  },
+  {
+   "id": "oem_nr",
+   "name": "Subsidiaries with non-recourse OEM financing",
+   "parent": "opco",
+   "value_share": 0.013562
+  }
+ ],
+ "pools": [
+  {
+   "id": "p_spv_r",
+   "entity": "spv_r",
+   "share": 1.0,
+   "description": "substantially all assets of the SPV borrowers + equity pledges"
+  },
+  {
+   "id": "p_spv_nr",
+   "entity": "spv_nr",
+   "share": 1.0,
+   "description": "substantially all assets of CCAC VIII"
+  },
+  {
+   "id": "p_oem_nr",
+   "entity": "oem_nr",
+   "share": 1.0,
+   "description": "financed equipment"
+  },
+  {
+   "id": "p_oem",
+   "entity": "opco",
+   "share": 0.203827,
+   "description": "equipment financed by recourse OEM / software financing (book value assumed equal to balance)"
+  },
+  {
+   "id": "p_rcf",
+   "entity": "opco",
+   "share": 0.062855,
+   "description": "assets pledged to the revolver (size not disclosed; set equal to its assumed default claim at book)"
+  }
+ ],
+ "claims": [
+  {
+   "id": "ddtl_1_0",
+   "name": "DDTL 1.0 Facility (SPV, parent-guaranteed)",
+   "kind": "delayed_draw_term_loan",
+   "entity": "spv_r",
+   "principal": 1139,
+   "amount": 1224.425,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_spv_r",
+     1
+    ]
+   ],
+   "guarantors": [
+    "parent"
+   ],
+   "maturity": "2028-03",
+   "coupon": 0.15,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "DDTL 1.0 Facility | Mar 2028 | 15% | $ | 1,139 | $ | 1,553"
+   },
+   "status": "filed",
+   "notes": "Each SPV has its own collateral; pooling the recourse SPVs is a simplification."
+  },
+  {
+   "id": "ddtl_2_0",
+   "name": "DDTL 2.0 Facility (SPV, parent-guaranteed)",
+   "kind": "delayed_draw_term_loan",
+   "entity": "spv_r",
+   "principal": 2796,
+   "amount": 2949.78,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_spv_r",
+     1
+    ]
+   ],
+   "guarantors": [
+    "parent"
+   ],
+   "maturity": "2030-08",
+   "coupon": 0.11,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "DDTL 2.0 Facility | Aug 2030 | 11% | 2,796 | 5,037"
+   },
+   "status": "filed",
+   "notes": "Each SPV has its own collateral; pooling the recourse SPVs is a simplification."
+  },
+  {
+   "id": "ddtl_2_1",
+   "name": "DDTL 2.1 Facility (SPV, parent-guaranteed)",
+   "kind": "delayed_draw_term_loan",
+   "entity": "spv_r",
+   "principal": 2494,
+   "amount": 2606.23,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_spv_r",
+     1
+    ]
+   ],
+   "guarantors": [
+    "parent"
+   ],
+   "maturity": "2031-03",
+   "coupon": 0.09,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "DDTL 2.1 Facility | Mar 2031 | 9% | 2,494 | 2,741"
+   },
+   "status": "filed",
+   "notes": "Each SPV has its own collateral; pooling the recourse SPVs is a simplification."
+  },
+  {
+   "id": "ddtl_3_0",
+   "name": "DDTL 3.0 Facility (SPV, parent-guaranteed)",
+   "kind": "delayed_draw_term_loan",
+   "entity": "spv_r",
+   "principal": 2323,
+   "amount": 2427.535,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_spv_r",
+     1
+    ]
+   ],
+   "guarantors": [
+    "parent"
+   ],
+   "maturity": "2030-08",
+   "coupon": 0.09,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "DDTL 3.0 Facility | Aug 2030 | 9% | 2,323 | 340"
+   },
+   "status": "filed",
+   "notes": "Each SPV has its own collateral; pooling the recourse SPVs is a simplification."
+  },
+  {
+   "id": "ddtl_5_0",
+   "name": "DDTL 5.0 Facility (SPV, parent-guaranteed)",
+   "kind": "delayed_draw_term_loan",
+   "entity": "spv_r",
+   "principal": 2749,
+   "amount": 2872.705,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_spv_r",
+     1
+    ]
+   ],
+   "guarantors": [
+    "parent"
+   ],
+   "maturity": "2031-11",
+   "coupon": 0.09,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "DDTL 5.0 Facility | Nov 2031 | 9% | 2,749"
+   },
+   "status": "derived",
+   "notes": "Each SPV has its own collateral; pooling the recourse SPVs is a simplification."
+  },
+  {
+   "id": "ddtl_5_5",
+   "name": "DDTL 5.5 Facility (SPV, parent-guaranteed)",
+   "kind": "delayed_draw_term_loan",
+   "entity": "spv_r",
+   "principal": 1555,
+   "amount": 1640.525,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_spv_r",
+     1
+    ]
+   ],
+   "guarantors": [
+    "parent"
+   ],
+   "maturity": "2031-09-01",
+   "coupon": 0.11,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "DDTL 5.5 Facility | Sep 2031 | 11% | 1,555"
+   },
+   "status": "derived",
+   "notes": "Each SPV has its own collateral; pooling the recourse SPVs is a simplification."
+  },
+  {
+   "id": "ddtl_4_0",
+   "name": "DDTL 4.0 Facility (CCAC VIII, non-recourse)",
+   "kind": "delayed_draw_term_loan",
+   "entity": "spv_nr",
+   "principal": 4583,
+   "amount": 4743.405,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_spv_nr",
+     1
+    ]
+   ],
+   "guarantors": [],
+   "maturity": "2032-03",
+   "coupon": 0.07,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "As of September 30, 2026, the facility has $2.2 billion of outstanding floating-rate loan and $2.4 billion of outstanding fixed-rate loan"
+   },
+   "status": "derived",
+   "notes": "$3.9bn undrawn commitment not included (assumed undrawn at default)."
+  },
+  {
+   "id": "oem_nr",
+   "name": "OEM financing (non-recourse)",
+   "kind": "equipment_financing",
+   "entity": "oem_nr",
+   "principal": 770,
+   "amount": 804.65,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_oem_nr",
+     1
+    ]
+   ],
+   "guarantors": [],
+   "maturity": "2028-08-15",
+   "coupon": 0.09,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "OEM and Software License Financing Arrangements | Oct 2026 - Aug 2028 | 9% | 770 | 647"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "oem_r",
+   "name": "OEM and software financing (recourse)",
+   "kind": "equipment_financing",
+   "entity": "opco",
+   "principal": 6891,
+   "amount": 7235.55,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_oem",
+     1
+    ]
+   ],
+   "guarantors": [
+    "parent"
+   ],
+   "maturity": "2030-07-15",
+   "coupon": 0.1,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "OEM and Software License Financing Arrangements | Dec 2026 - Jul 2030 | 10% | 6,891 | 3,518"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "rcf",
+   "name": "Revolving credit facility (85% of $2.5bn commitment drawn at default)",
+   "kind": "revolver",
+   "entity": "parent",
+   "principal": 2125.0,
+   "amount": 2199.375,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_rcf",
+     1
+    ]
+   ],
+   "guarantors": [
+    "opco"
+   ],
+   "maturity": "2029-11-15",
+   "coupon": 0.07,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Revolving Credit Facility",
+    "quote": "As of September 30, 2026, the Company had $1.2 billion borrowings outstanding under the Revolving Credit Facility and had $754 million of remaining capacity"
+   },
+   "status": "derived",
+   "notes": "Drawn $1,200m + $546m letters of credit at 9/30; default draw per S&P recovery-rating convention (as used in the October 2026 CoreWeave note)."
+  },
+  {
+   "id": "notes_2030",
+   "name": "9.25% Senior Notes due 2030",
+   "kind": "senior_unsecured",
+   "entity": "parent",
+   "principal": 2000,
+   "amount": 2092.5,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [
+    "opco"
+   ],
+   "maturity": "2030-06-01",
+   "coupon": 0.0925,
+   "instrument": {
+    "type": "bond",
+    "freq": 2,
+    "isin": "US21873SAB43"
+   },
+   "market": {
+    "cusip": "21873SAB4",
+    "clean": 82.094,
+    "date": "2026-11-20",
+    "yield_reported": 16.105181,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 39.51,
+    "stock_move_since_trade": 0.0,
+    "alt": [
+     {
+      "cusip": "U2069EAA8",
+      "clean": 83,
+      "date": "2026-11-20"
+     }
+    ]
+   },
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "2030 Senior Notes | Jun 2030 | 10% | 2,000 | 2,000"
+   },
+   "status": "filed",
+   "notes": "Callable; call schedule not modelled (prices far below call prices)."
+  },
+  {
+   "id": "notes_2031a",
+   "name": "9.00% Senior Notes due 2031",
+   "kind": "senior_unsecured",
+   "entity": "parent",
+   "principal": 1750,
+   "amount": 1828.75,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [
+    "opco"
+   ],
+   "maturity": "2031-02-01",
+   "coupon": 0.09,
+   "instrument": {
+    "type": "bond",
+    "freq": 2,
+    "isin": "US21873SAC26"
+   },
+   "market": {
+    "cusip": "21873SAC2",
+    "clean": 78.375,
+    "date": "2026-11-20",
+    "yield_reported": 16.311531,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 39.51,
+    "stock_move_since_trade": 0.0,
+    "alt": [
+     {
+      "cusip": "U2069EAB6",
+      "clean": 77.646,
+      "date": "2026-11-20"
+     }
+    ]
+   },
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "2031 9.00% Senior Notes | Feb 2031 | 10% | 1,750 | 1,750"
+   },
+   "status": "filed",
+   "notes": "Callable; call schedule not modelled (prices far below call prices)."
+  },
+  {
+   "id": "notes_2031b",
+   "name": "9.75% Senior Notes due 2031",
+   "kind": "senior_unsecured",
+   "entity": "parent",
+   "principal": 2750,
+   "amount": 2884.062,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [
+    "opco"
+   ],
+   "maturity": "2031-10-01",
+   "coupon": 0.0975,
+   "instrument": {
+    "type": "bond",
+    "freq": 2,
+    "isin": "US21873SAG30"
+   },
+   "market": {
+    "cusip": "21873SAG3",
+    "clean": 77.5,
+    "date": "2026-11-20",
+    "yield_reported": 16.679512,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 39.51,
+    "stock_move_since_trade": 0.0,
+    "alt": [
+     {
+      "cusip": "U2069EAC4",
+      "clean": 78.407,
+      "date": "2026-11-20"
+     },
+     {
+      "cusip": "U2069EAD2",
+      "clean": 79.92,
+      "date": "2026-11-20"
+     }
+    ]
+   },
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "2031 9.75% Senior Notes | Oct 2031 | 10% | 2,750"
+   },
+   "status": "filed",
+   "notes": "Callable; call schedule not modelled (prices far below call prices)."
+  },
+  {
+   "id": "notes_2032",
+   "name": "9.625% Senior Notes due 2032",
+   "kind": "senior_unsecured",
+   "entity": "parent",
+   "principal": 1250,
+   "amount": 1310.156,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [
+    "opco"
+   ],
+   "maturity": "2032-07-15",
+   "coupon": 0.09625,
+   "instrument": {
+    "type": "bond",
+    "freq": 2,
+    "isin": "US21873SAK42"
+   },
+   "market": {
+    "cusip": "21873SAK4",
+    "clean": 76,
+    "date": "2026-11-20",
+    "yield_reported": 16.268134,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 39.51,
+    "stock_move_since_trade": 0.0,
+    "alt": [
+     {
+      "cusip": "U2069EAE0",
+      "clean": 78.521,
+      "date": "2026-11-20"
+     }
+    ]
+   },
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "2032 9.625% Senior Notes | Jul 2032 | 10% | 1,250"
+   },
+   "status": "filed",
+   "notes": "Callable; call schedule not modelled (prices far below call prices)."
+  },
+  {
+   "id": "notes_eur_2032",
+   "name": "8.50% EUR Senior Notes due 2032 (EUR 2.0bn)",
+   "kind": "senior_unsecured",
+   "entity": "parent",
+   "principal": 2272,
+   "amount": 2368.56,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [
+    "opco"
+   ],
+   "maturity": "2032-07-15",
+   "coupon": 0.085,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "2032 EUR Senior Notes | Jul 2032 | 9% | 2,272"
+   },
+   "status": "derived",
+   "notes": "USD carrying amount at 9/30 FX; no USD price on TRACE."
+  },
+  {
+   "id": "cv_2031",
+   "name": "1.75% Convertible Senior Notes due 2031",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 2588,
+   "amount": 2610.645,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [
+    "opco"
+   ],
+   "maturity": "2031-12-01",
+   "coupon": 0.0175,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 107.8,
+    "first_call": null
+   },
+   "market": {
+    "cusip": "21873SAD0",
+    "clean": 62.8,
+    "date": "2026-11-20",
+    "yield_reported": 11.770416,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 39.51,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "2031 Convertible Senior Notes | Dec 2031 | 2% | 2,588 | 2,588"
+   },
+   "status": "filed",
+   "notes": "Subsidiary guarantees confirmed in the 8-K indenture description for the 2031 and 2033 series; assumed identical for the 2032 series (8-K not checked)."
+  },
+  {
+   "id": "cv_2032",
+   "name": "1.75% Convertible Senior Notes due 2032",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 4000,
+   "amount": 4035.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [
+    "opco"
+   ],
+   "maturity": "2032-10-01",
+   "coupon": 0.0175,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 119.6,
+    "first_call": "2029-10-08"
+   },
+   "market": {
+    "cusip": "21873SAH1",
+    "clean": 58.2808,
+    "date": "2026-11-20",
+    "yield_reported": 11.822575,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 39.51,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "2032 Convertible Senior Notes | Oct 2032 | 2% | 4,000"
+   },
+   "status": "filed",
+   "notes": "Subsidiary guarantees confirmed in the 8-K indenture description for the 2031 and 2033 series; assumed identical for the 2032 series (8-K not checked)."
+  },
+  {
+   "id": "cv_2033",
+   "name": "2.875% Convertible Senior Notes due 2033",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 4200,
+   "amount": 4260.375,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [
+    "opco"
+   ],
+   "maturity": "2033-04-01",
+   "coupon": 0.02875,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 97.85,
+    "first_call": "2030-04-01"
+   },
+   "market": {
+    "cusip": "21873SAL2",
+    "clean": 64.9091,
+    "date": "2026-11-20",
+    "yield_reported": 10.601234,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 39.51,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "2033 Convertible Senior Notes | Apr 2033 | 3% | 4,200"
+   },
+   "status": "filed",
+   "notes": "Subsidiary guarantees confirmed in the 8-K indenture description for the 2031 and 2033 series; assumed identical for the 2032 series (8-K not checked)."
+  },
+  {
+   "id": "magnetar",
+   "name": "Magnetar loan",
+   "kind": "other_debt",
+   "entity": "parent",
+   "principal": 195,
+   "amount": 195.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "CoreWeave 10-Q Q3 2026",
+    "accession": "0001769628-26-000465",
+    "section": "Note 10 Debt table",
+    "quote": "The remaining obligation as of September 30, 2026 was $195 million"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "trade",
+   "name": "Accounts payable and accrued liabilities",
+   "kind": "trade",
+   "entity": "opco",
+   "principal": 8569,
+   "amount": 8569.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "10-Q for period ended 2026-09-30",
+    "accession": "0001769628-26-000465",
+    "section": "Balance sheet",
+    "quote": "accounts payable 2,928; accrued liabilities 5,641"
+   },
+   "status": "filed",
+   "notes": "Treated as general unsecured claims at the operating subsidiaries."
+  },
+  {
+   "id": "lease_rej",
+   "name": "Lease-rejection claims (50% of operating leases rejected)",
+   "kind": "lease",
+   "entity": "opco",
+   "principal": 2471.55,
+   "amount": 2471.55,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "10-Q for period ended 2026-09-30",
+    "accession": "0001769628-26-000465",
+    "section": "Note 8 lease maturity table",
+    "quote": "Total undiscounted lease payments | 32,954; 2028 | 2,591"
+   },
+   "status": "derived",
+   "notes": "11 U.S.C. 502(b)(6) cap on half of the operating leases: rent $2,591m/yr (2028), remaining rent $32,954m."
+  },
+  {
+   "id": "equity",
+   "name": "Class A + B common stock",
+   "kind": "common",
+   "entity": "parent",
+   "principal": 0.0,
+   "amount": 0.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": null,
+   "instrument": {},
+   "market": {},
+   "source": {},
+   "status": "filed",
+   "notes": ""
+  }
+ ],
+ "admin_cost": 0.05,
+ "equity": {
+  "ticker": "CRWV",
+  "price": 39.5099983215332,
+  "date": "2026-11-20",
+  "price_source": "Yahoo Finance daily close",
+  "shares_m": 556.125724,
+  "shares_as_of": "2026-10-30",
+  "shares_source": "10-Q cover page",
+  "vol_1y": 0.9958488972032644,
+  "vol_6m": 1.0347477103942422,
+  "vol_3m": 1.0146004381710674,
+  "vol_ewma94": 1.2876122408153756,
+  "vol_source": "realised, daily log returns (Yahoo Finance closes)",
+  "return_1m": -0.28938849989495863,
+  "high_52w": 137.97999572753906,
+  "low_52w": 39.5099983215332,
+  "options": {
+   "source": "Yahoo Finance listed options, two-sided quotes at the 2026-11-20 close; IV from the ATM call mid (Black-Scholes, no dividends, Treasury zero rate)",
+   "atm_iv_term": [
+    {
+     "expiry": "2026-12-11",
+     "T": 0.0575,
+     "strike": 40.0,
+     "iv": 1.3267
+    },
+    {
+     "expiry": "2026-12-18",
+     "T": 0.0767,
+     "strike": 40.0,
+     "iv": 1.2789
+    },
+    {
+     "expiry": "2026-12-24",
+     "T": 0.0932,
+     "strike": 40.0,
+     "iv": 1.2423
+    },
+    {
+     "expiry": "2026-12-31",
+     "T": 0.1123,
+     "strike": 40.0,
+     "iv": 1.1959
+    },
+    {
+     "expiry": "2027-01-15",
+     "T": 0.1534,
+     "strike": 40.0,
+     "iv": 1.1589
+    },
+    {
+     "expiry": "2027-02-19",
+     "T": 0.2493,
+     "strike": 40.0,
+     "iv": 1.1563
+    },
+    {
+     "expiry": "2027-03-19",
+     "T": 0.326,
+     "strike": 40.0,
+     "iv": 1.1628
+    },
+    {
+     "expiry": "2027-04-16",
+     "T": 0.4027,
+     "strike": 40.0,
+     "iv": 1.0967
+    },
+    {
+     "expiry": "2027-06-17",
+     "T": 0.5726,
+     "strike": 40.0,
+     "iv": 1.0591
+    },
+    {
+     "expiry": "2027-07-16",
+     "T": 0.6521,
+     "strike": 40.0,
+     "iv": 1.0356
+    },
+    {
+     "expiry": "2027-09-17",
+     "T": 0.8247,
+     "strike": 40.0,
+     "iv": 1.0772
+    },
+    {
+     "expiry": "2027-11-19",
+     "T": 0.9973,
+     "strike": 40.0,
+     "iv": 1.0199
+    },
+    {
+     "expiry": "2027-12-17",
+     "T": 1.074,
+     "strike": 40.0,
+     "iv": 1.0065
+    },
+    {
+     "expiry": "2028-01-21",
+     "T": 1.1699,
+     "strike": 40.0,
+     "iv": 0.9969
+    },
+    {
+     "expiry": "2028-06-16",
+     "T": 1.5726,
+     "strike": 40.0,
+     "iv": 0.9787
+    },
+    {
+     "expiry": "2028-12-15",
+     "T": 2.0712,
+     "strike": 40.0,
+     "iv": 0.9449
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.1671,
+     "strike": 40.0,
+     "iv": 0.9399
+    }
+   ],
+   "iv_1y": 1.0194282920469362,
+   "iv_2y": 0.949726634576815,
+   "deep_put_pd_bounds": [
+    {
+     "expiry": "2027-11-19",
+     "T": 0.997,
+     "strike": 5.0,
+     "bid": 0.5,
+     "ask": 0.75,
+     "open_interest": 911,
+     "pd_upper_bound": 0.1045
+    },
+    {
+     "expiry": "2027-11-19",
+     "T": 0.997,
+     "strike": 10.0,
+     "bid": 1.1,
+     "ask": 2.05,
+     "open_interest": 55,
+     "pd_upper_bound": 0.115
+    },
+    {
+     "expiry": "2027-12-17",
+     "T": 1.074,
+     "strike": 5.0,
+     "bid": 0.57,
+     "ask": 0.7,
+     "open_interest": 1681,
+     "pd_upper_bound": 0.1196
+    },
+    {
+     "expiry": "2027-12-17",
+     "T": 1.074,
+     "strike": 10.0,
+     "bid": 1.39,
+     "ask": 1.65,
+     "open_interest": 12934,
+     "pd_upper_bound": 0.1458
+    },
+    {
+     "expiry": "2028-01-21",
+     "T": 1.17,
+     "strike": 5.0,
+     "bid": 0.59,
+     "ask": 0.92,
+     "open_interest": 2088,
+     "pd_upper_bound": 0.1244
+    },
+    {
+     "expiry": "2028-01-21",
+     "T": 1.17,
+     "strike": 10.0,
+     "bid": 1.47,
+     "ask": 2.1,
+     "open_interest": 675,
+     "pd_upper_bound": 0.1549
+    },
+    {
+     "expiry": "2028-06-16",
+     "T": 1.573,
+     "strike": 5.0,
+     "bid": 0.7,
+     "ask": 0.93,
+     "open_interest": 3586,
+     "pd_upper_bound": 0.1503
+    },
+    {
+     "expiry": "2028-06-16",
+     "T": 1.573,
+     "strike": 10.0,
+     "bid": 2.1,
+     "ask": 2.92,
+     "open_interest": 59,
+     "pd_upper_bound": 0.2255
+    },
+    {
+     "expiry": "2028-12-15",
+     "T": 2.071,
+     "strike": 5.0,
+     "bid": 1.06,
+     "ask": 1.1,
+     "open_interest": 3963,
+     "pd_upper_bound": 0.2331
+    },
+    {
+     "expiry": "2028-12-15",
+     "T": 2.071,
+     "strike": 10.0,
+     "bid": 2.5,
+     "ask": 3.35,
+     "open_interest": 257,
+     "pd_upper_bound": 0.2749
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.167,
+     "strike": 5.0,
+     "bid": 0.72,
+     "ask": 1.12,
+     "open_interest": 4950,
+     "pd_upper_bound": 0.159
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.167,
+     "strike": 10.0,
+     "bid": 2.15,
+     "ask": 2.77,
+     "open_interest": 2116,
+     "pd_upper_bound": 0.2375
+    }
+   ]
+  }
+ },
+ "cds": [
+  {
+   "tenor": "5Y",
+   "maturity": "2031-12-20",
+   "par_spread_bp": 1140.598,
+   "conventional_spread_bp": 1167.011,
+   "upfront_pct": 19.834,
+   "coupon_bp": 500,
+   "recovery": 0.4,
+   "date": "2026-10-22",
+   "tier": "SNRFOR",
+   "doc": "XR",
+   "source": "Markit 5Y official close via LSEG Workspace (CDSOV page), recorded in the October 2026 CoreWeave note"
+  }
+ ],
+ "dated_bond_marks": {
+  "date": "2026-10-22",
+  "source": "BondTerminal closing marks recorded in the October 2026 CoreWeave note",
+  "marks": {
+   "notes_2030": 84.35,
+   "notes_2031a": 80.57,
+   "notes_2031b": 80.36,
+   "notes_2032": 79.25
+  }
+ },
+ "default_value_scenarios": {
+  "basis": "enterprise value at default as a share of net PP&E ($56.8bn)",
+  "low": 19872,
+  "central": 31228,
+  "high": 42584
+ },
+ "assumptions": [
+  {
+   "id": "entity_value_shares",
+   "value": {
+    "spv_nr": 0.09158476874845892,
+    "spv_r": 0.2994117439853464,
+    "oem_nr": 0.013561590756983339,
+    "opco": 0.5954418965092113
+   },
+   "basis": "Value at default spread like book PP&E: SPV debt secured by $22.2bn of non-current assets, of which CCAC VIII $5.2bn (10-Q Note 10); total net PP&E $56.8bn; non-recourse OEM subsidiaries at their financing balance.",
+   "status": "derived"
+  },
+  {
+   "id": "admin_cost",
+   "value": 0.05,
+   "basis": "Administrative and professional costs, 5% of value (S&P recovery-rating convention (as used in the October 2026 CoreWeave note)).",
+   "status": "convention"
+  },
+  {
+   "id": "prepetition_interest_months",
+   "value": 6,
+   "basis": "Claims = principal + 6 months' interest (S&P recovery-rating convention (as used in the October 2026 CoreWeave note)).",
+   "status": "convention"
+  },
+  {
+   "id": "revolver_draw_at_default",
+   "value": 0.85,
+   "basis": "Revolver 85% drawn at default (S&P recovery-rating convention (as used in the October 2026 CoreWeave note)).",
+   "status": "convention"
+  },
+  {
+   "id": "lease_rejection_share",
+   "value": 0.5,
+   "basis": "Half of operating leases rejected; claims capped by 502(b)(6).",
+   "status": "estimate",
+   "range": [
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "id": "default_value_share_of_ppe",
+   "value": [
+    0.35,
+    0.55,
+    0.75
+   ],
+   "basis": "Low/central/high value at default. Wolfspeed's court-filed liquidation analysis recovered 13.7-44.8% of PP&E book value (fabs); a going concern with assumed customer contracts can be worth more.",
+   "status": "estimate"
+  },
+  {
+   "id": "customer_prepayments",
+   "value": "assumed",
+   "basis": "Customer contracts ($10.0bn deferred revenue, $132bn RPO) assumed in a restructuring, so prepayments create no claims.",
+   "status": "estimate"
+  },
+  {
+   "id": "undrawn_commitments",
+   "value": 0.0,
+   "basis": "DDTL 4.0 ($3.9bn) and 5.5 ($1.0bn) undrawn commitments not drawn before default.",
+   "status": "estimate"
+  }
+ ]
+}

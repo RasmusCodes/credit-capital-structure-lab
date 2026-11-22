@@ -1,0 +1,499 @@
+{
+ "company": "Wolfspeed, Inc.",
+ "ticker": "WOLF",
+ "cik": 895419,
+ "balance_sheet_date": "2026-09-27",
+ "filing": {
+  "form": "10-Q",
+  "accession": "0000895419-26-000081",
+  "filed": "2026-11-05",
+  "url": "https://www.sec.gov/Archives/edgar/data/895419/000089541926000081/wolf-20260927.htm"
+ },
+ "shares_outstanding": {
+  "total": 53581878,
+  "by_class": {
+   "common": 53581878
+  },
+  "as_of": "2026-10-30",
+  "source": "10-Q cover: shares outstanding of common stock as of October 30, 2026, was 53,581,878. Balance sheet: 53,021k at 9/27/26 (52,162k at 6/28/26); weighted average 55,000k includes contractually issuable shares and penny warrants"
+ },
+ "cash": {
+  "cash_and_equivalents_musd": 411.3,
+  "other_reserves_musd": {
+   "short_term_investments": 583.8,
+   "total_cash_and_ST_investments": 995.1
+  },
+  "source": "10-Q balance sheet 9/27/26; first-lien minimum liquidity covenant $350M unrestricted cash"
+ },
+ "assets_note": "Property and equipment, net $695.3M; total assets $2,875.5M; total liabilities $2,071.5M; equity $804.0M at 9/27/26. Balance sheet debt: long-term debt $930.3M + convertible notes net $750.3M = carrying; total outstanding principal $1,772.0M, equity component $218.9M. No preferred issued.",
+ "instruments": [
+  {
+   "name": "New Senior Secured Notes due 2030",
+   "type": "senior_secured_notes",
+   "ticker": null,
+   "issuer_entity": "Wolfspeed, Inc. (guaranteed by Wolfspeed Texas LLC)",
+   "secured": true,
+   "lien": "first",
+   "collateral": "Substantially all assets of Wolfspeed and Wolfspeed Texas LLC",
+   "currency": "USD",
+   "principal_outstanding_musd": 635.9,
+   "principal_outstanding_local_m": 635.9,
+   "shares_outstanding": null,
+   "liquidation_pref_per_share": null,
+   "coupon_type": "fixed",
+   "coupon_pct": 15.875,
+   "dividend_type": null,
+   "ranking_notes": "First lien; senior to 1.5L, 2L notes",
+   "issue_date": "2025-09-29",
+   "maturity": "2030-06-23",
+   "holder_put_dates": null,
+   "first_call_date": null,
+   "call_notes": "Mandatory offers to repurchase at 109.875% from extraordinary receipts (trigger date occurred in FY26; $623.3M principal repaid through 6/28/26). Min liquidity covenant: $350M unrestricted cash in first-lien accounts.",
+   "conversion_price_usd": null,
+   "conversion_rate_per_1000": null,
+   "conversion_notes": "Not convertible",
+   "cusip": null,
+   "isin": null,
+   "source": {
+    "doc": "10-Q quarter ended 2026-09-27",
+    "accession": "0000895419-26-000081",
+    "section": "Note 9 Long-term Debt",
+    "quote": "New Senior Secured Notes | 6/23/2030 | 12.9% | $1,259.2 | $635.9"
+   },
+   "status": "filed",
+   "notes": "Initial principal $1,259.2M (8-K: $1,259,210,128); outstanding $635.9M at both 6/28/26 and 9/27/26. Carrying $692.2M, fair value $697.1M. Effective rate 12.9%.",
+   "coupon_detail": "15.875% cash (13.875% if Interest Rate Step-Down Condition met; not met as of 2026-06-23). Initial period to 2026-06-22 was 9.875% cash + 4.00% PIK"
+  },
+  {
+   "name": "3.5% Convertible 1.5 Lien Senior Secured Notes due 2031",
+   "type": "convertible_notes",
+   "ticker": null,
+   "issuer_entity": "Wolfspeed, Inc. (guaranteed by Wolfspeed Texas LLC)",
+   "secured": true,
+   "lien": "first",
+   "collateral": "Substantially all assets (1.5 lien: effectively junior to New Senior Secured Notes; senior to 2L notes)",
+   "currency": "USD",
+   "principal_outstanding_musd": 379.0,
+   "principal_outstanding_local_m": 379.0,
+   "shares_outstanding": null,
+   "liquidation_pref_per_share": null,
+   "coupon_type": "fixed",
+   "coupon_pct": 3.5,
+   "dividend_type": null,
+   "ranking_notes": "Ranks effectively behind New Senior Secured Notes, ahead of 2L notes (post-emergence issuance, not part of the 2025 plan)",
+   "issue_date": "2026-03-26",
+   "maturity": "2031-03-15",
+   "holder_put_dates": null,
+   "first_call_date": "2028-03-20",
+   "call_notes": "Issuer redeemable at 100% on/after 2028-03-20 if stock >175% of conversion price (to 2029-03-19) or >130% thereafter; make-whole on change of control or redemption.",
+   "conversion_price_usd": 20.14,
+   "conversion_rate_per_1000": 49.6623,
+   "conversion_notes": "Convertible any time; cash, shares or combination at company election; initial conversion premium 20% over $16.78",
+   "cusip": null,
+   "isin": null,
+   "source": {
+    "doc": "10-Q quarter ended 2026-09-27",
+    "accession": "0000895419-26-000081",
+    "section": "Note 9 Long-term Debt / New 1.5L Convertible Notes",
+    "quote": "aggregate principal balance of $379.0 million"
+   },
+   "status": "filed",
+   "notes": "Issued March 26 2026 in private placement; carrying $366.1M, fair value $631.6M.",
+   "coupon_detail": "3.5% cash, semiannual Mar 15/Sep 15"
+  },
+  {
+   "name": "7.00% / 12.00% Second Lien Senior Secured PIK Toggle Notes due 2031 (New 2L Takeback / Non-Convertible)",
+   "type": "second_lien_notes",
+   "ticker": null,
+   "issuer_entity": "Wolfspeed, Inc. (guaranteed by Wolfspeed Texas LLC)",
+   "secured": true,
+   "lien": "second",
+   "collateral": "Second-priority liens on substantially all assets securing the New Senior Secured Notes",
+   "currency": "USD",
+   "principal_outstanding_musd": 296.4,
+   "principal_outstanding_local_m": 296.4,
+   "shares_outstanding": null,
+   "liquidation_pref_per_share": null,
+   "coupon_type": "fixed",
+   "coupon_pct": 12.0,
+   "dividend_type": null,
+   "ranking_notes": "Second lien; pari passu with other 2L notes under Equal Priority Intercreditor Agreement",
+   "issue_date": "2025-09-29",
+   "maturity": "2031-06-15",
+   "holder_put_dates": null,
+   "first_call_date": "2027-09-29",
+   "call_notes": "Not redeemable before 2027-09-29 (two years after effective date) at 100% plus accrued; 101% change-of-control put; asset-sale offers subject to first lien.",
+   "conversion_price_usd": null,
+   "conversion_rate_per_1000": null,
+   "conversion_notes": "Not convertible",
+   "cusip": null,
+   "isin": null,
+   "source": {
+    "doc": "10-Q quarter ended 2026-09-27",
+    "accession": "0000895419-26-000081",
+    "section": "Note 9 Long-term Debt",
+    "quote": "New 2L Non-Convertible Notes | 6/15/2031 | 12.5% | 296.4 | 296.4"
+   },
+   "status": "filed",
+   "notes": "Issued to convertible noteholders under plan; carrying $238.1M, fair value $254.5M. coupon_pct shows PIK rate; cash rate 7.00%. Semiannual Jun 15/Sep 15.",
+   "coupon_detail": "7.00% cash or 12.00% PIK at company election (10-Q: cash or in kind at 7.00% or 12.00%)"
+  },
+  {
+   "name": "2.5% Convertible Second-Lien Senior Secured Notes due 2031 (New 2L Non-Renesas Convertible)",
+   "type": "convertible_notes",
+   "ticker": null,
+   "issuer_entity": "Wolfspeed, Inc. (guaranteed by Wolfspeed Texas LLC)",
+   "secured": true,
+   "lien": "second",
+   "collateral": "Second-priority liens on substantially all assets",
+   "currency": "USD",
+   "principal_outstanding_musd": 257.1,
+   "principal_outstanding_local_m": 257.1,
+   "shares_outstanding": null,
+   "liquidation_pref_per_share": null,
+   "coupon_type": "fixed",
+   "coupon_pct": 2.5,
+   "dividend_type": null,
+   "ranking_notes": "Second lien; pari passu with other 2L notes",
+   "issue_date": "2025-09-29",
+   "maturity": "2031-06-15",
+   "holder_put_dates": null,
+   "first_call_date": "2028-09-29",
+   "call_notes": "Not redeemable before 2028-09-29 (three years); 100% change-of-control repurchase; make-whole on change of control or redemption.",
+   "conversion_price_usd": 12.23,
+   "conversion_rate_per_1000": 81.7508,
+   "conversion_notes": "Convertible any time until 5th trading day before maturity; cash, shares or both at company election. $10.0M converted into 0.8M shares in the quarter ended 2026-09-27; cumulative conversions $74.3M.",
+   "cusip": null,
+   "isin": null,
+   "source": {
+    "doc": "10-Q quarter ended 2026-09-27",
+    "accession": "0000895419-26-000081",
+    "section": "Note 9 Long-term Debt",
+    "quote": "New 2L Non-Renesas Convertible Notes(3) | 6/15/2031 | 3.0% | 331.4 | 267.1 | -- | (10.0) | $257.1"
+   },
+   "status": "filed",
+   "notes": "Initial principal $331.4M = $301.13M rights offering + $30.25M backstop premium. Outstanding 267.1 at 6/28/26 less 10.0 converted = 257.1 at 9/27/26. Carrying $251.9M (effective rate 3.0%), fair value $570.7M. 8-K initial conversion rate 81.7508 per $1,000.",
+   "coupon_detail": "2.5% cash, semiannual Jun 15/Sep 15"
+  },
+  {
+   "name": "2.5% Convertible Second-Lien Senior Secured Notes due 2031 (New 2L Renesas Convertible)",
+   "type": "convertible_notes",
+   "ticker": null,
+   "issuer_entity": "Wolfspeed, Inc. (guaranteed by Wolfspeed Texas LLC)",
+   "secured": true,
+   "lien": "second",
+   "collateral": "Second-priority liens on substantially all assets",
+   "currency": "USD",
+   "principal_outstanding_musd": 203.6,
+   "principal_outstanding_local_m": 203.6,
+   "shares_outstanding": null,
+   "liquidation_pref_per_share": null,
+   "coupon_type": "fixed",
+   "coupon_pct": 2.5,
+   "dividend_type": null,
+   "ranking_notes": "Second lien; pari passu with other 2L notes",
+   "issue_date": "2025-09-29",
+   "maturity": "2031-06-15",
+   "holder_put_dates": null,
+   "first_call_date": "2027-09-29",
+   "call_notes": "Not redeemable before 2027-09-29 (two years); 100% change-of-control repurchase until conversion expiration, then 101%.",
+   "conversion_price_usd": 18.35,
+   "conversion_rate_per_1000": 54.5005,
+   "conversion_notes": "Convertible from Renesas Base Distribution Date (January 2026) until 5th trading day before 2027-09-29 (Conversion Expiration Date); cash, shares or both at company election. Subject to Renesas ownership limitations (39.9% voting cap).",
+   "cusip": null,
+   "isin": null,
+   "source": {
+    "doc": "10-Q quarter ended 2026-09-27",
+    "accession": "0000895419-26-000081",
+    "section": "Note 9 Long-term Debt",
+    "quote": "New 2L Renesas Convertible Notes | 6/15/2031 | 12.3% | 203.6 | 203.6"
+   },
+   "status": "filed",
+   "notes": "Held by Renesas. Effective rate 12.3% reflects premium amortization; carrying $132.3M, fair value $328.9M (Level 3).",
+   "coupon_detail": "2.5% cash, semiannual Jun 15/Sep 15"
+  }
+ ],
+ "debt_maturity_schedule": [
+  {
+   "year": "2030",
+   "amount_musd": 635.9
+  },
+  {
+   "year": "2031",
+   "amount_musd": 1136.1
+  }
+ ],
+ "debt_maturity_detail": "2030: New Senior Secured Notes 635.9 (6/23/2030). 2031: 1.5L converts 379.0 (3/15/2031) + 2L notes 296.4 + 257.1 + 203.6 = 757.1 (6/15/2031). Sum 1,772.0 matches 10-Q total outstanding principal. Derived by adding rows of Note 9 table.",
+ "subsequent_events": [
+  {
+   "date": "2026-10-07",
+   "form": "10-Q (Note 14)",
+   "accession": "0000895419-26-000081",
+   "description": "Conditional commitment letter with U.S. Department of War Office of Strategic Capital for a senior secured delayed draw term loan up to $1.5B (initial tranche $600M, remaining tranches $200-400M), 30-year maturity, 36-month commitment period; subject to diligence and definitive agreements; not yet debt",
+   "amount_musd": 1500.0
+  },
+  {
+   "date": "2026-03-26",
+   "form": "10-Q",
+   "accession": "0000895419-26-000081",
+   "description": "Issued $379.0M 3.5% Convertible 1.5 Lien Senior Secured Notes due 2031 (during FY26)",
+   "amount_musd": 379.0
+  },
+  {
+   "date": "FY26",
+   "form": "10-Q",
+   "accession": "0000895419-26-000081",
+   "description": "$623.3M of New Senior Secured Notes principal repaid (Extraordinary Receipts Trigger Date occurred) and $64.3M of 2L Non-Renesas convertibles converted by 6/28/26; further $10.0M converted in Q1 FY27",
+   "amount_musd": 623.3
+  }
+ ],
+ "missing": [
+  "CUSIPs/ISINs not in filings reviewed",
+  "Whether Renesas Regulatory Approvals were received / Regulatory Trigger Deadline outcome (affects Renesas 16.85M shares vs 0.87M and old-equity 3% vs 5%): not located in the parts of the 10-Q read",
+  "Cash component of Class 3 treatment is derived (277.5 x 1.09875) not stated as one figure; commitment fee amount not captured",
+  "Final Class recovery percentages as filed in the confirmation order not reviewed (DS figures are solicitation-version estimates)",
+  "Claim amounts exclude fees/expenses; General unsecured claims amount not stated",
+  "Debt maturity schedule in 10-Q not read separately (derived from Note 9 table)"
+ ],
+ "sources": [
+  {
+   "label": "10-Q 9/27/26",
+   "url": "https://www.sec.gov/Archives/edgar/data/895419/000089541926000081/wolf-20260927.htm",
+   "accession": "0000895419-26-000081"
+  },
+  {
+   "label": "8-K RSA",
+   "url": "https://www.sec.gov/Archives/edgar/data/895419/000119312525144083/d937053d8k.htm",
+   "accession": "0001193125-25-144083"
+  },
+  {
+   "label": "8-K petition + Disclosure Statement Ex 99.1",
+   "url": "https://www.sec.gov/Archives/edgar/data/895419/000119312525153145/d755867dex991.htm",
+   "accession": "0001193125-25-153145"
+  },
+  {
+   "label": "8-K confirmation",
+   "url": "https://www.sec.gov/Archives/edgar/data/895419/000119312525199310/d36059d8k.htm",
+   "accession": "0001193125-25-199310"
+  },
+  {
+   "label": "8-K emergence",
+   "url": "https://www.sec.gov/Archives/edgar/data/895419/000119312525224251/d22768d8k.htm",
+   "accession": "0001193125-25-224251"
+  }
+ ],
+ "restructuring_2025": {
+  "petition_date": "2025-06-30",
+  "emergence_date": "2025-09-29",
+  "confirmation_date": "2025-09-08",
+  "rsa_date": "2025-06-22",
+  "plan_ev_low_musd": 2350,
+  "plan_ev_mid_musd": 2600,
+  "plan_ev_high_musd": 2850,
+  "ev_source": "Disclosure Statement Exhibit F Valuation Analysis (PWP, as of June 12, 2025): EV approx $2,350M to $2,850M, midpoint approx $2,600M; pro forma net debt approx $1,500M; implied equity value $850M-$1,350M, midpoint $1,100M. Filed as Ex. 99.1 to 8-K 0001193125-25-153145 (status filed)",
+  "pre_petition_funded_debt_musd": {
+   "senior_secured_notes": 1525,
+   "notes_2026": 577,
+   "notes_2028": 751,
+   "notes_2029": 1769,
+   "renesas_loans": 2127,
+   "total": 6749
+  },
+  "pre_petition_funded_debt_source": "DS section Capital Structure: principal plus accrued interest at anticipated Petition Date; total funded debt $6,749M reduced to approx $2,118M (about 70%)",
+  "classes": [
+   {
+    "class": "Class 1",
+    "description": "Other Secured Claims",
+    "claim_amount_musd": null,
+    "treatment": "Paid in full in cash, collateral, reinstatement or other unimpaired treatment",
+    "new_equity_pct": null,
+    "new_notes_musd": null,
+    "cash_musd": null,
+    "projected_recovery_pct": "100",
+    "recovery_basis": "Unimpaired",
+    "source": {
+     "doc": "Disclosure Statement (Ex. 99.1 to 8-K filed 2025-07-01)",
+     "accession": "0001193125-25-153145",
+     "section": "Section I.B Summary of Plan Classification and Treatment",
+     "quote": "Unimpaired (Not entitled to vote presumed to accept) 100%"
+    },
+    "status": "filed"
+   },
+   {
+    "class": "Class 2",
+    "description": "Other Priority Claims",
+    "claim_amount_musd": null,
+    "treatment": "Treatment consistent with section 1129(a)(9)",
+    "new_equity_pct": null,
+    "new_notes_musd": null,
+    "cash_musd": null,
+    "projected_recovery_pct": "100",
+    "recovery_basis": "Unimpaired",
+    "source": {
+     "doc": "Disclosure Statement (Ex. 99.1 to 8-K filed 2025-07-01)",
+     "accession": "0001193125-25-153145",
+     "section": "Section I.B Summary of Plan Classification and Treatment",
+     "quote": "Class 2: Other Priority Claims ... Unimpaired ... 100%"
+    },
+    "status": "filed"
+   },
+   {
+    "class": "Class 3",
+    "description": "Senior Secured Notes Claims (1,525 principal + accrued interest at anticipated petition date)",
+    "claim_amount_musd": 1525.0,
+    "treatment": "Pro rata share of New Senior Secured Notes and the Effective Date Cash Payment (redemption of existing notes at 109.875%, funded by rights offering and MACOM share sales) plus commitment fees",
+    "new_equity_pct": null,
+    "new_notes_musd": 1259.2,
+    "cash_musd": 304.9,
+    "projected_recovery_pct": "86",
+    "recovery_basis": "Disclosure statement table 'Approx. Percentage Recovery' (prior to incentive-plan dilution); valuation range in Exhibit F",
+    "source": {
+     "doc": "Disclosure Statement (Ex. 99.1 to 8-K filed 2025-07-01)",
+     "accession": "0001193125-25-153145",
+     "section": "Section I.B Summary of Plan Classification and Treatment",
+     "quote": "Class 3: Senior Secured Notes Claims ... Impaired (Entitled to vote) 86%"
+    },
+    "status": "filed"
+   },
+   {
+    "class": "Class 4",
+    "description": "Convertible Notes Claims: 2026 notes 577 + 2028 notes 751 + 2029 notes 1,769 (principal + accrued)",
+    "claim_amount_musd": 3097.0,
+    "treatment": "Pro rata share of rights to buy New 2L Convertible Notes (backstopped; $301.13M at 91.3242% offering price per RSA; $180.675M reserved for holders at emergence), New 2L Takeback Notes ($296.4M) and 56.3% of New Common Stock before dilution; actual emergence issuance 24,533,760 shares",
+    "new_equity_pct": 56.3,
+    "new_notes_musd": 296.4,
+    "cash_musd": null,
+    "projected_recovery_pct": "25 to 30",
+    "recovery_basis": "Disclosure statement table; Exhibit F valuation, before incentive-plan dilution",
+    "source": {
+     "doc": "Disclosure Statement (Ex. 99.1 to 8-K filed 2025-07-01)",
+     "accession": "0001193125-25-153145",
+     "section": "Section I.B Summary of Plan Classification and Treatment",
+     "quote": "Class 4: Convertible Notes Claims ... Impaired (Entitled to vote) 25 to 30%"
+    },
+    "status": "filed"
+   },
+   {
+    "class": "Class 5",
+    "description": "Renesas Claims (CRD loans, principal + accrued)",
+    "claim_amount_musd": 2127.0,
+    "treatment": "Base Consideration: $203.6M New Renesas 2L Convertible Notes, 38.7% of New Common Stock (16,852,372 shares once regulatory approvals received), warrant for 4,943,555 shares at $23.95; contingent consideration if approvals not obtained by deadline: $15M cash, $15M additional 2L takeback notes, 2.0% of New Common Stock, 1 extra year of warrant",
+    "new_equity_pct": 38.7,
+    "new_notes_musd": 203.6,
+    "cash_musd": null,
+    "projected_recovery_pct": "27 to 29",
+    "recovery_basis": "Disclosure statement table; before incentive-plan dilution",
+    "source": {
+     "doc": "Disclosure Statement (Ex. 99.1 to 8-K filed 2025-07-01)",
+     "accession": "0001193125-25-153145",
+     "section": "Section I.B Summary of Plan Classification and Treatment",
+     "quote": "Class 5: Renesas Claims ... Impaired (Entitled to vote) 27 to 29%"
+    },
+    "status": "filed"
+   },
+   {
+    "class": "Class 6",
+    "description": "General Unsecured Claims",
+    "claim_amount_musd": null,
+    "treatment": "Unaltered; paid in full in cash on effective date or ordinary course",
+    "new_equity_pct": null,
+    "new_notes_musd": null,
+    "cash_musd": null,
+    "projected_recovery_pct": "100",
+    "recovery_basis": "Unimpaired",
+    "source": {
+     "doc": "Disclosure Statement (Ex. 99.1 to 8-K filed 2025-07-01)",
+     "accession": "0001193125-25-153145",
+     "section": "Section I.B Summary of Plan Classification and Treatment",
+     "quote": "Class 6: General Unsecured Claims ... Unimpaired ... 100%"
+    },
+    "status": "filed"
+   },
+   {
+    "class": "Class 7",
+    "description": "Intercompany Claims",
+    "claim_amount_musd": null,
+    "treatment": "Reinstated or set off / cancelled",
+    "new_equity_pct": null,
+    "new_notes_musd": null,
+    "cash_musd": null,
+    "projected_recovery_pct": "0 / 100",
+    "recovery_basis": "Unimpaired or impaired",
+    "source": {
+     "doc": "Disclosure Statement (Ex. 99.1 to 8-K filed 2025-07-01)",
+     "accession": "0001193125-25-153145",
+     "section": "Section I.B Summary of Plan Classification and Treatment",
+     "quote": "Class 7: Intercompany Claims ... 0% / 100%"
+    },
+    "status": "filed"
+   },
+   {
+    "class": "Class 8",
+    "description": "Intercompany Interests",
+    "claim_amount_musd": null,
+    "treatment": "Reinstated or cancelled",
+    "new_equity_pct": null,
+    "new_notes_musd": null,
+    "cash_musd": null,
+    "projected_recovery_pct": "0 / 100",
+    "recovery_basis": "Unimpaired or impaired",
+    "source": {
+     "doc": "Disclosure Statement (Ex. 99.1 to 8-K filed 2025-07-01)",
+     "accession": "0001193125-25-153145",
+     "section": "Section I.B Summary of Plan Classification and Treatment",
+     "quote": "Class 8: Intercompany Interests ... 0% / 100%"
+    },
+    "status": "filed"
+   },
+   {
+    "class": "Class 9",
+    "description": "510(b) Claims",
+    "claim_amount_musd": null,
+    "treatment": "Unimpaired",
+    "new_equity_pct": null,
+    "new_notes_musd": null,
+    "cash_musd": null,
+    "projected_recovery_pct": "100",
+    "recovery_basis": "Unimpaired",
+    "source": {
+     "doc": "Disclosure Statement (Ex. 99.1 to 8-K filed 2025-07-01)",
+     "accession": "0001193125-25-153145",
+     "section": "Section I.B Summary of Plan Classification and Treatment",
+     "quote": "Class 9: 510(b) Claims ... Unimpaired ... 100%"
+    },
+    "status": "filed"
+   },
+   {
+    "class": "Class 10",
+    "description": "Existing Equity Interests (156,479,390 old shares at emergence)",
+    "claim_amount_musd": null,
+    "treatment": "Cancelled; pro rata share of Equity Recovery of 5.0% of New Common Stock (3.0% if Renesas contingent consideration triggered)",
+    "new_equity_pct": 5.0,
+    "new_notes_musd": null,
+    "cash_musd": null,
+    "projected_recovery_pct": "N/A",
+    "recovery_basis": "Deemed to reject; no recovery percentage stated",
+    "source": {
+     "doc": "Disclosure Statement (Ex. 99.1 to 8-K filed 2025-07-01)",
+     "accession": "0001193125-25-153145",
+     "section": "Section I.B Summary of Plan Classification and Treatment",
+     "quote": "Class 10: Existing Equity Interests ... 5.0% to 3.0% of the New Common Stock"
+    },
+    "status": "filed"
+   }
+  ],
+  "old_equity_treatment": "156,479,390 old shares cancelled; holders received pro rata ~1,306,896 new shares (about 5% of 25,840,656 issued at emergence). Plan: 5.0% of New Common Stock, 3.0% if Renesas contingent consideration triggered; if approvals received before deadline holders also share 871,287 shares from Share Reserve (8-K 0001193125-25-224251)",
+  "renesas_treatment": "Class 5 claim ~$2,127M. Received $203.6M New Renesas 2L Convertible Notes (2.5%, due 2031, conv. price $18.35), 38.7% of New Common Stock (16,852,372 shares if regulatory approvals received before deadline; otherwise 871,287 shares plus contingent $15M cash, $15M extra 2L takeback notes), warrant for 4,943,555 shares at $23.95 exercisable 3 years (not exercisable until approvals; cash-proceeds mechanism), 39.9% voting cap, board seat right",
+  "post_emergence_shares": {
+   "issued_at_emergence": 25840656,
+   "share_reserve": 73030424,
+   "to_convert_holders": 24533760,
+   "to_old_equity": 1306896,
+   "conversion_reserve_2L_nonrenesas": 27090171,
+   "conversion_reserve_renesas": 11096247,
+   "source": "8-K 0001193125-25-224251 Items 1.03/3.02"
+  },
+  "senior_secured_actual_vs_rsa": "RSA assumed $250M redemption at 109.875%; emergence 8-K shows $277.5M redeemed at 109.875% and $1,259.2M new senior secured notes. New 2L convertible rights offering: RSA $301.13M, emergence 8-K $180.675M for rights plus $120.45M reserved portion plus $30.25M premium = $331.4M",
+  "notes": "Claim amounts are principal+accrued at anticipated petition date from DS. Recovery percentages are the DS solicitation-version estimates before incentive-plan dilution, based on PWP midpoint plan equity. Class 3 cash is derived: 277.5 x 109.875% = 304.9 (status derived); excludes commitment fee. Debt reduction: funded debt $6,749M to about $2,118M (about 70%). Fresh-start accounting adopted 2025-09-29; the 8-K says holders of pre-petition debt received about 95% of new common issued at emergence."
+ }
+}

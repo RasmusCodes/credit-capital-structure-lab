@@ -1,0 +1,6 @@
+{
+  "name": "credit-lab-web",
+  "private": true,
+  "type": "module",
+  "description": "Browser engine and demo; package.json only marks the .js files as ES modules for the Node parity runner."
+}

@@ -1,0 +1,372 @@
+{
+ "id": "wolfspeed_2025",
+ "company": "Wolfspeed, Inc. (pre-petition, June 2025)",
+ "ticker": "WOLF",
+ "currency": "USD",
+ "units": "USD millions",
+ "balance_sheet_date": "2025-06-30",
+ "market_date": "2025-06-30",
+ "settlement_date": "2025-07-01",
+ "filing": {
+  "form": "8-K Ex. 99.1 (Disclosure Statement)",
+  "accession": "0001193125-25-153145",
+  "filed": "2025-07-01"
+ },
+ "summary": "Historical test case: claims and recoveries in Wolfspeed's 2025 prepackaged Chapter 11, from the court-filed disclosure statement.",
+ "entities": [
+  {
+   "id": "parent",
+   "name": "Wolfspeed debtors",
+   "parent": null,
+   "value_share": 1.0
+  }
+ ],
+ "pools": [
+  {
+   "id": "p_all",
+   "entity": "parent",
+   "share": 1.0,
+   "description": "collateral of the senior secured notes"
+  }
+ ],
+ "admin_cost": 0.0,
+ "claims": [
+  {
+   "id": "ssn",
+   "name": "Senior Secured Notes (allowed incl. Make-Whole Amount)",
+   "kind": "secured_notes",
+   "entity": "parent",
+   "principal": 1811.576,
+   "amount": 1811.576,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_all",
+     1
+    ]
+   ],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "Disclosure Statement, Exhibit D Liquidation Analysis (Ex. 99.1 to 8-K filed 2025-07-01)",
+    "accession": "0001193125-25-153145",
+    "section": "Liquidation Analysis claims table"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "admin",
+   "name": "Administrative claims",
+   "kind": "admin",
+   "entity": "parent",
+   "principal": 56.98,
+   "amount": 56.98,
+   "rank": 0,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "Disclosure Statement, Exhibit D Liquidation Analysis (Ex. 99.1 to 8-K filed 2025-07-01)",
+    "accession": "0001193125-25-153145",
+    "section": "Liquidation Analysis claims table"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "other_secured",
+   "name": "Other secured claims (listed with admin/priority)",
+   "kind": "admin",
+   "entity": "parent",
+   "principal": 119.081,
+   "amount": 119.081,
+   "rank": 0,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "Disclosure Statement, Exhibit D Liquidation Analysis (Ex. 99.1 to 8-K filed 2025-07-01)",
+    "accession": "0001193125-25-153145",
+    "section": "Liquidation Analysis claims table"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "priority_tax",
+   "name": "Priority tax claims",
+   "kind": "admin",
+   "entity": "parent",
+   "principal": 15.333,
+   "amount": 15.333,
+   "rank": 0,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "Disclosure Statement, Exhibit D Liquidation Analysis (Ex. 99.1 to 8-K filed 2025-07-01)",
+    "accession": "0001193125-25-153145",
+    "section": "Liquidation Analysis claims table"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "grants",
+   "name": "Grants and government subsidies",
+   "kind": "admin",
+   "entity": "parent",
+   "principal": 549.5,
+   "amount": 549.5,
+   "rank": 0,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "Disclosure Statement, Exhibit D Liquidation Analysis (Ex. 99.1 to 8-K filed 2025-07-01)",
+    "accession": "0001193125-25-153145",
+    "section": "Liquidation Analysis claims table"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2026",
+   "name": "Convertible notes due 2026",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 576.677,
+   "amount": 576.677,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "Disclosure Statement, Exhibit D Liquidation Analysis (Ex. 99.1 to 8-K filed 2025-07-01)",
+    "accession": "0001193125-25-153145",
+    "section": "Liquidation Analysis claims table"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2028",
+   "name": "Convertible notes due 2028",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 750.693,
+   "amount": 750.693,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "Disclosure Statement, Exhibit D Liquidation Analysis (Ex. 99.1 to 8-K filed 2025-07-01)",
+    "accession": "0001193125-25-153145",
+    "section": "Liquidation Analysis claims table"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2029",
+   "name": "Convertible notes due 2029",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 1769.141,
+   "amount": 1769.141,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "Disclosure Statement, Exhibit D Liquidation Analysis (Ex. 99.1 to 8-K filed 2025-07-01)",
+    "accession": "0001193125-25-153145",
+    "section": "Liquidation Analysis claims table"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "renesas",
+   "name": "Unsecured customer refundable deposit (Renesas)",
+   "kind": "senior_unsecured",
+   "entity": "parent",
+   "principal": 2127.009,
+   "amount": 2127.009,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "Disclosure Statement, Exhibit D Liquidation Analysis (Ex. 99.1 to 8-K filed 2025-07-01)",
+    "accession": "0001193125-25-153145",
+    "section": "Liquidation Analysis claims table"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "guc",
+   "name": "General unsecured claims",
+   "kind": "trade",
+   "entity": "parent",
+   "principal": 302.646,
+   "amount": 302.646,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "Disclosure Statement, Exhibit D Liquidation Analysis (Ex. 99.1 to 8-K filed 2025-07-01)",
+    "accession": "0001193125-25-153145",
+    "section": "Liquidation Analysis claims table"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "old_equity",
+   "name": "Existing equity",
+   "kind": "common",
+   "entity": "parent",
+   "principal": 0.0,
+   "amount": 0.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": null,
+   "instrument": {},
+   "market": {},
+   "source": {},
+   "status": "filed",
+   "notes": ""
+  }
+ ],
+ "equity": {
+  "ticker": "WOLF",
+  "price": null,
+  "shares_m": 156.47939,
+  "shares_as_of": "2025-09-29",
+  "shares_source": "8-K 0001193125-25-224251 (old shares cancelled)"
+ },
+ "historical": {
+  "liquidation_proceeds": {
+   "low": 1431.121,
+   "high": 2760.73,
+   "source": {
+    "doc": "Disclosure Statement, Exhibit D Liquidation Analysis (Ex. 99.1 to 8-K filed 2025-07-01)",
+    "accession": "0001193125-25-153145",
+    "section": "Exhibit D line 14"
+   }
+  },
+  "liquidation_recoveries_reported": {
+   "ssn": [
+    0.79,
+    1.0
+   ],
+   "admin": [
+    0.0,
+    1.0
+   ],
+   "unsecured": [
+    0.0,
+    0.038
+   ],
+   "source": {
+    "doc": "Disclosure Statement, Exhibit D Liquidation Analysis (Ex. 99.1 to 8-K filed 2025-07-01)",
+    "accession": "0001193125-25-153145",
+    "section": "Exhibit D lines 15-28"
+   }
+  },
+  "plan_ev": {
+   "low": 2350,
+   "mid": 2600,
+   "high": 2850,
+   "source": "Disclosure Statement Exhibit F valuation (PWP, 12 Jun 2025)"
+  },
+  "plan_equity_value": {
+   "low": 850,
+   "mid": 1100,
+   "high": 1350
+  },
+  "plan_recoveries_reported": {
+   "ssn": "86%",
+   "convertible": "25-30%",
+   "renesas": "27-29%",
+   "guc": "100% (unimpaired)",
+   "old_equity": "5.0% of new common (3.0% if Renesas contingency triggered)",
+   "source": "Disclosure Statement Section I.B summary table"
+  },
+  "plan_consideration": {
+   "ssn": {
+    "new_senior_secured_notes": 1259.2,
+    "cash_payment": 304.9,
+    "note": "cash = $277.5m redeemed at 109.875% (emergence 8-K), derived"
+   },
+   "convertible": {
+    "new_equity_pct": 56.3,
+    "takeback_2l_notes": 296.4,
+    "rights_offering_2l_converts": 301.13
+   },
+   "renesas": {
+    "new_equity_pct": 38.7,
+    "renesas_2l_converts": 203.6,
+    "warrants_shares": 4943555
+   },
+   "old_equity": {
+    "new_equity_pct": 5.0
+   }
+  },
+  "post_emergence_market": {
+   "date": "2026-11-20",
+   "shares_m": 53.581878,
+   "price": 19.219999313354492,
+   "source": "10-Q cover share count (30 Oct 2026); Yahoo close"
+  }
+ },
+ "assumptions": [
+  {
+   "id": "claims",
+   "value": "as filed",
+   "basis": "Claim amounts exactly as in the liquidation analysis table.",
+   "status": "filed"
+  }
+ ],
+ "missing": [
+  "Unimpaired-class claim amounts under the plan",
+  "Confirmed-plan (not solicitation) recovery estimates"
+ ]
+}

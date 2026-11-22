@@ -1,0 +1,774 @@
+{
+ "id": "iren",
+ "company": "IREN Limited",
+ "ticker": "IREN",
+ "currency": "USD",
+ "units": "USD millions",
+ "balance_sheet_date": "2026-09-30",
+ "market_date": "2026-11-20",
+ "settlement_date": "2026-11-23",
+ "filing": {
+  "form": "10-Q",
+  "accession": "0001878848-26-000066",
+  "filed": "2026-11-05",
+  "url": "https://www.sec.gov/Archives/edgar/data/1878848/000187884826000066/iren-20260930.htm"
+ },
+ "sources": [
+  {
+   "label": "10-Q Q1 FY27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1878848/000187884826000066/iren-20260930.htm",
+   "accession": "0001878848-26-000066"
+  },
+  {
+   "label": "8-K earnings 2026-11-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1878848/000187884826000065/irenreportsq1-fy27result.htm",
+   "accession": "0001878848-26-000065"
+  },
+  {
+   "label": "10-K FY2026 (baseline terms)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1878848/000187884826000052/iren-20260630.htm",
+   "accession": "0001878848-26-000052"
+  }
+ ],
+ "missing": [
+  "Contracted lease value $13,957M (not RPO) disclosed separately",
+  "Per-tranche amortization schedules of GPU Financing 1.0 (redacted)",
+  "Split of GPU Financing 2.0 between term loan and notes",
+  "Whether any 2029/2030 converts were converted after 9/30 (trigger met; no disclosure)",
+  "Unfunded USPP/DDTL commitment drawn after 9/30",
+  "Exact capped-call notional surviving",
+  "10-Q does not restate convert call/put terms (baseline used)",
+  "Accounts payable vs accrued split and capex payables"
+ ],
+ "summary": "Data-center and AI cloud operator: six parent-level convertible issues without subsidiary guarantees, GPU equipment financings and a Microsoft-contract SPV financed by a DDTL and private notes.",
+ "entities": [
+  {
+   "id": "parent",
+   "name": "IREN Limited (convert issuer)",
+   "parent": null,
+   "value_share": 0.0
+  },
+  {
+   "id": "ops",
+   "name": "Operating subsidiaries (data centers, GPU fleets)",
+   "parent": "parent",
+   "value_share": 0.799498
+  },
+  {
+   "id": "msft_spv",
+   "name": "Microsoft-contract SPV (DDTL + USPP notes)",
+   "parent": "ops",
+   "value_share": 0.200502
+  }
+ ],
+ "pools": [
+  {
+   "id": "p_gpu2",
+   "entity": "ops",
+   "share": 0.119946,
+   "description": "GPUs financed by GPU Financing 2.0 (Mackenzie)"
+  },
+  {
+   "id": "p_gpu3",
+   "entity": "ops",
+   "share": 0.044964,
+   "description": "equipment financed by CA Leasing"
+  },
+  {
+   "id": "p_fl",
+   "entity": "ops",
+   "share": 0.031513,
+   "description": "GPUs under finance leases"
+  },
+  {
+   "id": "p_msft",
+   "entity": "msft_spv",
+   "share": 1.0,
+   "description": "SPV assets, Microsoft contract cash flows, equity pledge"
+  }
+ ],
+ "claims": [
+  {
+   "id": "gpu_fin_2",
+   "name": "GPU Financing 2.0 (Mackenzie: MFSA term loan + senior secured notes, single instrument)",
+   "kind": "term_loan",
+   "entity": "ops",
+   "principal": 947,
+   "amount": 989.615,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_gpu2",
+     1
+    ]
+   ],
+   "guarantors": [
+    "parent"
+   ],
+   "maturity": "2029-05-31",
+   "coupon": 0.09,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "IREN 10-Q Q1 FY2027",
+    "accession": "0001878848-26-000066",
+    "section": "Note 19 Debt, GPU Financing 2.0",
+    "quote": "As of September 30, 2026, $947 million had been funded, $1,500 million of commitment remained available"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "gpu_fin_3",
+   "name": "GPU Financing 3.0 (CA Leasing equipment loans)",
+   "kind": "equipment_financing",
+   "entity": "ops",
+   "principal": 355,
+   "amount": 371.88,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_gpu3",
+     1
+    ]
+   ],
+   "guarantors": [
+    "parent"
+   ],
+   "maturity": "2029-08-31",
+   "coupon": 0.0951,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "IREN 10-Q Q1 FY2027",
+    "accession": "0001878848-26-000066",
+    "section": "Note 19 Debt, GPU Financing 3.0",
+    "quote": "$363 million had been funded and the Group was in compliance with all terms of the agreements"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "fin_leases",
+   "name": "GPU equipment finance leases (24- and 36-month) [lease liability]",
+   "kind": "equipment_financing",
+   "entity": "ops",
+   "principal": 311,
+   "amount": 311.0,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_fl",
+     1
+    ]
+   ],
+   "guarantors": [
+    "parent"
+   ],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "IREN 10-Q Q1 FY2027",
+    "accession": "0001878848-26-000066",
+    "section": "Balance sheet / Note 17",
+    "quote": "Finance lease liability, current portion | 179"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "msft_ddtl",
+   "name": "DDTL Facility (GPU Financing 1.0, Microsoft)",
+   "kind": "delayed_draw_term_loan",
+   "entity": "msft_spv",
+   "principal": 409,
+   "amount": 421.27,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_msft",
+     1
+    ]
+   ],
+   "guarantors": [],
+   "maturity": "2031-12-31",
+   "coupon": 0.06,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "IREN 10-Q Q1 FY2027",
+    "accession": "0001878848-26-000066",
+    "section": "Note 19 Debt",
+    "quote": "$413 million of the DDTL Facility and $1,575 million of the U.S. private placement senior notes"
+   },
+   "status": "filed",
+   "notes": "Shared security package with the USPP notes."
+  },
+  {
+   "id": "uspp_2031",
+   "name": "5.96% Senior Secured Notes due 2031 (USPP, Microsoft GPU financing)",
+   "kind": "secured_notes",
+   "entity": "msft_spv",
+   "principal": 1571,
+   "amount": 1617.816,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_msft",
+     1
+    ]
+   ],
+   "guarantors": [],
+   "maturity": "2031-12-31",
+   "coupon": 0.0596,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "IREN 10-Q Q1 FY2027",
+    "accession": "0001878848-26-000066",
+    "section": "Note 19 Debt",
+    "quote": "USPP Senior Notes | December 31, 2031 | 7.09% | 1,571 | 525"
+   },
+   "status": "derived",
+   "notes": ""
+  },
+  {
+   "id": "other_debt",
+   "name": "Other recourse debt",
+   "kind": "other_debt",
+   "entity": "ops",
+   "principal": 14.0,
+   "amount": 14.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "IREN 10-Q Q1 FY2027",
+    "accession": "0001878848-26-000066",
+    "section": "Note 19 Debt table",
+    "quote": "Other debt | 2027 - 2029 | Various | 14 | 22"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2030_06",
+   "name": "3.25% Convertible Senior Notes due 2030",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 212,
+   "amount": 215.445,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2030-06-15",
+   "coupon": 0.0325,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 16.81
+   },
+   "market": {
+    "cusip": "46270CAB5",
+    "clean": 103.0466,
+    "date": "2026-11-20",
+    "yield_reported": 2.35282,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 11.82,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "IREN 10-Q Q1 FY2027",
+    "accession": "0001878848-26-000066",
+    "section": "Note 19 Debt table",
+    "quote": "2030 Convertible Notes | June 15, 2030 | 3.87% | $ | 212 | $ | 212"
+   },
+   "status": "filed",
+   "notes": "Parent obligation without subsidiary guarantees: structurally subordinated."
+  },
+  {
+   "id": "cv_2029_12",
+   "name": "3.50% Convertible Senior Notes due 2029",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 233,
+   "amount": 237.078,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2029-12-15",
+   "coupon": 0.035,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 13.64
+   },
+   "market": {
+    "cusip": "46270CAD1",
+    "clean": 142.87,
+    "date": "2026-11-18",
+    "yield_reported": -8.42936,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 15.24,
+    "stock_move_since_trade": -0.2244
+   },
+   "source": {
+    "doc": "IREN 10-Q Q1 FY2027",
+    "accession": "0001878848-26-000066",
+    "section": "Note 19 Debt table",
+    "quote": "2029 Convertible Notes | December 15, 2029 | 4.22% | 233 | 233"
+   },
+   "status": "filed",
+   "notes": "Parent obligation without subsidiary guarantees: structurally subordinated."
+  },
+  {
+   "id": "cv_2031_07",
+   "name": "0.00% Convertible Senior Notes due 2031",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 1000,
+   "amount": 1000.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2031-07-01",
+   "coupon": 0.0,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 85.63
+   },
+   "market": {
+    "cusip": "46270CAE9",
+    "clean": 48.4836,
+    "date": "2026-11-19",
+    "yield_reported": null,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 14.41,
+    "stock_move_since_trade": -0.1797,
+    "alt": [
+     {
+      "cusip": "46270CAF6",
+      "clean": 43.5,
+      "date": "2026-11-20"
+     }
+    ]
+   },
+   "source": {
+    "doc": "IREN 10-Q Q1 FY2027",
+    "accession": "0001878848-26-000066",
+    "section": "Note 19 Debt table",
+    "quote": "2031 Convertible Notes | July 1, 2031 | 0.37% | 1,000 | 1,000"
+   },
+   "status": "filed",
+   "notes": "Parent obligation without subsidiary guarantees: structurally subordinated."
+  },
+  {
+   "id": "cv_2032_06",
+   "name": "0.25% Convertible Senior Notes due 2032",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 1150,
+   "amount": 1151.438,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2032-06-01",
+   "coupon": 0.0025,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 51.4
+   },
+   "market": {
+    "cusip": "46270CAG4",
+    "clean": 43.487,
+    "date": "2026-11-20",
+    "yield_reported": 16.067764,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 11.82,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "IREN 10-Q Q1 FY2027",
+    "accession": "0001878848-26-000066",
+    "section": "Note 19 Debt table",
+    "quote": "2032 Convertible Notes | June 1, 2032 | 0.45% | 1,150 | 1,150"
+   },
+   "status": "filed",
+   "notes": "Parent obligation without subsidiary guarantees: structurally subordinated."
+  },
+  {
+   "id": "cv_2033_06",
+   "name": "1.00% Convertible Senior Notes due 2033 (June)",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 1150,
+   "amount": 1155.75,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2033-06-01",
+   "coupon": 0.01,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 51.4
+   },
+   "market": {
+    "cusip": "46270CAJ8",
+    "clean": 43.1201,
+    "date": "2026-11-20",
+    "yield_reported": 14.952119,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 11.82,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "IREN 10-Q Q1 FY2027",
+    "accession": "0001878848-26-000066",
+    "section": "Note 19 Debt table",
+    "quote": "2033 (Jun) Convertible Notes | June 1, 2033 | 1.18% | 1,150 | 1,150"
+   },
+   "status": "filed",
+   "notes": "Parent obligation without subsidiary guarantees: structurally subordinated."
+  },
+  {
+   "id": "cv_2033_12",
+   "name": "1.00% Convertible Senior Notes due 2033 (December)",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 3000,
+   "amount": 3015.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2033-12-01",
+   "coupon": 0.01,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 73.07
+   },
+   "market": {
+    "cusip": "46270CAL3",
+    "clean": 37.98,
+    "date": "2026-11-20",
+    "yield_reported": 16.033672,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 11.82,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "IREN 10-Q Q1 FY2027",
+    "accession": "0001878848-26-000066",
+    "section": "Note 19 Debt table",
+    "quote": "2033 (Dec) Convertible Notes | December 1, 2033 | 1.18% | 3,000 | 3,000"
+   },
+   "status": "filed",
+   "notes": "Parent obligation without subsidiary guarantees: structurally subordinated."
+  },
+  {
+   "id": "trade",
+   "name": "Payables and accruals (incl. $2,493m PP&E payables)",
+   "kind": "trade",
+   "entity": "ops",
+   "principal": 2583.0,
+   "amount": 2583.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "10-Q for period ended 2026-09-30",
+    "accession": "0001878848-26-000066",
+    "section": "Balance sheet",
+    "quote": "AP and accrued combined 2,583 (incl. PP&E payables 2,493)"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "equity",
+   "name": "Ordinary shares",
+   "kind": "common",
+   "entity": "parent",
+   "principal": 0.0,
+   "amount": 0.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": null,
+   "instrument": {},
+   "market": {},
+   "source": {},
+   "status": "filed",
+   "notes": ""
+  }
+ ],
+ "admin_cost": 0.05,
+ "equity": {
+  "ticker": "IREN",
+  "price": 11.819999694824219,
+  "date": "2026-11-20",
+  "price_source": "Yahoo Finance daily close",
+  "shares_m": 424.357381,
+  "shares_as_of": "2026-10-30",
+  "shares_source": "10-Q cover page",
+  "vol_1y": 1.0995910985398596,
+  "vol_6m": 1.1262943020128424,
+  "vol_3m": 1.0961916005443753,
+  "vol_ewma94": 1.4576322870332115,
+  "vol_source": "realised, daily log returns (Yahoo Finance closes)",
+  "return_1m": -0.5366523093385986,
+  "high_52w": 67.83999633789062,
+  "low_52w": 11.819999694824219,
+  "options": {
+   "source": "Yahoo Finance listed options, two-sided quotes at the 2026-11-20 close; IV from the ATM call mid (Black-Scholes, no dividends, Treasury zero rate)",
+   "atm_iv_term": [
+    {
+     "expiry": "2026-12-11",
+     "T": 0.0575,
+     "strike": 12.0,
+     "iv": 1.528
+    },
+    {
+     "expiry": "2026-12-18",
+     "T": 0.0767,
+     "strike": 12.0,
+     "iv": 1.4949
+    },
+    {
+     "expiry": "2026-12-24",
+     "T": 0.0932,
+     "strike": 12.0,
+     "iv": 1.4602
+    },
+    {
+     "expiry": "2026-12-31",
+     "T": 0.1123,
+     "strike": 12.0,
+     "iv": 1.4144
+    },
+    {
+     "expiry": "2027-01-15",
+     "T": 0.1534,
+     "strike": 12.0,
+     "iv": 1.3978
+    },
+    {
+     "expiry": "2027-02-19",
+     "T": 0.2493,
+     "strike": 12.0,
+     "iv": 1.4062
+    },
+    {
+     "expiry": "2027-03-19",
+     "T": 0.326,
+     "strike": 12.0,
+     "iv": 1.3332
+    },
+    {
+     "expiry": "2027-04-16",
+     "T": 0.4027,
+     "strike": 12.0,
+     "iv": 1.3122
+    },
+    {
+     "expiry": "2027-05-21",
+     "T": 0.4986,
+     "strike": 12.0,
+     "iv": 1.3147
+    },
+    {
+     "expiry": "2027-06-17",
+     "T": 0.5726,
+     "strike": 12.0,
+     "iv": 1.3176
+    },
+    {
+     "expiry": "2027-07-16",
+     "T": 0.6521,
+     "strike": 12.0,
+     "iv": 1.2608
+    },
+    {
+     "expiry": "2027-08-20",
+     "T": 0.7479,
+     "strike": 13.0,
+     "iv": 1.2172
+    },
+    {
+     "expiry": "2028-01-21",
+     "T": 1.1699,
+     "strike": 13.0,
+     "iv": 1.0984
+    },
+    {
+     "expiry": "2028-03-17",
+     "T": 1.3233,
+     "strike": 13.0,
+     "iv": 1.1602
+    },
+    {
+     "expiry": "2028-06-16",
+     "T": 1.5726,
+     "strike": 13.0,
+     "iv": 1.191
+    },
+    {
+     "expiry": "2028-09-15",
+     "T": 1.8219,
+     "strike": 13.0,
+     "iv": 1.0242
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.1671,
+     "strike": 13.0,
+     "iv": 1.0627
+    }
+   ],
+   "iv_1y": 1.1462296682464455,
+   "iv_2y": 1.0440634125144843,
+   "deep_put_pd_bounds": [
+    {
+     "expiry": "2028-01-21",
+     "T": 1.17,
+     "strike": 3.0,
+     "bid": 0.66,
+     "ask": 0.75,
+     "open_interest": 985,
+     "pd_upper_bound": 0.2319
+    },
+    {
+     "expiry": "2028-01-21",
+     "T": 1.17,
+     "strike": 5.0,
+     "bid": 1.3,
+     "ask": 1.61,
+     "open_interest": 19803,
+     "pd_upper_bound": 0.274
+    },
+    {
+     "expiry": "2028-03-17",
+     "T": 1.323,
+     "strike": 3.0,
+     "bid": 0.55,
+     "ask": 1.05,
+     "open_interest": 15,
+     "pd_upper_bound": 0.1946
+    },
+    {
+     "expiry": "2028-03-17",
+     "T": 1.323,
+     "strike": 5.0,
+     "bid": 1.38,
+     "ask": 1.92,
+     "open_interest": 103,
+     "pd_upper_bound": 0.293
+    },
+    {
+     "expiry": "2028-06-16",
+     "T": 1.573,
+     "strike": 3.0,
+     "bid": 0.66,
+     "ask": 1.0,
+     "open_interest": 6,
+     "pd_upper_bound": 0.2363
+    },
+    {
+     "expiry": "2028-06-16",
+     "T": 1.573,
+     "strike": 5.0,
+     "bid": 1.53,
+     "ask": 2.12,
+     "open_interest": 9361,
+     "pd_upper_bound": 0.3286
+    },
+    {
+     "expiry": "2028-09-15",
+     "T": 1.822,
+     "strike": 3.0,
+     "bid": 0.83,
+     "ask": 1.15,
+     "open_interest": 41,
+     "pd_upper_bound": 0.3007
+    },
+    {
+     "expiry": "2028-09-15",
+     "T": 1.822,
+     "strike": 5.0,
+     "bid": 1.83,
+     "ask": 2.25,
+     "open_interest": 918,
+     "pd_upper_bound": 0.3977
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.167,
+     "strike": 3.0,
+     "bid": 0.91,
+     "ask": 1.15,
+     "open_interest": 249,
+     "pd_upper_bound": 0.335
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.167,
+     "strike": 5.0,
+     "bid": 2.0,
+     "ask": 2.25,
+     "open_interest": 7533,
+     "pd_upper_bound": 0.4418
+    }
+   ]
+  }
+ },
+ "default_value_scenarios": {
+  "basis": "share of net PP&E ($12,344m)",
+  "low": 4320,
+  "central": 6789,
+  "high": 9258
+ },
+ "assumptions": [
+  {
+   "id": "collateral_ltv",
+   "value": 0.8,
+   "basis": "GPU financings and the Microsoft SPV debt at 80% of the book value of their collateral (not disclosed).",
+   "status": "estimate"
+  },
+  {
+   "id": "admin_cost",
+   "value": 0.05,
+   "basis": "S&P recovery-rating convention (as used in the October 2026 CoreWeave note).",
+   "status": "convention"
+  },
+  {
+   "id": "prepetition_interest_months",
+   "value": 6,
+   "basis": "S&P recovery-rating convention (as used in the October 2026 CoreWeave note).",
+   "status": "convention"
+  },
+  {
+   "id": "customer_prepayments",
+   "value": "assumed",
+   "basis": "$2.5bn Microsoft prepayment: contract assumed, no refund claim.",
+   "status": "estimate"
+  },
+  {
+   "id": "default_value_share_of_ppe",
+   "value": [
+    0.35,
+    0.55,
+    0.75
+   ],
+   "basis": "As in the CoreWeave case.",
+   "status": "estimate"
+  }
+ ]
+}

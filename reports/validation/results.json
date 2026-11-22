@@ -1,0 +1,2012 @@
+{
+ "benchmarks": [
+  {
+   "test": "Merton two-equation calibration",
+   "quantity": "V0",
+   "model": 12.39538718863966,
+   "reference": 12.4,
+   "abs_error": 0.00461281136034053,
+   "reference_source": "Hull, Options, Futures and Other Derivatives (Merton example: E=3, sigma_E=80%, D=10, r=5%, T=1)"
+  },
+  {
+   "test": "Merton two-equation calibration",
+   "quantity": "sigma_V",
+   "model": 0.21230471342320792,
+   "reference": 0.2123,
+   "abs_error": 4.713423207930445e-06,
+   "reference_source": "Hull, Options, Futures and Other Derivatives (Merton example: E=3, sigma_E=80%, D=10, r=5%, T=1)"
+  },
+  {
+   "test": "Merton two-equation calibration",
+   "quantity": "PD",
+   "model": 0.1269712410627966,
+   "reference": 0.127,
+   "abs_error": 2.875893720338807e-05,
+   "reference_source": "Hull, Options, Futures and Other Derivatives (Merton example: E=3, sigma_E=80%, D=10, r=5%, T=1)"
+  },
+  {
+   "test": "Merton two-equation calibration",
+   "quantity": "debt value",
+   "model": 9.395387188639662,
+   "reference": 9.4,
+   "abs_error": 0.004612811360338753,
+   "reference_source": "Hull, Options, Futures and Other Derivatives (Merton example: E=3, sigma_E=80%, D=10, r=5%, T=1)"
+  },
+  {
+   "test": "CDS quoted spread to upfront (ISDA-style)",
+   "quantity": "upfront, points",
+   "model": 19.81053641280073,
+   "reference": 19.834,
+   "abs_error": 0.02346358719927011,
+   "reference_source": "Markit 5Y official close 22-Oct-2026, CoreWeave SNRFOR XR, via LSEG (conventional spread 1,167.011bp)"
+  },
+  {
+   "test": "CDS upfront to quoted spread",
+   "quantity": "spread, bp",
+   "model": 1168.037862589785,
+   "reference": 1167.011,
+   "abs_error": 1.0268625897849688,
+   "reference_source": "same Markit close"
+  },
+  {
+   "test": "Wolfspeed Chapter 7 liquidation analysis (low case)",
+   "quantity": "recovery ssn",
+   "model": 0.789986729786661,
+   "reference": 0.79,
+   "abs_error": 0.0,
+   "reference_source": "Wolfspeed disclosure statement Exhibit D (8-K 0001193125-25-153145)"
+  },
+  {
+   "test": "Wolfspeed Chapter 7 liquidation analysis (low case)",
+   "quantity": "recovery admin",
+   "model": 0.0,
+   "reference": 0.0,
+   "abs_error": 0.0,
+   "reference_source": "Wolfspeed disclosure statement Exhibit D (8-K 0001193125-25-153145)"
+  },
+  {
+   "test": "Wolfspeed Chapter 7 liquidation analysis (low case)",
+   "quantity": "recovery cv_2029",
+   "model": 0.0,
+   "reference": 0.0,
+   "abs_error": 0.0,
+   "reference_source": "Wolfspeed disclosure statement Exhibit D (8-K 0001193125-25-153145)"
+  },
+  {
+   "test": "Wolfspeed Chapter 7 liquidation analysis (high case)",
+   "quantity": "recovery ssn",
+   "model": 1.0,
+   "reference": 1.0,
+   "abs_error": 0.0,
+   "reference_source": "Wolfspeed disclosure statement Exhibit D (8-K 0001193125-25-153145)"
+  },
+  {
+   "test": "Wolfspeed Chapter 7 liquidation analysis (high case)",
+   "quantity": "recovery admin",
+   "model": 1.0,
+   "reference": 1.0,
+   "abs_error": 0.0,
+   "reference_source": "Wolfspeed disclosure statement Exhibit D (8-K 0001193125-25-153145)"
+  },
+  {
+   "test": "Wolfspeed Chapter 7 liquidation analysis (high case)",
+   "quantity": "recovery cv_2029",
+   "model": 0.03768616433165417,
+   "reference": 0.038,
+   "abs_error": 0.0,
+   "reference_source": "Wolfspeed disclosure statement Exhibit D (8-K 0001193125-25-153145)"
+  },
+  {
+   "test": "Waterfall pricer vs multi-tranche Merton (closed form)",
+   "quantity": "junior tranche value",
+   "model": 18.73242164083703,
+   "reference": 18.732421640837046,
+   "abs_error": 1.7763568394002505e-14,
+   "reference_source": "closed form (call spreads)"
+  },
+  {
+   "test": "CreditGrades closed-form CDS spread",
+   "quantity": "5y spread, bp",
+   "model": 780.1409396799315,
+   "reference": 780.1409397034583,
+   "abs_error": 2.352687489270977e-08,
+   "reference_source": "numerical integration of the survival curve"
+  },
+  {
+   "test": "Black-Cox first-passage probability",
+   "quantity": "P(hit by 2y)",
+   "model": 0.5143094026704863,
+   "reference": 0.51415,
+   "abs_error": 0.0001594026704863083,
+   "reference_source": "Monte Carlo, 40,000 paths x 500 steps with Brownian-bridge correction (s.e. 0.0025)"
+  }
+ ],
+ "observable_assets": {
+  "V0": 55555.121814950006,
+  "sigma_V": 0.35311344446610754,
+  "btc_price": 58352.55,
+  "btc_held": 850849,
+  "annual_payout": 1601.5404842499997,
+  "payout_rate": 0.02882795378587437,
+  "by_horizon": {
+   "1.0": {
+    "equity_model": 34013.81994066801,
+    "equity_market": 32859.18971352397,
+    "pd_debt_default": 2.801103473057217e-09,
+    "claims": {
+     "secured_loans": {
+      "value": 39.145626584870506,
+      "pct_of_claim": 0.9563808991930446,
+      "spread": 1.7515719430427623e-10,
+      "pd_impaired": 3.939988014223274e-09,
+      "pd_touch": 7.716282363984014e-09
+     },
+     "cv_2028": {
+      "value": 968.9630462733927,
+      "pct_of_claim": 0.9563808991639913,
+      "spread": 2.0553558854885523e-10,
+      "pd_impaired": 3.544670545128904e-29,
+      "pd_touch": 7.008650660006149e-29
+     },
+     "cv_2029": {
+      "value": 1434.571348745987,
+      "pct_of_claim": 0.9563808991639914,
+      "spread": 2.0553547058765886e-10,
+      "pd_impaired": 4.820548118261017e-18,
+      "pd_touch": 9.500793472039916e-18
+     },
+     "cv_2030a": {
+      "value": 767.495671579103,
+      "pct_of_claim": 0.9563808991639913,
+      "spread": 2.0553558854885523e-10,
+      "pd_impaired": 3.262238439708788e-15,
+      "pd_touch": 6.42078114114226e-15
+     },
+     "cv_2030b": {
+      "value": 1912.7617983279827,
+      "pct_of_claim": 0.9563808991639914,
+      "spread": 2.0553547058765886e-10,
+      "pd_impaired": 5.3509859511092315e-11,
+      "pd_touch": 1.0500496049918046e-10
+     },
+     "cv_2031": {
+      "value": 579.8537391631279,
+      "pct_of_claim": 0.9563808991639913,
+      "spread": 2.0553558854885523e-10,
+      "pd_impaired": 3.8544793347891127e-10,
+      "pd_touch": 7.557480984159118e-10
+     },
+     "cv_2032": {
+      "value": 773.712147423669,
+      "pct_of_claim": 0.9563808991639913,
+      "spread": 2.0553558854885523e-10,
+      "pd_impaired": 3.5577678016015316e-09,
+      "pd_touch": 6.968102239218308e-09
+     },
+     "strf": {
+      "value": 1271.8019920557456,
+      "pct_of_claim": 0.956380882380485,
+      "spread": 1.7754512582346393e-08,
+      "pd_impaired": 7.076327392733152e-08,
+      "pd_touch": 1.3834475481351458e-07
+     },
+     "strc": {
+      "value": 8698.645436162586,
+      "pct_of_claim": 0.9562678371627475,
+      "spread": 0.00011822578373825443,
+      "pd_impaired": 0.0008693850645189443,
+      "pd_touch": 0.0016799388446155363
+     },
+     "stre": {
+      "value": 839.9650019925359,
+      "pct_of_claim": 0.9555013599313557,
+      "spread": 0.000920077046563432,
+      "pd_impaired": 0.0013931141906943847,
+      "pd_touch": 0.002688821540581107
+     },
+     "strk": {
+      "value": 1338.6809618601249,
+      "pct_of_claim": 0.9547862394282505,
+      "spread": 0.0016687816256545501,
+      "pd_impaired": 0.0027276413094340602,
+      "pd_touch": 0.005254656398757212
+     },
+     "strd": {
+      "value": 1337.028949635088,
+      "pct_of_claim": 0.9533713458824007,
+      "spread": 0.0031517763385161685,
+      "pd_impaired": 0.004912036289872141,
+      "pd_touch": 0.009444635825864243
+     }
+    },
+    "cond_recovery": {
+     "secured_loans": 0.9374684637537778,
+     "cv_2028": 0.9266233588622045,
+     "cv_2029": 0.9266233588622045,
+     "cv_2030a": 0.9266233588622045,
+     "cv_2030b": 0.9266233588622044,
+     "cv_2031": 0.9266233588622045,
+     "cv_2032": 0.9266233588622046,
+     "strf": 1.0549726119815101e-16,
+     "strc": -8.229402853901318e-35,
+     "stre": 0.0,
+     "strk": 0.0,
+     "strd": 0.0
+    }
+   },
+   "5.0": {
+    "equity_model": 32417.06593593525,
+    "equity_market": 32859.18971352397,
+    "pd_debt_default": 0.008578250166871327,
+    "claims": {
+     "secured_loans": {
+      "value": 32.36365687300677,
+      "pct_of_claim": 0.7906881550171452,
+      "spread": 0.0003473282806117292,
+      "pd_impaired": 0.009193032607767375,
+      "pd_touch": 0.016905557117436933
+     },
+     "cv_2028": {
+      "value": 800.9191862621466,
+      "pct_of_claim": 0.7905191167620255,
+      "spread": 0.000390090101602715,
+      "pd_impaired": 9.503392510882054e-07,
+      "pd_touch": 1.8064077144562437e-06
+     },
+     "cv_2029": {
+      "value": 1185.7786751430383,
+      "pct_of_claim": 0.7905191167620256,
+      "spread": 0.00039009010160268726,
+      "pd_impaired": 0.00015125372369533007,
+      "pd_touch": 0.0002840361332257191
+     },
+     "cv_2030a": {
+      "value": 634.3915912015256,
+      "pct_of_claim": 0.7905191167620256,
+      "spread": 0.00039009010160268726,
+      "pd_impaired": 0.0005527960549470221,
+      "pd_touch": 0.0010330853487915525
+     },
+     "cv_2030b": {
+      "value": 1581.038233524051,
+      "pct_of_claim": 0.7905191167620256,
+      "spread": 0.00039009010160268726,
+      "pd_impaired": 0.003856333392952509,
+      "pd_touch": 0.007135500938524407
+     },
+     "cv_2031": {
+      "value": 479.2917404928161,
+      "pct_of_claim": 0.7905191167620256,
+      "spread": 0.00039009010160268726,
+      "pd_impaired": 0.005742215540889936,
+      "pd_touch": 0.01059689145415973
+     },
+     "cv_2032": {
+      "value": 639.5299654604786,
+      "pct_of_claim": 0.7905191167620255,
+      "spread": 0.000390090101602715,
+      "pd_impaired": 0.009004614992214818,
+      "pd_touch": 0.01656179617656172
+     },
+     "strf": {
+      "value": 1040.796440901452,
+      "pct_of_claim": 0.7826672899912934,
+      "spread": 0.0023865202602753807,
+      "pd_impaired": 0.016557866384614,
+      "pd_touch": 0.03029293561500932
+     },
+     "strc": {
+      "value": 6781.24116798235,
+      "pct_of_claim": 0.7454819112441246,
+      "spread": 0.012121884001319264,
+      "pd_impaired": 0.11952662133427894,
+      "pd_touch": 0.2124644953630394
+     },
+     "stre": {
+      "value": 612.165965477094,
+      "pct_of_claim": 0.696368790520456,
+      "spread": 0.0257521797105488,
+      "pd_impaired": 0.1325923572896307,
+      "pd_touch": 0.23511635335366776
+     },
+     "strk": {
+      "value": 957.804882453029,
+      "pct_of_claim": 0.6831343298948764,
+      "spread": 0.029589754697228327,
+      "pd_impaired": 0.15395569198969922,
+      "pd_touch": 0.2719631767911076
+     },
+     "strd": {
+      "value": 934.6629775984833,
+      "pct_of_claim": 0.6664634308350006,
+      "spread": 0.03453100386863528,
+      "pd_impaired": 0.1757804691042772,
+      "pd_touch": 0.3093678951151053
+     }
+    },
+    "cond_recovery": {
+     "secured_loans": 0.7977286416020968,
+     "cv_2028": 0.772849989498415,
+     "cv_2029": 0.7728499894984149,
+     "cv_2030a": 0.7728499894984149,
+     "cv_2030b": 0.7728499894984149,
+     "cv_2031": 0.7728499894984148,
+     "cv_2032": 0.7728499894984148,
+     "strf": 2.972668613413702e-16,
+     "strc": 4.753069015985801e-44,
+     "stre": 0.0,
+     "strk": 0.0,
+     "strd": 0.0
+    }
+   },
+   "10.0": {
+    "equity_model": 30587.001493917865,
+    "equity_market": 32859.18971352397,
+    "pd_debt_default": 0.06593028512824436,
+    "claims": {
+     "secured_loans": {
+      "value": 24.55181323610584,
+      "pct_of_claim": 0.5998341901274301,
+      "spread": 0.002140966037739521,
+      "pd_impaired": 0.06828148835640613,
+      "pd_touch": 0.11910839383406291
+     },
+     "cv_2028": {
+      "value": 606.5075373942809,
+      "pct_of_claim": 0.5986319356488842,
+      "spread": 0.0023415983052650566,
+      "pd_impaired": 0.0007114087394623209,
+      "pd_touch": 0.0013011573440109537
+     },
+     "cv_2029": {
+      "value": 897.9479034733264,
+      "pct_of_claim": 0.5986319356488843,
+      "spread": 0.0023415983052650358,
+      "pd_impaired": 0.008741013873813798,
+      "pd_touch": 0.015696404792367977
+     },
+     "cv_2030a": {
+      "value": 480.4021283582296,
+      "pct_of_claim": 0.5986319356488843,
+      "spread": 0.0023415983052650358,
+      "pd_impaired": 0.016658557004347315,
+      "pd_touch": 0.029706194000757902
+     },
+     "cv_2030b": {
+      "value": 1197.2638712977687,
+      "pct_of_claim": 0.5986319356488843,
+      "spread": 0.0023415983052650358,
+      "pd_impaired": 0.044046463830805474,
+      "pd_touch": 0.07746723526511216
+     },
+     "cv_2031": {
+      "value": 362.95054258391855,
+      "pct_of_claim": 0.5986319356488844,
+      "spread": 0.002341598305265022,
+      "pd_impaired": 0.053828215870153774,
+      "pd_touch": 0.0943345006905798
+     },
+     "cv_2032": {
+      "value": 484.29323593994746,
+      "pct_of_claim": 0.5986319356488844,
+      "spread": 0.002341598305265022,
+      "pd_impaired": 0.06756922253511306,
+      "pd_touch": 0.11789141826774795
+     },
+     "strf": {
+      "value": 751.8291814671796,
+      "pct_of_claim": 0.5653671408461376,
+      "spread": 0.008058760069354999,
+      "pd_impaired": 0.09206456857561335,
+      "pd_touch": 0.15952986739921599
+     },
+     "strc": {
+      "value": 4620.65634889552,
+      "pct_of_claim": 0.5079624276512527,
+      "spread": 0.018765544408750917,
+      "pd_impaired": 0.2565402419240693,
+      "pd_touch": 0.4294972683014525
+     },
+     "stre": {
+      "value": 399.7363841865184,
+      "pct_of_claim": 0.45471972974852026,
+      "spread": 0.02983816770307615,
+      "pd_impaired": 0.2711281659632172,
+      "pd_touch": 0.4526915856104136
+     },
+     "strk": {
+      "value": 621.7118868429679,
+      "pct_of_claim": 0.4434230196430202,
+      "spread": 0.03235387155798092,
+      "pd_impaired": 0.2937342683294716,
+      "pd_touch": 0.48839251878443746
+     },
+     "strd": {
+      "value": 602.977602645518,
+      "pct_of_claim": 0.42995446637710905,
+      "spread": 0.035438361667990526,
+      "pd_impaired": 0.3155253948949296,
+      "pd_touch": 0.5225238616158615
+     }
+    },
+    "cond_recovery": {
+     "secured_loans": 0.6787197197165149,
+     "cv_2028": 0.6489631999788371,
+     "cv_2029": 0.6489631999788371,
+     "cv_2030a": 0.6489631999788371,
+     "cv_2030b": 0.6489631999788372,
+     "cv_2031": 0.648963199978837,
+     "cv_2032": 0.6489631999788372,
+     "strf": -1.536701689531543e-17,
+     "strc": -1.255106678095307e-34,
+     "stre": 0.0,
+     "strk": 0.0,
+     "strd": 0.0
+    }
+   }
+  },
+  "calibration_check": {
+   "merton_kmv_1y": {
+    "V": 36113.852030611,
+    "sigma_V": 0.8032504396746364,
+    "V_error": -0.3499455882591066,
+    "sigma_ratio": 2.274765949195497
+   },
+   "merton_all_debt_5y": {
+    "V": 36786.88373631714,
+    "sigma_V": 0.8080604918917556,
+    "V_error": -0.3378309229731954,
+    "sigma_ratio": 2.2883877817609255
+   },
+   "merton_all_claims_5y": {
+    "V": 43052.138104925085,
+    "sigma_V": 0.732386573379091,
+    "V_error": -0.22505546386292574,
+    "sigma_ratio": 2.0740829465907993
+   }
+  },
+  "equity_vol_used": 0.8825101083032492,
+  "preferreds": [
+   {
+    "ticker": "STRF",
+    "price": 94.0999984741211,
+    "dividend_rate": 0.1,
+    "cumulative": true,
+    "current_yield": 0.10626992733427248,
+    "ust_30y": 0.0531,
+    "market_spread": 0.05316992733427248,
+    "model_spread_10y": 0.008058760069354999,
+    "pd_impaired_10y": 0.09206456857561335,
+    "pd_touch_10y": 0.15952986739921599,
+    "attach_musd": 6771.887,
+    "detach_musd": 8101.6939999999995,
+    "asset_drop_to_impair": 0.8756174309449415
+   },
+   {
+    "ticker": "STRC",
+    "price": 93.5999984741211,
+    "dividend_rate": 0.12,
+    "cumulative": true,
+    "current_yield": 0.12820513029514427,
+    "ust_30y": 0.0531,
+    "market_spread": 0.07510513029514426,
+    "model_spread_10y": 0.018765544408750917,
+    "pd_impaired_10y": 0.2565402419240693,
+    "pd_touch_10y": 0.4294972683014525,
+    "attach_musd": 8101.6939999999995,
+    "detach_musd": 17198.146999999997,
+    "asset_drop_to_impair": 0.8511922137185761
+   },
+   {
+    "ticker": "STRK",
+    "price": 58.09000015258789,
+    "dividend_rate": 0.08,
+    "cumulative": true,
+    "current_yield": 0.1377173348078155,
+    "ust_30y": 0.0531,
+    "market_spread": 0.0846173348078155,
+    "model_spread_10y": 0.03235387155798092,
+    "pd_impaired_10y": 0.2937342683294716,
+    "pd_touch_10y": 0.48839251878443746,
+    "attach_musd": 18077.229999999996,
+    "detach_musd": 19479.303999999996,
+    "asset_drop_to_impair": 0.6679666526037463
+   },
+   {
+    "ticker": "STRD",
+    "price": 59.81999969482422,
+    "dividend_rate": 0.1,
+    "cumulative": false,
+    "current_yield": 0.16716817203302703,
+    "ust_30y": 0.0531,
+    "market_spread": 0.11406817203302702,
+    "model_spread_10y": 0.035438361667990526,
+    "pd_impaired_10y": 0.3155253948949296,
+    "pd_touch_10y": 0.5225238616158615,
+    "attach_musd": 19479.303999999996,
+    "detach_musd": 20881.725999999995,
+    "asset_drop_to_impair": 0.642214071952991
+   }
+  ]
+ },
+ "sensitivities": {
+  "bond_pd_vs_recovery": {
+   "bond": "9.75% Senior Notes due 2031",
+   "price": 77.5,
+   "rows": [
+    {
+     "recovery": 0.0,
+     "hazard": 0.11372631050040724,
+     "pd_5y": 0.43370013967202137,
+     "status": "ok"
+    },
+    {
+     "recovery": 0.05,
+     "hazard": 0.12056387914666798,
+     "pd_5y": 0.45273350188994055,
+     "status": "ok"
+    },
+    {
+     "recovery": 0.1,
+     "hazard": 0.1282885678483029,
+     "pd_5y": 0.47346782556723876,
+     "status": "ok"
+    },
+    {
+     "recovery": 0.15000000000000002,
+     "hazard": 0.13708783391924678,
+     "pd_5y": 0.49613110292295304,
+     "status": "ok"
+    },
+    {
+     "recovery": 0.2,
+     "hazard": 0.14720689018327707,
+     "pd_5y": 0.5209903094183103,
+     "status": "ok"
+    },
+    {
+     "recovery": 0.25,
+     "hazard": 0.15897322584444412,
+     "pd_5y": 0.5483583074995969,
+     "status": "ok"
+    },
+    {
+     "recovery": 0.30000000000000004,
+     "hazard": 0.1728350286700265,
+     "pd_5y": 0.5786009969208494,
+     "status": "ok"
+    },
+    {
+     "recovery": 0.35000000000000003,
+     "hazard": 0.1894238529809366,
+     "pd_5y": 0.6121432718531717,
+     "status": "ok"
+    },
+    {
+     "recovery": 0.4,
+     "hazard": 0.209661909307471,
+     "pd_5y": 0.6494701971304759,
+     "status": "ok"
+    },
+    {
+     "recovery": 0.45,
+     "hazard": 0.23495707383209172,
+     "pd_5y": 0.6911147311215056,
+     "status": "ok"
+    },
+    {
+     "recovery": 0.5,
+     "hazard": 0.2675852785816779,
+     "pd_5y": 0.7376108030470117,
+     "status": "ok"
+    },
+    {
+     "recovery": 0.55,
+     "hazard": 0.3115188818557499,
+     "pd_5y": 0.7893578189135981,
+     "status": "ok"
+    },
+    {
+     "recovery": 0.6000000000000001,
+     "hazard": 0.3744848580358985,
+     "pd_5y": 0.846249526123932,
+     "status": "ok"
+    },
+    {
+     "recovery": 0.65,
+     "hazard": 0.47422265904914324,
+     "pd_5y": 0.9066232874603296,
+     "status": "ok"
+    },
+    {
+     "recovery": 0.7000000000000001,
+     "hazard": 0.664961829114327,
+     "pd_5y": 0.9640206150768682,
+     "status": "ok"
+    }
+   ]
+  },
+  "structural_grid": [
+   {
+    "vol_source": "ATM IV 1y",
+    "equity_vol": 1.0194282920469362,
+    "barrier_fraction": 0.5,
+    "V": 47022.61016971355,
+    "sigma_V": 0.6265774053995399,
+    "pd_5y_barrier": 0.6095014865722888,
+    "pd_T": 0.7809981454364149
+   },
+   {
+    "vol_source": "ATM IV 1y",
+    "equity_vol": 1.0194282920469362,
+    "barrier_fraction": 0.75,
+    "V": 52025.41897117518,
+    "sigma_V": 0.5468198210765368,
+    "pd_5y_barrier": 0.6450896625209683,
+    "pd_T": 0.7523280203446076
+   },
+   {
+    "vol_source": "ATM IV 1y",
+    "equity_vol": 1.0194282920469362,
+    "barrier_fraction": 1.0,
+    "V": 57223.121815243285,
+    "sigma_V": 0.472479411956288,
+    "pd_5y_barrier": 0.6542533980425328,
+    "pd_T": 0.7206336764056699
+   },
+   {
+    "vol_source": "ATM IV 1y",
+    "equity_vol": 1.0194282920469362,
+    "barrier_fraction": 1.25,
+    "V": 62337.469256608005,
+    "sigma_V": 0.4050676457497722,
+    "pd_5y_barrier": 0.6527830046007106,
+    "pd_T": 0.6879379132231981
+   },
+   {
+    "vol_source": "ATM IV 2y",
+    "equity_vol": 0.949726634576815,
+    "barrier_fraction": 0.5,
+    "V": 49047.22890780207,
+    "sigma_V": 0.5730300719316657,
+    "pd_5y_barrier": 0.524576192037437,
+    "pd_T": 0.7462125707646792
+   },
+   {
+    "vol_source": "ATM IV 2y",
+    "equity_vol": 0.949726634576815,
+    "barrier_fraction": 0.75,
+    "V": 53274.52261751233,
+    "sigma_V": 0.5084401977857267,
+    "pd_5y_barrier": 0.5851307627571917,
+    "pd_T": 0.7201612143029639
+   },
+   {
+    "vol_source": "ATM IV 2y",
+    "equity_vol": 0.949726634576815,
+    "barrier_fraction": 1.0,
+    "V": 57993.74259494229,
+    "sigma_V": 0.44254879151467513,
+    "pd_5y_barrier": 0.6062870206175867,
+    "pd_T": 0.6890175479115865
+   },
+   {
+    "vol_source": "ATM IV 2y",
+    "equity_vol": 0.949726634576815,
+    "barrier_fraction": 1.25,
+    "V": 62757.42950098047,
+    "sigma_V": 0.38049127164322194,
+    "pd_5y_barrier": 0.6115701005663597,
+    "pd_T": 0.6559281781921007
+   },
+   {
+    "vol_source": "realised 3m",
+    "equity_vol": 1.0146004381710674,
+    "barrier_fraction": 0.5,
+    "V": 47146.74538464713,
+    "sigma_V": 0.6230295305065129,
+    "pd_5y_barrier": 0.6043234047897906,
+    "pd_T": 0.7788239892889516
+   },
+   {
+    "vol_source": "realised 3m",
+    "equity_vol": 1.0146004381710674,
+    "barrier_fraction": 0.75,
+    "V": 52103.493186212916,
+    "sigma_V": 0.5442369788528427,
+    "pd_5y_barrier": 0.6413514087848915,
+    "pd_T": 0.7502772072406032
+   },
+   {
+    "vol_source": "realised 3m",
+    "equity_vol": 1.0146004381710674,
+    "barrier_fraction": 1.0,
+    "V": 57271.94909717838,
+    "sigma_V": 0.4704411574218196,
+    "pd_5y_barrier": 0.6512055693229147,
+    "pd_T": 0.7185917098927115
+   },
+   {
+    "vol_source": "realised 3m",
+    "equity_vol": 1.0146004381710674,
+    "barrier_fraction": 1.25,
+    "V": 62364.2219765433,
+    "sigma_V": 0.403379662481964,
+    "pd_5y_barrier": 0.6501272803927243,
+    "pd_T": 0.6858527292017103
+   },
+   {
+    "vol_source": "realised 1y",
+    "equity_vol": 0.9958488972032644,
+    "barrier_fraction": 0.5,
+    "V": 47649.948098548135,
+    "sigma_V": 0.6090392763951589,
+    "pd_5y_barrier": 0.5832864380994695,
+    "pd_T": 0.7700720428969894
+   },
+   {
+    "vol_source": "realised 1y",
+    "equity_vol": 0.9958488972032644,
+    "barrier_fraction": 0.75,
+    "V": 52417.82432665273,
+    "sigma_V": 0.5341075640381608,
+    "pd_5y_barrier": 0.6262869909085184,
+    "pd_T": 0.7420774391154847
+   },
+   {
+    "vol_source": "realised 1y",
+    "equity_vol": 0.9958488972032644,
+    "barrier_fraction": 1.0,
+    "V": 57467.63384457593,
+    "sigma_V": 0.46247933138310937,
+    "pd_5y_barrier": 0.6390027529684528,
+    "pd_T": 0.7104625824724976
+   },
+   {
+    "vol_source": "realised 1y",
+    "equity_vol": 0.9958488972032644,
+    "barrier_fraction": 1.25,
+    "V": 62471.25508776851,
+    "sigma_V": 0.39680507396962944,
+    "pd_5y_barrier": 0.6395450995584688,
+    "pd_T": 0.6775754082365746
+   }
+  ],
+  "recovery_tornado": {
+   "claim": "notes_2031b",
+   "base": 0.3486466786282995,
+   "rows": [
+    {
+     "driver": "Value at default (35% / 75% of PP&E)",
+     "low": 0.21208344891963166,
+     "high": 0.49841168181288853
+    },
+    {
+     "driver": "Administrative costs (10% / 2%)",
+     "low": 0.3281073318837436,
+     "high": 0.3611023960131426
+    },
+    {
+     "driver": "Lease rejections (100% / 0% of leases)",
+     "low": 0.3269010300452964,
+     "high": 0.3734915563976237
+    },
+    {
+     "driver": "Trade claims (+50% / -50%)",
+     "low": 0.31259921547781633,
+     "high": 0.3940914396707693
+    },
+    {
+     "driver": "Value held in SPVs (+25% / -25%)",
+     "low": 0.28547001504764286,
+     "high": 0.41450920117488477
+    },
+    {
+     "driver": "Revolver drawn (100% / 48% = current)",
+     "low": 0.34504229813297815,
+     "high": 0.3578679665781587
+    },
+    {
+     "driver": "Substantive consolidation (all entities pooled)",
+     "low": 0.2903342160819848,
+     "high": 0.2903342160819848
+    }
+   ],
+   "base_value": 31228
+  }
+ },
+ "restructuring": {
+  "value": 31228,
+  "scenarios": {
+   "Absolute priority (base)": {
+    "SPV term loans (recourse)": 0.6473585429262747,
+    "DDTL 4.0 (non-recourse)": 0.5727985615818173,
+    "OEM financing": 0.6554831651569593,
+    "Revolver": 0.6774708163343885,
+    "Senior notes": 0.34864667862829946,
+    "Convertibles": 0.34864667862829946,
+    "Trade and leases": 0.34864667862829946,
+    "Magnetar": 9.799176457560878e-17,
+    "Equity value ($m)": 1.8617117363215879e-28
+   },
+   "5% gift to old equity": {
+    "SPV term loans (recourse)": 0.614990615779961,
+    "DDTL 4.0 (non-recourse)": 0.5441586335027264,
+    "OEM financing": 0.6291351508792248,
+    "Revolver": 0.6508718170322306,
+    "Senior notes": 0.3291278297466359,
+    "Convertibles": 0.3291278297466359,
+    "Trade and leases": 0.3291278297466359,
+    "Magnetar": 1.1783542254770458e-16,
+    "Equity value ($m)": 1483.33
+   },
+   "Substantive consolidation": {
+    "SPV term loans (recourse)": 0.7497424239237835,
+    "DDTL 4.0 (non-recourse)": 0.6968297563140567,
+    "OEM financing": 0.6436474785114537,
+    "Revolver": 0.648596363214249,
+    "Senior notes": 0.29033421608198473,
+    "Convertibles": 0.2903342160819848,
+    "Trade and leases": 0.2903342160819848,
+    "Magnetar": 0.2903342160819848,
+    "Equity value ($m)": 2.6147972675971687e-12
+   },
+   "All leases rejected": {
+    "SPV term loans (recourse)": 0.6473585429262747,
+    "DDTL 4.0 (non-recourse)": 0.5727985615818173,
+    "OEM financing": 0.6456518742904822,
+    "Revolver": 0.6667030716163835,
+    "Senior notes": 0.32690103004529647,
+    "Convertibles": 0.3269010300452964,
+    "Trade and leases": 0.3269010300452964,
+    "Magnetar": 6.033520203485442e-17,
+    "Equity value ($m)": 0.0
+   },
+   "Recourse DDTLs lose parent guarantee": {
+    "SPV term loans (recourse)": 0.6473585429262747,
+    "DDTL 4.0 (non-recourse)": 0.5727985615818173,
+    "OEM financing": 0.6554831651569593,
+    "Revolver": 0.6774708163343885,
+    "Senior notes": 0.3486466786282995,
+    "Convertibles": 0.3486466786282995,
+    "Trade and leases": 0.34864667862829946,
+    "Magnetar": 1.255513466991812e-16,
+    "Equity value ($m)": 1.8617117363215879e-28
+   },
+   "Secured claims allowed +10% (make-whole style)": {
+    "SPV term loans (recourse)": 0.5885077662966134,
+    "DDTL 4.0 (non-recourse)": 0.5207259650743793,
+    "OEM financing": 0.6201619013419934,
+    "Revolver": 0.6429061008589524,
+    "Senior notes": 0.34001251973764995,
+    "Convertibles": 0.34001251973764995,
+    "Trade and leases": 0.3400125197376499,
+    "Magnetar": 8.902479271133387e-17,
+    "Equity value ($m)": 0.0
+   }
+  }
+ },
+ "historical": {
+  "source": "S&P Global Ratings, Form NRSRO Exhibit 1 (EDGAR accession 0001650548-26-000001, filed 2026-03-26), Tables 7-9: Corporate Issuers transition and default rates, single-cohort method",
+  "default_rates": [
+   {
+    "horizon": "1y",
+    "rating": "AAA",
+    "n": 4,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "1y",
+    "rating": "AA+",
+    "n": 14,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "1y",
+    "rating": "AA",
+    "n": 23,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "1y",
+    "rating": "AA-",
+    "n": 38,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "1y",
+    "rating": "A+",
+    "n": 86,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "1y",
+    "rating": "A",
+    "n": 159,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "1y",
+    "rating": "A-",
+    "n": 305,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "1y",
+    "rating": "BBB+",
+    "n": 457,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "1y",
+    "rating": "BBB",
+    "n": 481,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "1y",
+    "rating": "BBB-",
+    "n": 368,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "1y",
+    "rating": "BB+",
+    "n": 308,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "1y",
+    "rating": "BB",
+    "n": 321,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "1y",
+    "rating": "BB-",
+    "n": 350,
+    "default_pct": 0.29,
+    "default_pct_ex_withdrawn": 0.3464341177876
+   },
+   {
+    "horizon": "1y",
+    "rating": "B+",
+    "n": 371,
+    "default_pct": 0.81,
+    "default_pct_ex_withdrawn": 0.9983976334278319
+   },
+   {
+    "horizon": "1y",
+    "rating": "B",
+    "n": 651,
+    "default_pct": 0.31,
+    "default_pct_ex_withdrawn": 0.36168475090421187
+   },
+   {
+    "horizon": "1y",
+    "rating": "B-",
+    "n": 511,
+    "default_pct": 2.94,
+    "default_pct_ex_withdrawn": 3.5770775033459055
+   },
+   {
+    "horizon": "1y",
+    "rating": "CCC+",
+    "n": 180,
+    "default_pct": 15.56,
+    "default_pct_ex_withdrawn": 18.30588235294118
+   },
+   {
+    "horizon": "1y",
+    "rating": "CCC",
+    "n": 70,
+    "default_pct": 40.0,
+    "default_pct_ex_withdrawn": 48.274197441467535
+   },
+   {
+    "horizon": "1y",
+    "rating": "CCC-",
+    "n": 19,
+    "default_pct": 63.16,
+    "default_pct_ex_withdrawn": 85.72204125950054
+   },
+   {
+    "horizon": "1y",
+    "rating": "CC",
+    "n": 4,
+    "default_pct": 75.0,
+    "default_pct_ex_withdrawn": 75.0
+   },
+   {
+    "horizon": "3y",
+    "rating": "AAA",
+    "n": 4,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "3y",
+    "rating": "AA+",
+    "n": 15,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "3y",
+    "rating": "AA",
+    "n": 23,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "3y",
+    "rating": "AA-",
+    "n": 38,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "3y",
+    "rating": "A+",
+    "n": 90,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "3y",
+    "rating": "A",
+    "n": 171,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "3y",
+    "rating": "A-",
+    "n": 295,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "3y",
+    "rating": "BBB+",
+    "n": 424,
+    "default_pct": 0.24,
+    "default_pct_ex_withdrawn": 0.2629560644242358
+   },
+   {
+    "horizon": "3y",
+    "rating": "BBB",
+    "n": 477,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "3y",
+    "rating": "BBB-",
+    "n": 377,
+    "default_pct": 0.8,
+    "default_pct_ex_withdrawn": 0.9366584709050463
+   },
+   {
+    "horizon": "3y",
+    "rating": "BB+",
+    "n": 308,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "3y",
+    "rating": "BB",
+    "n": 269,
+    "default_pct": 0.74,
+    "default_pct_ex_withdrawn": 0.9006815968841285
+   },
+   {
+    "horizon": "3y",
+    "rating": "BB-",
+    "n": 358,
+    "default_pct": 3.35,
+    "default_pct_ex_withdrawn": 4.612419110560375
+   },
+   {
+    "horizon": "3y",
+    "rating": "B+",
+    "n": 373,
+    "default_pct": 2.41,
+    "default_pct_ex_withdrawn": 3.2335972091775123
+   },
+   {
+    "horizon": "3y",
+    "rating": "B",
+    "n": 704,
+    "default_pct": 4.83,
+    "default_pct_ex_withdrawn": 6.8695775849807985
+   },
+   {
+    "horizon": "3y",
+    "rating": "B-",
+    "n": 648,
+    "default_pct": 12.96,
+    "default_pct_ex_withdrawn": 20.335791620900675
+   },
+   {
+    "horizon": "3y",
+    "rating": "CCC+",
+    "n": 217,
+    "default_pct": 32.72,
+    "default_pct_ex_withdrawn": 49.65098634294385
+   },
+   {
+    "horizon": "3y",
+    "rating": "CCC",
+    "n": 58,
+    "default_pct": 68.97,
+    "default_pct_ex_withdrawn": 88.89032091764402
+   },
+   {
+    "horizon": "3y",
+    "rating": "CCC-",
+    "n": 20,
+    "default_pct": 80.0,
+    "default_pct_ex_withdrawn": 94.11764705882354
+   },
+   {
+    "horizon": "3y",
+    "rating": "CC",
+    "n": 6,
+    "default_pct": 83.33,
+    "default_pct_ex_withdrawn": 83.33
+   },
+   {
+    "horizon": "10y",
+    "rating": "AAA",
+    "n": 12,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "10y",
+    "rating": "AA+",
+    "n": 5,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "10y",
+    "rating": "AA",
+    "n": 20,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "10y",
+    "rating": "AA-",
+    "n": 80,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "10y",
+    "rating": "A+",
+    "n": 87,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "10y",
+    "rating": "A",
+    "n": 162,
+    "default_pct": 0.0,
+    "default_pct_ex_withdrawn": 0.0
+   },
+   {
+    "horizon": "10y",
+    "rating": "A-",
+    "n": 302,
+    "default_pct": 0.33,
+    "default_pct_ex_withdrawn": 0.40024257125530627
+   },
+   {
+    "horizon": "10y",
+    "rating": "BBB+",
+    "n": 345,
+    "default_pct": 0.58,
+    "default_pct_ex_withdrawn": 0.7522697795071335
+   },
+   {
+    "horizon": "10y",
+    "rating": "BBB",
+    "n": 479,
+    "default_pct": 0.84,
+    "default_pct_ex_withdrawn": 1.2535442471272946
+   },
+   {
+    "horizon": "10y",
+    "rating": "BBB-",
+    "n": 378,
+    "default_pct": 3.44,
+    "default_pct_ex_withdrawn": 6.25113574413956
+   },
+   {
+    "horizon": "10y",
+    "rating": "BB+",
+    "n": 305,
+    "default_pct": 1.97,
+    "default_pct_ex_withdrawn": 3.5766158315177927
+   },
+   {
+    "horizon": "10y",
+    "rating": "BB",
+    "n": 322,
+    "default_pct": 4.35,
+    "default_pct_ex_withdrawn": 8.19054791941254
+   },
+   {
+    "horizon": "10y",
+    "rating": "BB-",
+    "n": 357,
+    "default_pct": 7.28,
+    "default_pct_ex_withdrawn": 17.097228745890092
+   },
+   {
+    "horizon": "10y",
+    "rating": "B+",
+    "n": 460,
+    "default_pct": 13.48,
+    "default_pct_ex_withdrawn": 35.63309542690986
+   },
+   {
+    "horizon": "10y",
+    "rating": "B",
+    "n": 847,
+    "default_pct": 16.77,
+    "default_pct_ex_withdrawn": 53.4076433121019
+   },
+   {
+    "horizon": "10y",
+    "rating": "B-",
+    "n": 343,
+    "default_pct": 31.49,
+    "default_pct_ex_withdrawn": 76.06280193236714
+   },
+   {
+    "horizon": "10y",
+    "rating": "CCC+",
+    "n": 117,
+    "default_pct": 51.28,
+    "default_pct_ex_withdrawn": 90.90586775394434
+   },
+   {
+    "horizon": "10y",
+    "rating": "CCC",
+    "n": 34,
+    "default_pct": 61.76,
+    "default_pct_ex_withdrawn": 95.44119919641477
+   },
+   {
+    "horizon": "10y",
+    "rating": "CCC-",
+    "n": 21,
+    "default_pct": 42.86,
+    "default_pct_ex_withdrawn": 69.24071082390954
+   },
+   {
+    "horizon": "10y",
+    "rating": "CC",
+    "n": 6,
+    "default_pct": 83.33,
+    "default_pct_ex_withdrawn": 100.0
+   }
+  ],
+  "markov_vs_cohort": [
+   {
+    "rating": "BB",
+    "horizon": "3y",
+    "markov_from_1y_matrix_pct": 0.20096850871613742,
+    "cohort_reported_pct": 0.74,
+    "cohort_n": 269
+   },
+   {
+    "rating": "BB",
+    "horizon": "10y",
+    "markov_from_1y_matrix_pct": 3.0051841022036827,
+    "cohort_reported_pct": 4.35,
+    "cohort_n": 322
+   },
+   {
+    "rating": "B+",
+    "horizon": "3y",
+    "markov_from_1y_matrix_pct": 4.002400435681408,
+    "cohort_reported_pct": 2.41,
+    "cohort_n": 373
+   },
+   {
+    "rating": "B+",
+    "horizon": "10y",
+    "markov_from_1y_matrix_pct": 16.578581139858546,
+    "cohort_reported_pct": 13.48,
+    "cohort_n": 460
+   },
+   {
+    "rating": "B",
+    "horizon": "3y",
+    "markov_from_1y_matrix_pct": 3.2406236320895845,
+    "cohort_reported_pct": 4.83,
+    "cohort_n": 704
+   },
+   {
+    "rating": "B",
+    "horizon": "10y",
+    "markov_from_1y_matrix_pct": 23.553704715484876,
+    "cohort_reported_pct": 16.77,
+    "cohort_n": 847
+   },
+   {
+    "rating": "B-",
+    "horizon": "3y",
+    "markov_from_1y_matrix_pct": 16.12791222723298,
+    "cohort_reported_pct": 12.96,
+    "cohort_n": 648
+   },
+   {
+    "rating": "B-",
+    "horizon": "10y",
+    "markov_from_1y_matrix_pct": 47.690226846550594,
+    "cohort_reported_pct": 31.49,
+    "cohort_n": 343
+   },
+   {
+    "rating": "CCC+",
+    "horizon": "3y",
+    "markov_from_1y_matrix_pct": 49.01233844591366,
+    "cohort_reported_pct": 32.72,
+    "cohort_n": 217
+   },
+   {
+    "rating": "CCC+",
+    "horizon": "10y",
+    "markov_from_1y_matrix_pct": 77.87669992628733,
+    "cohort_reported_pct": 51.28,
+    "cohort_n": 117
+   },
+   {
+    "rating": "CCC",
+    "horizon": "3y",
+    "markov_from_1y_matrix_pct": 69.03262859731792,
+    "cohort_reported_pct": 68.97,
+    "cohort_n": 58
+   },
+   {
+    "rating": "CCC",
+    "horizon": "10y",
+    "markov_from_1y_matrix_pct": 83.29630058799846,
+    "cohort_reported_pct": 61.76,
+    "cohort_n": 34
+   }
+  ],
+  "generator_check": {
+   "max_abs_diff_expm_vs_P": 0.2240963952544777
+  },
+  "market_vs_historical": [
+   {
+    "issuer": "CoreWeave, Inc.",
+    "agency_rating_compared": "B",
+    "market_pd_1y": 0.1670933187850852,
+    "market_pd_3y": 0.42214702907013313,
+    "historical_1y": 0.0031,
+    "historical_3y": 0.0483,
+    "ratio_3y": 8.740104121534847,
+    "implied_rating_1y": "CCC+",
+    "implied_rating_3y": "CCC+"
+   },
+   {
+    "issuer": "CoreWeave, Inc.",
+    "agency_rating_compared": "B+",
+    "market_pd_1y": 0.1670933187850852,
+    "market_pd_3y": 0.42214702907013313,
+    "historical_1y": 0.008100000000000001,
+    "historical_3y": 0.0241,
+    "ratio_3y": 17.516474235275233,
+    "implied_rating_1y": "CCC+",
+    "implied_rating_3y": "CCC+"
+   }
+  ],
+  "matrix": {
+   "labels": [
+    "AAA",
+    "AA+",
+    "AA",
+    "AA-",
+    "A+",
+    "A",
+    "A-",
+    "BBB+",
+    "BBB",
+    "BBB-",
+    "BB+",
+    "BB",
+    "BB-",
+    "B+",
+    "B",
+    "B-",
+    "CCC+",
+    "CCC",
+    "CCC-",
+    "CC",
+    "D"
+   ],
+   "P": [
+    [
+     1.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.026300000000000004,
+     0.026300000000000004,
+     0.8421000000000001,
+     0.1053,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.012019479846648013,
+     0.02414257589887058,
+     0.9156564086623148,
+     0.04818153559216662,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.04484762001834676,
+     0.8781979410865355,
+     0.07053307511976353,
+     0.0,
+     0.0,
+     0.006421363775354194,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0034587569437165913,
+     0.05837962477727701,
+     0.8935122104601194,
+     0.041190650875170313,
+     0.0034587569437165913,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.08110333470564018,
+     0.8783449979415398,
+     0.038287361053931664,
+     0.0022643062988884316,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.004353685083445631,
+     0.06468332123976366,
+     0.8728102000621956,
+     0.058152793614595216,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.002905100064557779,
+     0.11695717667312241,
+     0.8420486335270067,
+     0.026361093178394662,
+     0.008822896492360661,
+     0.0,
+     0.002905100064557779,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.08101952277657268,
+     0.841648590021692,
+     0.059869848156182216,
+     0.01052060737527115,
+     0.0034707158351409985,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0034707158351409985,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.007317361029151421,
+     0.1176678862268382,
+     0.7794169715567096,
+     0.0846217396435737,
+     0.007317361029151421,
+     0.0,
+     0.0036586805145757107,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0034635136749074395,
+     0.0,
+     0.006807595843783588,
+     0.14331780723754922,
+     0.7370118237190969,
+     0.08193001313746565,
+     0.017078705362474616,
+     0.0034635136749074395,
+     0.0,
+     0.0034635136749074395,
+     0.0,
+     0.0,
+     0.0034635136749074395
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.006655163914222332,
+     0.006655163914222332,
+     0.13285679073206802,
+     0.7108701010598965,
+     0.09970421493714567,
+     0.013310327828444664,
+     0.013310327828444664,
+     0.006655163914222332,
+     0.0,
+     0.0,
+     0.009982745871333498
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0017500875043752182,
+     0.0053669350134173364,
+     0.06090304515225759,
+     0.817290864543227,
+     0.09672150274180372,
+     0.012600630031501572,
+     0.0,
+     0.0017500875043752182,
+     0.0,
+     0.0036168475090421178
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0024330900243309007,
+     0.021411192214111925,
+     0.09282238442822385,
+     0.7284671532846717,
+     0.09051094890510951,
+     0.01909975669099757,
+     0.009489051094890512,
+     0.0,
+     0.03576642335766424
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.006587460298788378,
+     0.0,
+     0.1045759322432655,
+     0.5881660981061051,
+     0.08493118456652157,
+     0.032702035054699444,
+     0.0,
+     0.18303728973061992
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.20687990343995175,
+     0.12070006035003018,
+     0.10343995171997587,
+     0.06891973445986724,
+     0.017260108630054314,
+     0.48280024140012073
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.07138979370249729,
+     0.0,
+     0.0,
+     0.07138979370249729,
+     0.0,
+     0.0,
+     0.8572204125950055
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.25,
+     0.0,
+     0.75
+    ],
+    [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  "marginal_B_from_markov": [
+   0.0036168475090421204,
+   0.010887942648484472,
+   0.018204156785577186,
+   0.024361721164101735,
+   0.029057535904753018,
+   0.032453121577248445,
+   0.03478913237964487,
+   0.036292825374769966,
+   0.03715602344041058,
+   0.03753304619619435
+  ]
+ },
+ "cross_model": [
+  {
+   "issuer": "CoreWeave, Inc.",
+   "merton_kmv_pd_1y": 0.20258702345907886,
+   "black_cox_pd_1y": 0.22259825725829097,
+   "black_cox_pd_5y": 0.6542017079555984,
+   "creditgrades_pd_5y": 0.6896291400889023,
+   "creditgrades_cds_5y_bp": 1600.9717985602056,
+   "bond_pd_5y": 0.5990629719365042,
+   "convert_pd_5y_upper": 0.45842068072084563,
+   "put_pd_bound": 0.159,
+   "put_bound_horizon": 2.167
+  },
+  {
+   "issuer": "Nebius Group N.V.",
+   "merton_kmv_pd_1y": 0.14425169655944414,
+   "black_cox_pd_1y": 0.1994027071341652,
+   "black_cox_pd_5y": 0.7347618033634554,
+   "creditgrades_pd_5y": 0.7524719293168761,
+   "creditgrades_cds_5y_bp": 1645.8781952741858,
+   "bond_pd_5y": null,
+   "convert_pd_5y_upper": 0.2807832603878199,
+   "put_pd_bound": 0.1473,
+   "put_bound_horizon": 2.071
+  },
+  {
+   "issuer": "IREN Limited",
+   "merton_kmv_pd_1y": 0.27140664948675164,
+   "black_cox_pd_1y": 0.3094379002977351,
+   "black_cox_pd_5y": 0.7294427056621338,
+   "creditgrades_pd_5y": 0.7440690220270757,
+   "creditgrades_cds_5y_bp": 1905.711659549008,
+   "bond_pd_5y": null,
+   "convert_pd_5y_upper": 0.48037394881193896,
+   "put_pd_bound": 0.1946,
+   "put_bound_horizon": 1.323
+  },
+  {
+   "issuer": "Strategy Inc",
+   "merton_kmv_pd_1y": 0.0047539909624158775,
+   "black_cox_pd_1y": 0.00029083989766431895,
+   "black_cox_pd_5y": 0.2076117563440809,
+   "creditgrades_pd_5y": 0.4647732878954989,
+   "creditgrades_cds_5y_bp": 663.0883864038008,
+   "bond_pd_5y": null,
+   "convert_pd_5y_upper": 0.0971926650161622,
+   "put_pd_bound": 0.0169,
+   "put_bound_horizon": 1.17,
+   "observable_asset_pd_5y": 0.008578250166871327
+  },
+  {
+   "issuer": "Wolfspeed, Inc.",
+   "merton_kmv_pd_1y": 0.13709211651258435,
+   "black_cox_pd_1y": 0.144967487519847,
+   "black_cox_pd_5y": 0.5929546800480638,
+   "creditgrades_pd_5y": 0.6537318516956407,
+   "creditgrades_cds_5y_bp": 1371.0515663578678,
+   "bond_pd_5y": null,
+   "convert_pd_5y_upper": null,
+   "put_pd_bound": 0.3578,
+   "put_bound_horizon": 2.167
+  }
+ ]
+}

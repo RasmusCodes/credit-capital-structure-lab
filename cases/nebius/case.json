@@ -1,0 +1,778 @@
+{
+ "id": "nebius",
+ "company": "Nebius Group N.V.",
+ "ticker": "NBIS",
+ "currency": "USD",
+ "units": "USD millions",
+ "balance_sheet_date": "2026-09-30",
+ "market_date": "2026-11-20",
+ "settlement_date": "2026-11-23",
+ "filing": {
+  "form": "6-K (Ex.99.2 unaudited interim consolidated financial statements; Ex.99.1 operating and financial review)",
+  "accession": "0001104659-26-126238",
+  "filed": "2026-11-12",
+  "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926126238/nbis-ex99d2.htm"
+ },
+ "sources": [
+  {
+   "label": "6-K Ex.99.2 interim statements Q3 2026",
+   "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926126238/nbis-ex99d2.htm",
+   "accession": "0001104659-26-126238"
+  },
+  {
+   "label": "6-K Ex.99.1 earnings press release",
+   "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926126008/tm2629571d1_ex99-1.htm",
+   "accession": "0001104659-26-126008"
+  },
+  {
+   "label": "6-K Citi facility",
+   "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926117978/tm2628078d1_6k.htm",
+   "accession": "0001104659-26-117978"
+  }
+ ],
+ "missing": [
+  "Term Loan undrawn/commitment status",
+  "Citi facility drawn amount",
+  "Maturity table of debt principal",
+  "Restricted cash current/non-current split",
+  "Finance lease liabilities, current operating lease liability",
+  "Shares outstanding after 9/30 (cover figure not extracted) and post-quarter ATM/conversion activity",
+  "Per-series conversion price/accretion tables and CUSIPs re-verified only partly (carried from baseline; conversion rates for Aug/Mar 2026 series confirmed in Note 12)",
+  "Capped calls: none disclosed"
+ ],
+ "summary": "AI cloud provider funded mainly by parent-level convertible notes, with a $3.5bn secured bridge (signed after the quarter) on the operating subsidiaries and an SPV term loan.",
+ "entities": [
+  {
+   "id": "parent",
+   "name": "Nebius Group N.V. (convert issuer)",
+   "parent": null,
+   "value_share": 0.0
+  },
+  {
+   "id": "ops",
+   "name": "Nebius Inc., Nebius B.V. and operating subsidiaries",
+   "parent": "parent",
+   "value_share": 0.944473
+  },
+  {
+   "id": "compute2",
+   "name": "Nebius Compute II borrowers",
+   "parent": "ops",
+   "value_share": 0.055527
+  }
+ ],
+ "pools": [
+  {
+   "id": "p_ops",
+   "entity": "ops",
+   "share": 1.0,
+   "description": "Citi bridge collateral: substantially all assets of borrowers incl. shares of Nebius Inc./B.V."
+  },
+  {
+   "id": "p_c2",
+   "entity": "compute2",
+   "share": 1.0,
+   "description": "assets of the Compute II borrowers"
+  }
+ ],
+ "claims": [
+  {
+   "id": "citi_bridge",
+   "name": "Citi senior secured bridge ($3.5bn, assumed fully drawn at default)",
+   "kind": "term_loan",
+   "entity": "parent",
+   "principal": 3500.0,
+   "amount": 3622.5,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_ops",
+     1
+    ]
+   ],
+   "guarantors": [
+    "ops"
+   ],
+   "maturity": "2027-10-16",
+   "coupon": 0.07,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "Nebius 6-K 2026-11-12 Ex.99.2 (unaudited interim statements Q3 2026)",
+    "accession": "0001104659-26-126238",
+    "section": "Note 12 Debt",
+    "quote": "On October 22, 2026, the Group entered into a senior secured facility agreement with Citi in an aggregate principal amount of $3.5 billion"
+   },
+   "status": "estimate",
+   "notes": "Signed 2026-10-17, after the balance sheet date; drawn amount not disclosed."
+  },
+  {
+   "id": "tl_compute2",
+   "name": "Nebius Compute II term loan",
+   "kind": "term_loan",
+   "entity": "compute2",
+   "principal": 751.8,
+   "amount": 778.113,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_c2",
+     1
+    ]
+   ],
+   "guarantors": [],
+   "maturity": "2030-10-31",
+   "coupon": 0.07,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "Nebius 6-K 2026-11-12 Ex.99.2 (unaudited interim statements Q3 2026)",
+    "accession": "0001104659-26-126238",
+    "section": "Note 12 Debt",
+    "quote": "Term Loan Facility October 2030 SOFR+2.5% 7.60% 751.8 (15.2) (3.5) 733.1"
+   },
+   "status": "filed",
+   "notes": "Non-recourse except bad-acts guaranty."
+  },
+  {
+   "id": "cv_2029_06",
+   "name": "2.00% Convertible Senior Notes due June 2029",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 87.5,
+   "amount": 88.375,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2029-06-05",
+   "coupon": 0.02,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 51.45
+   },
+   "market": {
+    "cusip": "63954QAB2",
+    "clean": 164.0468,
+    "date": "2026-11-20",
+    "yield_reported": -10.582089,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 81.31,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "Nebius 6-K 2026-11-12 Ex.99.2 (unaudited interim statements Q3 2026)",
+    "accession": "0001104659-26-126238",
+    "section": "Note 12 Debt",
+    "quote": "Notes due June 2029 June 2029 2.00% 7.06% 105.0 (12.2) (1.6) 91.2"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2031_06",
+   "name": "3.00% Convertible Senior Notes due June 2031",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 87.5,
+   "amount": 88.812,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2031-06-05",
+   "coupon": 0.03,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 51.45
+   },
+   "market": {
+    "cusip": "63954QAD8",
+    "clean": 278,
+    "date": "2026-11-09",
+    "yield_reported": -15.195132,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 141.45,
+    "stock_move_since_trade": -0.4252
+   },
+   "source": {
+    "doc": "Nebius 6-K 2026-11-12 Ex.99.2 (unaudited interim statements Q3 2026)",
+    "accession": "0001104659-26-126238",
+    "section": "Note 12 Debt",
+    "quote": "Notes due June 2031 June 2031 3.00% 6.87% 109.4 (17.8) (1.8) 89.8"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2030_09",
+   "name": "1.00% Convertible Senior Notes due September 2030",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 1581.25,
+   "amount": 1589.156,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2030-09-15",
+   "coupon": 0.01,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 138.75
+   },
+   "market": {
+    "cusip": "63954QAG1",
+    "clean": 94.25,
+    "date": "2026-11-20",
+    "yield_reported": 6.264602,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 81.31,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "Nebius 6-K 2026-11-12 Ex.99.2 (unaudited interim statements Q3 2026)",
+    "accession": "0001104659-26-126238",
+    "section": "Note 12 Debt",
+    "quote": "Notes due September 2030 September 2030 1.00% 4.15% 1,818.4 (191.7) (25.8) 1,600.9"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2032_09",
+   "name": "2.75% Convertible Senior Notes due September 2032",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 1581.25,
+   "amount": 1602.992,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2032-09-15",
+   "coupon": 0.0275,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 138.75
+   },
+   "market": {
+    "cusip": "63954QAH9",
+    "clean": 97.2101,
+    "date": "2026-11-18",
+    "yield_reported": 5.534864,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 106.96,
+    "stock_move_since_trade": -0.2398
+   },
+   "source": {
+    "doc": "Nebius 6-K 2026-11-12 Ex.99.2 (unaudited interim statements Q3 2026)",
+    "accession": "0001104659-26-126238",
+    "section": "Note 12 Debt",
+    "quote": "Notes due September 2032 September 2032 2.75% 4.88% 1,818.4 (206.8) (27.9) 1,583.7"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2031_03",
+   "name": "1.25% Convertible Senior Notes due March 2031",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 2587.5,
+   "amount": 2603.672,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2031-03-15",
+   "coupon": 0.0125,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 183.22
+   },
+   "market": {
+    "cusip": "63954QAJ5",
+    "clean": 73.2185,
+    "date": "2026-11-20",
+    "yield_reported": 13.182108,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 81.31,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "Nebius 6-K 2026-11-12 Ex.99.2 (unaudited interim statements Q3 2026)",
+    "accession": "0001104659-26-126238",
+    "section": "Note 12 Debt",
+    "quote": "Notes due March 2031 March 2031 1.25% 4.98% 3,105.0 (467.9) (23.6) 2,613.5"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2033_03",
+   "name": "2.625% Convertible Senior Notes due March 2033",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 1750.0,
+   "amount": 1772.969,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2033-03-15",
+   "coupon": 0.02625,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 180.31
+   },
+   "market": {
+    "cusip": "63954QAL0",
+    "clean": 69.8536,
+    "date": "2026-11-20",
+    "yield_reported": 11.746335,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 81.31,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "Nebius 6-K 2026-11-12 Ex.99.2 (unaudited interim statements Q3 2026)",
+    "accession": "0001104659-26-126238",
+    "section": "Note 12 Debt",
+    "quote": "Notes due March 2033 March 2033 2.63% 5.20% 2,100.0 (327.4) (16.5) 1,756.1"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2030_02",
+   "name": "0.50% Convertible Senior Notes due February 2030",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 3450.0,
+   "amount": 3458.625,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2030-02-15",
+   "coupon": 0.005,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 313.46
+   },
+   "market": {
+    "cusip": "63954QAN6",
+    "clean": 64.75,
+    "date": "2026-11-20",
+    "yield_reported": 17.734752,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 81.31,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "Nebius 6-K 2026-11-12 Ex.99.2 (unaudited interim statements Q3 2026)",
+    "accession": "0001104659-26-126238",
+    "section": "Note 12 Debt",
+    "quote": "Notes due February 2030 February 2030 0.50% 3.57% 3,795.0 (335.4) (42.2) 3,417.4"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "cv_2034_02",
+   "name": "4.50% Convertible Senior Notes due February 2034",
+   "kind": "convertible",
+   "entity": "parent",
+   "principal": 2300.0,
+   "amount": 2351.75,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": "2034-02-15",
+   "coupon": 0.045,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 324.65
+   },
+   "market": {
+    "cusip": "63954QAQ9",
+    "clean": 62.25,
+    "date": "2026-11-20",
+    "yield_reported": 15.322285,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 81.31,
+    "stock_move_since_trade": 0.0
+   },
+   "source": {
+    "doc": "Nebius 6-K 2026-11-12 Ex.99.2 (unaudited interim statements Q3 2026)",
+    "accession": "0001104659-26-126238",
+    "section": "Note 12 Debt",
+    "quote": "Notes due February 2034 February 2034 4.50% 7.16% 2,875.0 (569.3) (28.6) 2,277.1"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "trade",
+   "name": "Accounts payable, accrued and other liabilities",
+   "kind": "trade",
+   "entity": "ops",
+   "principal": 779.0,
+   "amount": 779.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "6-K (Ex.99.2 unaudited interim consolidated financial statements; Ex.99.1 operating and financial review) for period ended 2026-09-30",
+    "accession": "0001104659-26-126238",
+    "section": "Balance sheet",
+    "quote": "accounts payable, accrued and other liabilities 779.0"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "equity",
+   "name": "Class A + B common (+ NVIDIA pre-funded warrants)",
+   "kind": "common",
+   "entity": "parent",
+   "principal": 0.0,
+   "amount": 0.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": null,
+   "instrument": {},
+   "market": {},
+   "source": {},
+   "status": "filed",
+   "notes": ""
+  }
+ ],
+ "admin_cost": 0.05,
+ "equity": {
+  "ticker": "NBIS",
+  "price": 81.30999755859375,
+  "date": "2026-11-20",
+  "price_source": "Yahoo Finance daily close",
+  "shares_m": 313.968341,
+  "shares_as_of": "2026-09-30",
+  "shares_source": "Interim balance sheet; includes 21.07m NVIDIA pre-funded warrants",
+  "vol_1y": 1.1314837703766012,
+  "vol_6m": 1.2447813866077866,
+  "vol_3m": 1.0762227796830424,
+  "vol_ewma94": 1.4899262089875407,
+  "vol_source": "realised, daily log returns (Yahoo Finance closes)",
+  "return_1m": -0.48916254008943216,
+  "high_52w": 286.69000244140625,
+  "low_52w": 73.87000274658203,
+  "options": {
+   "source": "Yahoo Finance listed options, two-sided quotes at the 2026-11-20 close; IV from the ATM call mid (Black-Scholes, no dividends, Treasury zero rate)",
+   "atm_iv_term": [
+    {
+     "expiry": "2026-12-11",
+     "T": 0.0575,
+     "strike": 80.0,
+     "iv": 1.4747
+    },
+    {
+     "expiry": "2026-12-18",
+     "T": 0.0767,
+     "strike": 80.0,
+     "iv": 1.4313
+    },
+    {
+     "expiry": "2026-12-24",
+     "T": 0.0932,
+     "strike": 80.0,
+     "iv": 1.3981
+    },
+    {
+     "expiry": "2026-12-31",
+     "T": 0.1123,
+     "strike": 80.0,
+     "iv": 1.3395
+    },
+    {
+     "expiry": "2027-01-15",
+     "T": 0.1534,
+     "strike": 80.0,
+     "iv": 1.2805
+    },
+    {
+     "expiry": "2027-02-19",
+     "T": 0.2493,
+     "strike": 80.0,
+     "iv": 1.2497
+    },
+    {
+     "expiry": "2027-03-19",
+     "T": 0.326,
+     "strike": 80.0,
+     "iv": 1.2085
+    },
+    {
+     "expiry": "2027-04-16",
+     "T": 0.4027,
+     "strike": 80.0,
+     "iv": 1.1995
+    },
+    {
+     "expiry": "2027-05-21",
+     "T": 0.4986,
+     "strike": 80.0,
+     "iv": 1.1648
+    },
+    {
+     "expiry": "2027-06-17",
+     "T": 0.5726,
+     "strike": 80.0,
+     "iv": 1.1475
+    },
+    {
+     "expiry": "2027-07-16",
+     "T": 0.6521,
+     "strike": 100.0,
+     "iv": 1.089
+    },
+    {
+     "expiry": "2027-08-20",
+     "T": 0.7479,
+     "strike": 90.0,
+     "iv": 1.0979
+    },
+    {
+     "expiry": "2027-09-17",
+     "T": 0.8247,
+     "strike": 80.0,
+     "iv": 1.1075
+    },
+    {
+     "expiry": "2027-10-15",
+     "T": 0.9014,
+     "strike": 80.0,
+     "iv": 1.1085
+    },
+    {
+     "expiry": "2027-11-19",
+     "T": 0.9973,
+     "strike": 80.0,
+     "iv": 1.1145
+    },
+    {
+     "expiry": "2027-12-17",
+     "T": 1.074,
+     "strike": 80.0,
+     "iv": 1.107
+    },
+    {
+     "expiry": "2028-01-21",
+     "T": 1.1699,
+     "strike": 80.0,
+     "iv": 1.1123
+    },
+    {
+     "expiry": "2028-06-16",
+     "T": 1.5726,
+     "strike": 80.0,
+     "iv": 1.0829
+    },
+    {
+     "expiry": "2028-12-15",
+     "T": 2.0712,
+     "strike": 80.0,
+     "iv": 1.0729
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.1671,
+     "strike": 80.0,
+     "iv": 1.0661
+    }
+   ],
+   "iv_1y": 1.1142359843546286,
+   "iv_2y": 1.0743279983955074,
+   "deep_put_pd_bounds": [
+    {
+     "expiry": "2027-10-15",
+     "T": 0.901,
+     "strike": 50.0,
+     "bid": 13.0,
+     "ask": 15.15,
+     "open_interest": null,
+     "pd_upper_bound": 0.2706
+    },
+    {
+     "expiry": "2027-10-15",
+     "T": 0.901,
+     "strike": 55.0,
+     "bid": 15.6,
+     "ask": 16.7,
+     "open_interest": null,
+     "pd_upper_bound": 0.2952
+    },
+    {
+     "expiry": "2027-11-19",
+     "T": 0.997,
+     "strike": 50.0,
+     "bid": 12.5,
+     "ask": 15.75,
+     "open_interest": null,
+     "pd_upper_bound": 0.2614
+    },
+    {
+     "expiry": "2027-11-19",
+     "T": 0.997,
+     "strike": 65.0,
+     "bid": 21.9,
+     "ask": 23.9,
+     "open_interest": 19,
+     "pd_upper_bound": 0.3522
+    },
+    {
+     "expiry": "2027-12-17",
+     "T": 1.074,
+     "strike": 40.0,
+     "bid": 10.55,
+     "ask": 11.2,
+     "open_interest": 4127,
+     "pd_upper_bound": 0.2767
+    },
+    {
+     "expiry": "2027-12-17",
+     "T": 1.074,
+     "strike": 45.0,
+     "bid": 11.15,
+     "ask": 15.5,
+     "open_interest": 753,
+     "pd_upper_bound": 0.26
+    },
+    {
+     "expiry": "2028-01-21",
+     "T": 1.17,
+     "strike": 40.0,
+     "bid": 10.7,
+     "ask": 12.05,
+     "open_interest": 20945,
+     "pd_upper_bound": 0.2819
+    },
+    {
+     "expiry": "2028-01-21",
+     "T": 1.17,
+     "strike": 45.0,
+     "bid": 12.95,
+     "ask": 14.95,
+     "open_interest": 480,
+     "pd_upper_bound": 0.3033
+    },
+    {
+     "expiry": "2028-06-16",
+     "T": 1.573,
+     "strike": 50.0,
+     "bid": 17.6,
+     "ask": 19.55,
+     "open_interest": null,
+     "pd_upper_bound": 0.378
+    },
+    {
+     "expiry": "2028-06-16",
+     "T": 1.573,
+     "strike": 55.0,
+     "bid": 20.25,
+     "ask": 22.1,
+     "open_interest": null,
+     "pd_upper_bound": 0.3954
+    },
+    {
+     "expiry": "2028-12-15",
+     "T": 2.071,
+     "strike": 10.0,
+     "bid": 2.15,
+     "ask": 4.1,
+     "open_interest": 524,
+     "pd_upper_bound": 0.2364
+    },
+    {
+     "expiry": "2028-12-15",
+     "T": 2.071,
+     "strike": 15.0,
+     "bid": 2.01,
+     "ask": 5.0,
+     "open_interest": 6,
+     "pd_upper_bound": 0.1473
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.167,
+     "strike": 5.0,
+     "bid": 0.9,
+     "ask": 1.3,
+     "open_interest": 815,
+     "pd_upper_bound": 0.1988
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.167,
+     "strike": 10.0,
+     "bid": 2.9,
+     "ask": 3.4,
+     "open_interest": 793,
+     "pd_upper_bound": 0.3203
+    }
+   ]
+  }
+ },
+ "default_value_scenarios": {
+  "basis": "share of net PP&E ($19,342m)",
+  "low": 6770,
+  "central": 10638,
+  "high": 14506
+ },
+ "assumptions": [
+  {
+   "id": "compute2_value",
+   "value": 1074.0,
+   "basis": "Compute II asset value = term loan / 0.70 loan-to-value (not disclosed).",
+   "status": "estimate"
+  },
+  {
+   "id": "bridge_drawn_at_default",
+   "value": 3500.0,
+   "basis": "Bridge treated as fully drawn before any default.",
+   "status": "estimate"
+  },
+  {
+   "id": "admin_cost",
+   "value": 0.05,
+   "basis": "S&P recovery-rating convention (as used in the October 2026 CoreWeave note).",
+   "status": "convention"
+  },
+  {
+   "id": "prepetition_interest_months",
+   "value": 6,
+   "basis": "S&P recovery-rating convention (as used in the October 2026 CoreWeave note).",
+   "status": "convention"
+  },
+  {
+   "id": "customer_prepayments",
+   "value": "assumed",
+   "basis": "$9.4bn deferred revenue: contracts assumed, no refund claims.",
+   "status": "estimate"
+  },
+  {
+   "id": "leases",
+   "value": "omitted",
+   "basis": "Lease schedule not extracted; rejection claims omitted (flatters unsecured recoveries).",
+   "status": "estimate"
+  },
+  {
+   "id": "default_value_share_of_ppe",
+   "value": [
+    0.35,
+    0.55,
+    0.75
+   ],
+   "basis": "As in the CoreWeave case.",
+   "status": "estimate"
+  }
+ ]
+}

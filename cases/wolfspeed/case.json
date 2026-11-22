@@ -1,0 +1,481 @@
+{
+ "id": "wolfspeed",
+ "company": "Wolfspeed, Inc.",
+ "ticker": "WOLF",
+ "currency": "USD",
+ "units": "USD millions",
+ "balance_sheet_date": "2026-09-27",
+ "market_date": "2026-11-20",
+ "settlement_date": "2026-11-23",
+ "filing": {
+  "form": "10-Q",
+  "accession": "0000895419-26-000081",
+  "filed": "2026-11-05",
+  "url": "https://www.sec.gov/Archives/edgar/data/895419/000089541926000081/wolf-20260927.htm"
+ },
+ "sources": [
+  {
+   "label": "10-Q 9/27/26",
+   "url": "https://www.sec.gov/Archives/edgar/data/895419/000089541926000081/wolf-20260927.htm",
+   "accession": "0000895419-26-000081"
+  },
+  {
+   "label": "8-K RSA",
+   "url": "https://www.sec.gov/Archives/edgar/data/895419/000119312525144083/d937053d8k.htm",
+   "accession": "0001193125-25-144083"
+  },
+  {
+   "label": "8-K petition + Disclosure Statement Ex 99.1",
+   "url": "https://www.sec.gov/Archives/edgar/data/895419/000119312525153145/d755867dex991.htm",
+   "accession": "0001193125-25-153145"
+  },
+  {
+   "label": "8-K confirmation",
+   "url": "https://www.sec.gov/Archives/edgar/data/895419/000119312525199310/d36059d8k.htm",
+   "accession": "0001193125-25-199310"
+  },
+  {
+   "label": "8-K emergence",
+   "url": "https://www.sec.gov/Archives/edgar/data/895419/000119312525224251/d22768d8k.htm",
+   "accession": "0001193125-25-224251"
+  }
+ ],
+ "missing": [
+  "CUSIPs/ISINs not in filings reviewed",
+  "Whether Renesas Regulatory Approvals were received / Regulatory Trigger Deadline outcome (affects Renesas 16.85M shares vs 0.87M and old-equity 3% vs 5%): not located in the parts of the 10-Q read",
+  "Cash component of Class 3 treatment is derived (277.5 x 1.09875) not stated as one figure; commitment fee amount not captured",
+  "Final Class recovery percentages as filed in the confirmation order not reviewed (DS figures are solicitation-version estimates)",
+  "Claim amounts exclude fees/expenses; General unsecured claims amount not stated",
+  "Debt maturity schedule in 10-Q not read separately (derived from Note 9 table)"
+ ],
+ "summary": "Silicon-carbide maker that emerged from a prepackaged Chapter 11 in September 2025 with first-lien notes, 1.5-lien and second-lien convertibles and second-lien PIK toggle notes.",
+ "entities": [
+  {
+   "id": "parent",
+   "name": "Wolfspeed, Inc. and guarantor Wolfspeed Texas LLC",
+   "parent": null,
+   "value_share": 1.0
+  }
+ ],
+ "pools": [
+  {
+   "id": "p_all",
+   "entity": "parent",
+   "share": 1.0,
+   "description": "substantially all assets (shared by 1L, 1.5L, 2L)"
+  }
+ ],
+ "claims": [
+  {
+   "id": "ssn_2030",
+   "name": "15.875% Senior Secured Notes due 2030 (first lien)",
+   "kind": "secured_notes",
+   "entity": "parent",
+   "principal": 635.9,
+   "amount": 686.375,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_all",
+     1
+    ]
+   ],
+   "guarantors": [],
+   "maturity": "2030-06-23",
+   "coupon": 0.15875,
+   "instrument": {
+    "type": "bond",
+    "freq": 2
+   },
+   "market": {
+    "cusip": "977852AK8",
+    "clean": 110,
+    "date": "2026-11-20",
+    "yield_reported": 8.124876,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 19.22,
+    "stock_move_since_trade": 0.0,
+    "alt": [
+     {
+      "cusip": "U97162AC2",
+      "clean": 109.75,
+      "date": "2026-09-18"
+     }
+    ]
+   },
+   "source": {
+    "doc": "10-Q quarter ended 2026-09-27",
+    "accession": "0000895419-26-000081",
+    "section": "Note 9 Long-term Debt",
+    "quote": "New Senior Secured Notes | 6/23/2030 | 12.9% | $1,259.2 | $635.9"
+   },
+   "status": "filed",
+   "notes": "Coupon stepped to 15.875% cash on 2026-06-23 (10-Q). Callable; schedule not modelled."
+  },
+  {
+   "id": "cv_15l_2031",
+   "name": "3.5% Convertible 1.5-Lien Notes due 2031",
+   "kind": "secured_notes",
+   "entity": "parent",
+   "principal": 379.0,
+   "amount": 385.633,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_all",
+     2
+    ]
+   ],
+   "guarantors": [],
+   "maturity": "2031-03-15",
+   "coupon": 0.035,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 20.14,
+    "first_call": "2028-03-20"
+   },
+   "market": {
+    "cusip": "97785WAC0",
+    "clean": 145.1392,
+    "date": "2026-11-17",
+    "yield_reported": -5.581082,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 23.15,
+    "stock_move_since_trade": -0.1698
+   },
+   "source": {
+    "doc": "10-Q quarter ended 2026-09-27",
+    "accession": "0000895419-26-000081",
+    "section": "Note 9 Long-term Debt / New 1.5L Convertible Notes",
+    "quote": "aggregate principal balance of $379.0 million"
+   },
+   "status": "filed",
+   "notes": ""
+  },
+  {
+   "id": "pik_2l_2031",
+   "name": "7%/12% Second-Lien PIK Toggle Notes due 2031",
+   "kind": "second_lien_notes",
+   "entity": "parent",
+   "principal": 296.4,
+   "amount": 314.184,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_all",
+     3
+    ]
+   ],
+   "guarantors": [],
+   "maturity": "2031-06-15",
+   "coupon": 0.12,
+   "instrument": {},
+   "market": {
+    "cusip": "977852AS1",
+    "clean": 91,
+    "date": "2026-10-08",
+    "yield_reported": 9.415595,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 31.02,
+    "stock_move_since_trade": -0.3804
+   },
+   "source": {
+    "doc": "10-Q quarter ended 2026-09-27",
+    "accession": "0000895419-26-000081",
+    "section": "Note 9 Long-term Debt",
+    "quote": "New 2L Non-Convertible Notes | 6/15/2031 | 12.5% | 296.4 | 296.4"
+   },
+   "status": "filed",
+   "notes": "Last TRACE print 2026-10-08 (stale)."
+  },
+  {
+   "id": "cv_2l_2031",
+   "name": "2.5% Second-Lien Convertible Notes due 2031 (non-Renesas)",
+   "kind": "second_lien_notes",
+   "entity": "parent",
+   "principal": 257.1,
+   "amount": 260.314,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_all",
+     3
+    ]
+   ],
+   "guarantors": [],
+   "maturity": "2031-06-15",
+   "coupon": 0.025,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 12.23,
+    "first_call": "2028-09-29"
+   },
+   "market": {
+    "cusip": "977852AP7",
+    "clean": 194.241,
+    "date": "2026-11-16",
+    "yield_reported": -12.236103,
+    "source": "FINRA TRACE last sale (finra.org Corporate and Agency Bonds)",
+    "stock_on_trade_date": 22.65,
+    "stock_move_since_trade": -0.1514
+   },
+   "source": {
+    "doc": "10-Q quarter ended 2026-09-27",
+    "accession": "0000895419-26-000081",
+    "section": "Note 9 Long-term Debt",
+    "quote": "New 2L Non-Renesas Convertible Notes(3) | 6/15/2031 | 3.0% | 331.4 | 267.1 | -- | (10.0) | $257.1"
+   },
+   "status": "filed",
+   "notes": "Deep in the money: trades on equity, not credit."
+  },
+  {
+   "id": "cv_2l_renesas",
+   "name": "2.5% Second-Lien Convertible Notes due 2031 (Renesas)",
+   "kind": "second_lien_notes",
+   "entity": "parent",
+   "principal": 203.6,
+   "amount": 206.145,
+   "rank": 10,
+   "secured_by": [
+    [
+     "p_all",
+     3
+    ]
+   ],
+   "guarantors": [],
+   "maturity": "2031-06-15",
+   "coupon": 0.025,
+   "instrument": {
+    "type": "convertible",
+    "conversion_price": 18.35
+   },
+   "market": {},
+   "source": {
+    "doc": "10-Q quarter ended 2026-09-27",
+    "accession": "0000895419-26-000081",
+    "section": "Note 9 Long-term Debt",
+    "quote": "New 2L Renesas Convertible Notes | 6/15/2031 | 12.3% | 203.6 | 203.6"
+   },
+   "status": "filed",
+   "notes": "Held by Renesas; not traded."
+  },
+  {
+   "id": "other_liab",
+   "name": "Other liabilities (payables, accruals, leases)",
+   "kind": "trade",
+   "entity": "parent",
+   "principal": 390.9,
+   "amount": 390.9,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": 0.0,
+   "instrument": {},
+   "market": {},
+   "source": {
+    "doc": "10-Q for period ended 2026-09-27",
+    "accession": "0000895419-26-000081",
+    "section": "Balance sheet 9/27/26",
+    "quote": "total liabilities $2,071.5M; long-term debt $930.3M; convertible notes net $750.3M"
+   },
+   "status": "derived",
+   "notes": ""
+  },
+  {
+   "id": "equity",
+   "name": "Common stock",
+   "kind": "common",
+   "entity": "parent",
+   "principal": 0.0,
+   "amount": 0.0,
+   "rank": 10,
+   "secured_by": [],
+   "guarantors": [],
+   "maturity": null,
+   "coupon": null,
+   "instrument": {},
+   "market": {},
+   "source": {},
+   "status": "filed",
+   "notes": ""
+  }
+ ],
+ "admin_cost": 0.05,
+ "equity": {
+  "ticker": "WOLF",
+  "price": 19.219999313354492,
+  "date": "2026-11-20",
+  "price_source": "Yahoo Finance daily close",
+  "shares_m": 53.581878,
+  "shares_as_of": "2026-10-30",
+  "shares_source": "10-Q cover page",
+  "vol_1y": 1.1586730186718974,
+  "vol_6m": 1.2152341279213903,
+  "vol_3m": 1.0336674095634972,
+  "vol_ewma94": 1.214027009590914,
+  "vol_source": "realised, daily log returns (Yahoo Finance closes)",
+  "return_1m": -0.15068493035227293,
+  "high_52w": 73.5,
+  "low_52w": 14.800000190734863,
+  "options": {
+   "source": "Yahoo Finance listed options, two-sided quotes at the 2026-11-20 close; IV from the ATM call mid (Black-Scholes, no dividends, Treasury zero rate)",
+   "atm_iv_term": [
+    {
+     "expiry": "2026-12-11",
+     "T": 0.0575,
+     "strike": 19.0,
+     "iv": 1.1228
+    },
+    {
+     "expiry": "2026-12-18",
+     "T": 0.0767,
+     "strike": 20.0,
+     "iv": 1.0698
+    },
+    {
+     "expiry": "2026-12-24",
+     "T": 0.0932,
+     "strike": 19.0,
+     "iv": 1.0576
+    },
+    {
+     "expiry": "2026-12-31",
+     "T": 0.1123,
+     "strike": 23.0,
+     "iv": 1.0167
+    },
+    {
+     "expiry": "2027-01-15",
+     "T": 0.1534,
+     "strike": 20.0,
+     "iv": 1.0099
+    },
+    {
+     "expiry": "2027-03-19",
+     "T": 0.326,
+     "strike": 20.0,
+     "iv": 0.9815
+    },
+    {
+     "expiry": "2027-04-16",
+     "T": 0.4027,
+     "strike": 20.0,
+     "iv": 0.9414
+    },
+    {
+     "expiry": "2027-06-17",
+     "T": 0.5726,
+     "strike": 20.0,
+     "iv": 0.9284
+    },
+    {
+     "expiry": "2027-09-17",
+     "T": 0.8247,
+     "strike": 20.0,
+     "iv": 0.9587
+    },
+    {
+     "expiry": "2028-01-21",
+     "T": 1.1699,
+     "strike": 20.0,
+     "iv": 0.9094
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.1671,
+     "strike": 20.0,
+     "iv": 0.8687
+    }
+   ],
+   "iv_1y": 0.9336643974507531,
+   "iv_2y": 0.8755200661853189,
+   "deep_put_pd_bounds": [
+    {
+     "expiry": "2027-12-17",
+     "T": 1.074,
+     "strike": 0.5,
+     "bid": 0.32,
+     "ask": 0.34,
+     "open_interest": 7658,
+     "pd_upper_bound": 0.6715
+    },
+    {
+     "expiry": "2027-12-17",
+     "T": 1.074,
+     "strike": 1.0,
+     "bid": 0.77,
+     "ask": 0.8,
+     "open_interest": 10593,
+     "pd_upper_bound": 0.8079
+    },
+    {
+     "expiry": "2028-01-21",
+     "T": 1.17,
+     "strike": 0.5,
+     "bid": 0.32,
+     "ask": 0.36,
+     "open_interest": 741,
+     "pd_upper_bound": 0.6745
+    },
+    {
+     "expiry": "2028-01-21",
+     "T": 1.17,
+     "strike": 1.0,
+     "bid": 0.79,
+     "ask": 0.8,
+     "open_interest": 732,
+     "pd_upper_bound": 0.8326
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.167,
+     "strike": 12.5,
+     "bid": 4.05,
+     "ask": 5.2,
+     "open_interest": 35,
+     "pd_upper_bound": 0.3578
+    },
+    {
+     "expiry": "2029-01-19",
+     "T": 2.167,
+     "strike": 15.0,
+     "bid": 5.0,
+     "ask": 8.0,
+     "open_interest": 123,
+     "pd_upper_bound": 0.3682
+    }
+   ]
+  }
+ },
+ "default_value_scenarios": {
+  "basis": "share of non-cash assets ($1,880m)",
+  "low": 658,
+  "central": 1034,
+  "high": 1410
+ },
+ "assumptions": [
+  {
+   "id": "admin_cost",
+   "value": 0.05,
+   "basis": "5% administrative costs; the 2025 liquidation analysis had Chapter 7 costs of 5.2-5.4% of proceeds.",
+   "status": "convention"
+  },
+  {
+   "id": "lien_ranks",
+   "value": "1L > 1.5L > 2L",
+   "basis": "Intercreditor ranking per instrument names in the 10-Q.",
+   "status": "filed"
+  },
+  {
+   "id": "default_value_share",
+   "value": [
+    0.35,
+    0.55,
+    0.75
+   ],
+   "basis": "Share of non-cash assets realised at default.",
+   "status": "estimate"
+  }
+ ]
+}

@@ -128,7 +128,13 @@ dependence, dated inputs, structural inputs, restricted access, deep in-the-mone
 flags, medium with one or two, low with three or more or any model dependence.
 
 `scenarios.py` computes jump-to-default and repricing P&L per position, P&L across recovery scenarios, and hedge
-ratios that neutralise a bond's jump-to-default loss with puts.
+ratios that neutralise a bond's jump-to-default loss with puts. `analysis.example_trade_section` applies them to a
+note hedged with deep puts: default at the waterfall's low/central/high recoveries, equity -50%/+50% without default
+(assets moved so the equity-calibrated Black-Cox model reproduces the new equity value, the note repriced on the
+structural hazard curve, puts at their own implied volatility held fixed for the strike), and a year of carry.
+`analysis.decomposition_section` splits each bond's par-equivalent CDS spread into expected loss (S&P's historical
+default intensity for the notes' rating from the 3-year cohort, times the waterfall's loss given default), a
+default-risk premium, and a non-default component that is identified only on a date with a CDS quote.
 
 ## 7. The browser engine
 

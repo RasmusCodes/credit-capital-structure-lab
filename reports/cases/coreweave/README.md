@@ -142,6 +142,47 @@ Markit 5Y par spread 1,140.6bp; our converter turns the conventional spread into
 
 The CDS curve is a single 5Y point, so the CDS spread at each bond's maturity assumes a flat curve.
 
+## Spread decomposition
+
+Expected loss uses S&P's historical default intensity for B-rated issuers (4.83% defaulted in the December 31, 2022 through December 31, 2025 cohort of 704: 1.65% a year) and the waterfall's central recovery. Spreads are the bonds' par-equivalent CDS spreads, so they compare directly with CDS. Notes' rating: FINRA TRACE security data for the senior notes, queried 2026-11-21.
+
+On 2026-10-22 (the one date with a documented CDS quote, BondTerminal bond marks):
+
+| Bond | Bond spread (CDS-equivalent) | CDS at bond maturity | Expected loss | Default-risk premium | Non-default component |
+|---|---|---|---|---|---|
+| notes_2030 | 1,027bp | 1,141bp | 107bp | 1,033bp | -114bp |
+| notes_2031a | 1,081bp | 1,141bp | 107bp | 1,033bp | -59bp |
+| notes_2031b | 1,109bp | 1,141bp | 107bp | 1,033bp | -31bp |
+| notes_2032 | 1,074bp | 1,141bp | 107bp | 1,033bp | -66bp |
+
+Expected loss at historical default rates is about a tenth of the default component: the rest is a risk premium, or the market sees this issuer as far riskier than the average issuer with its rating. A negative non-default component means the bonds trade tighter than CDS (a positive basis).
+
+On 2026-11-20 (no CDS quote): the risk premium and the non-default part cannot be separated.
+
+| Bond | Bond spread (CDS-equivalent) | Expected loss | Remainder |
+|---|---|---|---|
+| 9.25% Senior Notes due 2030 | 1,137bp | 107bp | 1,029bp |
+| 9.00% Senior Notes due 2031 | 1,176bp | 107bp | 1,068bp |
+| 9.75% Senior Notes due 2031 | 1,220bp | 107bp | 1,113bp |
+| 9.625% Senior Notes due 2032 | 1,191bp | 107bp | 1,084bp |
+
+## Example position and scenario P&L
+
+Long $10m face of 9.00% Senior Notes due 2031 at 78.375, plus 11,214 2029-01-19 $5 puts bought at the ask ($1.12; premium $1.26m), sized so an immediate default at the central recovery (35%) costs nothing. Puts are repriced at 118% volatility: the implied volatility of the put's mid quote (sticky strike).
+
+| Scenario | Notes ($m) | Puts ($m) | Total ($m) |
+|---|---|---|---|
+| Default now, recovery 21% (low) | -5.72 | +4.35 | -1.37 |
+| Default now, recovery 35% (central) | -4.35 | +4.35 | +0.00 |
+| Default now, recovery 50% (high) | -2.85 | +4.35 | +1.50 |
+| Equity -50%, no default | -1.55 | +0.60 | -0.95 |
+| Equity +50%, no default | +1.03 | -0.28 | +0.74 |
+| One year, nothing changes (coupon only) | +0.90 | -0.69 | +0.21 |
+
+The puts cancel an immediate default at the recovery they were sized for; at other recoveries the position gains or loses the difference. If the equity halves without a default, the notes lose 2.6 times what the puts gain: the hedge covers the jump to default, not the spread widening on the way there.
+
+Caveats: puts bought at the ask, Black-Scholes (European) for the no-default repricing; stock assumed worthless at default (any recovery to equity weakens the hedge); bond financed at no cost (repo and borrow not modelled); last-trade bond price, not an executable quote.
+
 ## Missing information
 
 - DDTL 1.0/2.0 spreads and amortization schedules not in Q3 10-Q or FY25 10-K excerpt checked

@@ -214,6 +214,48 @@ def case_report(cid):
         for b in c["basis"]:
             L.append(f"| {b['claim_id']} | {b['bond_price']:.2f} | {b['pecs_bp']:,.0f}bp | {b['cds_at_bond_maturity_bp']:,.0f}bp | {b['basis_bp']:+.0f}bp |")
         L += ["", "The CDS curve is a single 5Y point, so the CDS spread at each bond's maturity assumes a flat curve.", ""]
+    dec = a.get("decomposition")
+    if dec:
+        ph = dec["physical"]
+        L += ["## Spread decomposition", "",
+              f"Expected loss uses S&P's historical default intensity for {ph['rating']}-rated issuers ({ph['default_rate']:.2%} "
+              f"defaulted in the {ph['cohort']} cohort of {ph['n']}: {ph['hazard']:.2%} a year) and the waterfall's central "
+              f"recovery. Spreads are the bonds' par-equivalent CDS spreads, so they compare directly with CDS. Notes' rating: "
+              f"{dec['rating_source']}.", ""]
+        if dec["dated"]:
+            L += [f"On {dec['dated'][0]['date']} (the one date with a documented CDS quote, BondTerminal bond marks):", "",
+                  "| Bond | Bond spread (CDS-equivalent) | CDS at bond maturity | Expected loss | Default-risk premium | Non-default component |",
+                  "|---|---|---|---|---|---|"]
+            for x in dec["dated"]:
+                L.append(f"| {x['claim_id']} | {x['pecs_bp']:,.0f}bp | {x['cds_bp']:,.0f}bp | {x['expected_loss_bp']:,.0f}bp | "
+                         f"{x['default_risk_premium_bp']:,.0f}bp | {x['non_default_bp']:+,.0f}bp |")
+            L += ["", "Expected loss at historical default rates is about a tenth of the default component: the rest is a "
+                  "risk premium, or the market sees this issuer as far riskier than the average issuer with its rating. A "
+                  "negative non-default component means the bonds trade tighter than CDS (a positive basis).", ""]
+        if dec["current"]:
+            L += [f"On {dec['current'][0]['date']} (no CDS quote): the risk premium and the non-default part cannot be separated.", "",
+                  "| Bond | Bond spread (CDS-equivalent) | Expected loss | Remainder |", "|---|---|---|---|"]
+            for x in dec["current"]:
+                L.append(f"| {x['name']} | {x['pecs_bp']:,.0f}bp | {x['expected_loss_bp']:,.0f}bp | {x['pecs_bp'] - x['expected_loss_bp']:,.0f}bp |")
+            L.append("")
+    tr = a.get("example_trade")
+    if tr:
+        p = tr["put"]
+        L += ["## Example position and scenario P&L", "",
+              f"Long ${tr['face_musd']:.0f}m face of {tr['note_name']} at {tr['note_price']:.3f}, plus {tr['contracts']:,.0f} "
+              f"{p['expiry']} ${p['strike']:g} puts bought at the ask (${p['ask']:.2f}; premium ${tr['premium_musd']:.2f}m), sized "
+              f"so an immediate default at the central recovery ({tr['recovery_central']:.0%}) costs nothing. Puts are repriced "
+              f"at {p['iv']:.0%} volatility: the {p['iv_source']}.", "",
+              "| Scenario | Notes ($m) | Puts ($m) | Total ($m) |", "|---|---|---|---|"]
+        for r in tr["rows"]:
+            L.append(f"| {r['scenario']} | {r['bond']:+.2f} | {r['puts']:+.2f} | {r['total']:+.2f} |")
+        down = next((r for r in tr["rows"] if r["scenario"].startswith("Equity -")), None)
+        road = ""
+        if down and down["puts"] > 0:
+            road = (f" If the equity halves without a default, the notes lose {-down['bond'] / down['puts']:.1f} times what the "
+                    "puts gain: the hedge covers the jump to default, not the spread widening on the way there.")
+        L += ["", "The puts cancel an immediate default at the recovery they were sized for; at other recoveries the position "
+              "gains or loses the difference." + road, "", "Caveats: " + "; ".join(tr["caveats"]) + ".", ""]
     oa = a.get("observable_assets")
     if oa:
         L += ["## Observable assets", "",

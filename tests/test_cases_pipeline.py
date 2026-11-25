@@ -75,6 +75,30 @@ def test_analysis_runs_and_is_internally_consistent():
     assert summ["total_claims"] > summ["market_cap"]
 
 
+def test_spread_decomposition_and_example_trade():
+    case = load_case("coreweave")
+    res = run_case(case)
+    dec = res["decomposition"]
+    ph = dec["physical"]
+    assert ph["rating"] and 0 < ph["hazard"] < 0.2
+    for x in dec["dated"]:          # pieces add back to the bond's CDS-equivalent spread
+        total = x["expected_loss_bp"] + x["default_risk_premium_bp"] + x["non_default_bp"]
+        assert total == pytest.approx(x["pecs_bp"], abs=1e-6)
+    for x in dec["current"]:
+        assert x["default_risk_premium_bp"] is None   # no CDS that day: not separable, never forced
+    tr = res["example_trade"]
+    rows = {r["scenario"].split(",")[0] if r["scenario"].startswith("Default") else r["scenario"]: r for r in tr["rows"]}
+    central = next(r for r in tr["rows"] if "(central)" in r["scenario"])
+    assert central["total"] == pytest.approx(0.0, abs=1e-9)          # jump-to-default neutral by construction
+    low = next(r for r in tr["rows"] if "(low)" in r["scenario"])
+    high = next(r for r in tr["rows"] if "(high)" in r["scenario"])
+    assert low["total"] < 0 < high["total"]
+    down = next(r for r in tr["rows"] if r["scenario"].startswith("Equity -"))
+    assert down["bond"] < 0 < down["puts"]
+    assert tr["put"]["model"] == pytest.approx(0.5 * (tr["put"]["bid"] + tr["put"]["ask"]), rel=1e-6)
+    assert rows
+
+
 def test_scanner_flags_and_confidence():
     s = Signal("X", "curve", "a", "b", "m", 30.0, "bp", "r", ["stale_price", "short_bond_funding", "dated_inputs"]).finalize(1.0)
     assert s.confidence == "low" and s.score == pytest.approx(0.3)

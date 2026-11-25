@@ -394,6 +394,142 @@ def historical_section(case: Case) -> dict | None:
     return out
 
 
+def historical_hazard(rating: str, horizon: str = "3y") -> dict | None:
+    """Average annual default intensity for a rating from S&P's Form NRSRO cohort table (withdrawn issuers counted
+    as non-defaults, as published). The 3-year cohort is the default: one year is too noisy, ten years too old."""
+    from pathlib import Path
+    import json as _json
+    p = Path(__file__).resolve().parents[2] / "data" / "reference" / "sp_corporate_transitions_2025.json"
+    if not p.exists():
+        return None
+    ref = _json.loads(p.read_text())
+    row = ref["tables"][horizon]["rows"].get(rating)
+    if not row or not row["n"]:
+        return None
+    years = {"1y": 1.0, "3y": 3.0, "10y": 10.0}[horizon]
+    d = row["pct"].get("Default", 0.0) / 100
+    return {"rating": rating, "horizon": horizon, "cohort": ref["tables"][horizon]["period"], "n": row["n"],
+            "default_rate": d, "hazard": float(-np.log(1 - d) / years)}
+
+
+def decomposition_section(case: Case, out: dict) -> dict | None:
+    """Split each identified bond's spread into expected loss, default-risk premium and a non-default part.
+
+    Spreads are compared in CDS-equivalent terms (the bond's par-equivalent CDS spread, PECS). Expected loss uses
+    S&P's historical default intensity for the notes' rating and the waterfall's central recovery. The non-default
+    part (PECS minus CDS, i.e. minus the basis) is identified only on the date with a documented CDS quote.
+    """
+    ratings = case.data.get("ratings") or {}
+    rt = (ratings.get("notes") or {}).get("sp")
+    hist = historical_hazard(rt) if rt else None
+    if not hist or not out["bonds"]["bonds"]:
+        return None
+    from .spreads import decompose_spread
+    res = {"physical": hist, "rating_source": ratings["notes"]["source"], "current": [], "dated": []}
+    for b in out["bonds"]["bonds"]:
+        if not b.get("pd_identified") or b.get("pecs") is None:
+            continue
+        d = decompose_spread(b["pecs"], None, hist["hazard"], b["recovery_used"])
+        d.update({"claim_id": b["claim_id"], "name": b["name"], "date": b["trade_date"], "z_bp": b["zspread"] * 1e4,
+                  "pecs_bp": b["pecs"] * 1e4})
+        res["current"].append(d)
+    cdsa = out.get("cds")
+    if cdsa and cdsa.get("basis"):
+        rec = out["recovery_used"]
+        for x in cdsa["basis"]:
+            if x.get("pecs_bp") is None:
+                continue
+            d = decompose_spread(x["pecs_bp"] / 1e4, x["cds_at_bond_maturity_bp"] / 1e4, hist["hazard"], rec.get(x["claim_id"], 0.4))
+            d.update({"claim_id": x["claim_id"], "date": cdsa["quote"]["date"], "pecs_bp": x["pecs_bp"],
+                      "cds_bp": x["cds_at_bond_maturity_bp"]})
+            res["dated"].append(d)
+    return res
+
+
+def example_trade_section(case: Case, out: dict, face_musd: float = 10.0) -> dict | None:
+    """A hedged position and its scenario P&L: long a note, long deep puts sized so that the position neither gains
+    nor loses on an immediate default at the central waterfall recovery (stock assumed worthless at default).
+
+    Scenarios: default now at the low/central/high recoveries; equity -50% / +50% without default (assets moved so the
+    equity-calibrated Black-Cox model reproduces the new equity value; the note repriced on the hybrid structural
+    curve, puts with Black-Scholes at the listed implied volatility); one year of carry with nothing else changing.
+    Model-to-model changes are used throughout so the market-vs-model level gap does not leak into the P&L.
+    """
+    from .options import bs_implied_vol, bs_price
+    from .scenarios import Position, hedge_ratio_jtd_neutral, jump_to_default
+    bonds = {b["claim_id"]: b for b in out["bonds"]["bonds"] if b.get("pd_identified")}
+    t = (out.get("options") or {}).get("tightest")
+    bc = out["structural"].get("black_cox_waterfall", {})
+    if not bonds or not t or "V" not in bc:
+        return None
+    cid = "notes_2031a" if "notes_2031a" in bonds else next(iter(bonds))
+    b = bonds[cid]
+    q = next(x for x in case.bonds if x.claim_id == cid)
+    sc = out["recovery_curves"].get("scenarios") or {}
+    R = {k: v["recovery"][cid] for k, v in sc.items()} or {"central": b["recovery_used"]}
+    Rc = R.get("central", b["recovery_used"])
+    S = case.equity["price"]
+    r_put = float(case.zc.zero(t["T"]))
+    # deep out-of-the-money puts trade far above at-the-money volatility (skew): reprice at the put's own implied
+    # volatility from its mid quote, held fixed for the strike (sticky strike); fall back to ATM vol if it fails
+    mid = 0.5 * (t["bid"] + t["ask"])
+    iv = bs_implied_vol(mid, S, t["strike"], t["T"], r_put, 0.0, "put")
+    iv_source = "implied volatility of the put's mid quote (sticky strike)"
+    if not np.isfinite(iv):
+        term = case.equity["options"]["atm_iv_term"]
+        iv = float(np.interp(t["T"], [x["T"] for x in term], [x["iv"] for x in term]))
+        iv_source = "at-the-money implied volatility (the put's own was not recoverable)"
+    put_now = bs_price(S, t["strike"], t["T"], r_put, 0.0, iv, "put")
+    n_puts = hedge_ratio_jtd_neutral(face_musd, q.clean, Rc, t["strike"], t["ask"])
+    premium = n_puts * 100 * t["ask"] / 1e6
+    pos = [Position(cid, "bond", face_musd, q.clean), Position("put", "put", n_puts, t["ask"], strike=t["strike"])]
+    rows = []
+    for k in ("low", "central", "high"):
+        if k in R:
+            j = jump_to_default(pos, {cid: R[k]})
+            rows.append({"scenario": f"Default now, recovery {R[k]:.0%} ({k})", "bond": j["rows"][0]["pnl"],
+                         "puts": j["rows"][1]["pnl"], "total": j["total"]})
+    # equity moves through the structural model
+    from scipy.optimize import brentq
+    cs, T = case.structure, out["structural"]["horizon"]
+    rT = float(case.zc.zero(T))
+    H0, sig = bc["H0"], bc["sigma_V"]
+
+    def model_note(V):
+        hc = structural_hazard_curve(V, sig, H0, 0.0, rT)
+        Rb = float(np.clip(barrier_recoveries(cs, H0).get(cid, 0.0), 0.0, 0.95))
+        return risky_dirty_price(q.bond, case.settle, case.zc, hc, Rb) - q.bond.accrued(case.settle)
+
+    def model_equity(V):
+        return price_structure(cs, V, sig, T, rT, model="black_cox", H0=H0, default_point=cs.total_debt(),
+                               with_sigma_E=False).equity
+
+    base_note = model_note(bc["V"])
+    for mult in (0.5, 1.5):
+        target = case.market_cap * mult
+        try:
+            V1 = brentq(lambda V: model_equity(V) - target, H0 * 1.0001, bc["V"] * 4)
+        except ValueError:
+            continue
+        note = model_note(V1)
+        put1 = bs_price(S * mult, t["strike"], t["T"], r_put, 0.0, iv, "put")
+        bond_pnl = face_musd * (note - base_note) / 100
+        put_pnl = n_puts * 100 * (put1 - put_now) / 1e6
+        rows.append({"scenario": f"Equity {mult - 1:+.0%}, no default", "bond": bond_pnl, "puts": put_pnl, "total": bond_pnl + put_pnl,
+                     "note_price_change": note - base_note})
+    put_1y = bs_price(S, t["strike"], max(t["T"] - 1, 0.01), float(case.zc.zero(max(t["T"] - 1, 0.01))), 0.0, iv, "put")
+    carry_bond = face_musd * q.bond.coupon   # coupon income only; pull to par and roll-down left out
+    rows.append({"scenario": "One year, nothing changes (coupon only)", "bond": carry_bond,
+                 "puts": n_puts * 100 * (put_1y - put_now) / 1e6, "total": carry_bond + n_puts * 100 * (put_1y - put_now) / 1e6})
+    return {"note": cid, "note_name": b["name"], "face_musd": face_musd, "note_price": q.clean, "recovery_central": Rc,
+            "put": {"expiry": t["expiry"], "strike": t["strike"], "bid": t["bid"], "ask": t["ask"], "iv": iv,
+                    "iv_source": iv_source, "model": put_now},
+            "contracts": n_puts, "premium_musd": premium, "rows": rows,
+            "caveats": ["puts bought at the ask, Black-Scholes (European) for the no-default repricing",
+                        "stock assumed worthless at default (any recovery to equity weakens the hedge)",
+                        "bond financed at no cost (repo and borrow not modelled)", "last-trade bond price, not an executable quote"]}
+
+
 def run_case(case: Case) -> dict:
     out = {"id": case.id, "company": case.data["company"], "market_date": case.data["market_date"],
            "settlement_date": case.data["settlement_date"]}
@@ -432,4 +568,6 @@ def run_case(case: Case) -> dict:
     out["converts"] = convert_section(case, rec, hc) if case.converts else {"converts": []}
     out["options"] = option_section(case, out["bonds"]["bonds"])
     out["cds"] = cds_section(case, rec)
+    out["decomposition"] = decomposition_section(case, out)
+    out["example_trade"] = example_trade_section(case, out)
     return out

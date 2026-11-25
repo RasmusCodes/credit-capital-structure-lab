@@ -2634,5 +2634,7 @@
   },
   "bond_vs_put": []
  },
- "cds": null
+ "cds": null,
+ "decomposition": null,
+ "example_trade": null
 }

@@ -33,7 +33,10 @@ it open: liquidity, funding, optionality, basis and model risk.
   claims. At that recovery the notes imply a 60% five-year default probability; the equity-calibrated Black-Cox model
   says 65% and prices the notes 4.7-8.4 points below where they trade. The Jan-2029 $5 puts cap the risk-neutral
   default probability by that date at 16% (bid), against 32-34% implied by the notes. On 22 October, the one date with
-  a documented CDS quote, CDS traded 31-114bp wider than the notes' par-equivalent spreads.
+  a documented CDS quote, CDS traded 31-114bp wider than the notes' par-equivalent spreads, and expected loss at the B
+  rating's historical default rate explained about 107bp of a 1,141bp CDS spread. A note hedged with deep puts sized for
+  an immediate default at 35% recovery still loses about $1.0m per $10m if the equity halves without a default: the
+  puts cover the jump, not the road to it.
 - **Strategy.** Its assets are mostly bitcoin, so the structural model needs no calibration. With observed assets
   ($55.6bn), observed volatility (35%) and dividends paid out of the asset pool, the model values the equity at
   $32.4bn against a $32.9bn market value. Calibrating Merton to the equity instead understates assets by 22-35% and
@@ -55,7 +58,7 @@ These are model readings on dated snapshots, not trade recommendations. Details:
 ```bash
 python -m venv .venv
 .venv/Scripts/python -m pip install -e .[research,dev]     # Windows; use .venv/bin/python elsewhere
-.venv/Scripts/python -m pytest                              # 49 tests, no network
+.venv/Scripts/python -m pytest                              # the test suite; no network needed
 node tests/js/parity.mjs                                    # JavaScript engine vs Python vectors
 ```
 

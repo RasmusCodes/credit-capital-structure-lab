@@ -277,6 +277,9 @@ def coreweave():
                  "source": "Markit 5Y official close via LSEG Workspace (CDSOV page), recorded in the October 2026 CoreWeave note"}]
     c["dated_bond_marks"] = {"date": "2026-10-22", "source": "BondTerminal closing marks recorded in the October 2026 CoreWeave note",
                              "marks": {"notes_2030": 84.35, "notes_2031a": 80.57, "notes_2031b": 80.36, "notes_2032": 79.25}}
+    c["ratings"] = {"notes": {"sp": TRACE["21873SAC2"]["sp"], "moodys": TRACE["21873SAC2"]["moodys"],
+                              "source": "FINRA TRACE security data for the senior notes, queried 2026-11-21"},
+                    "issuer": {"sp": "B+", "fitch": "BB-", "source": "LSEG CDSOV page recorded 2026-10-23 (ratings dated 19-May-2025)"}}
     ppe_val = ppe
     c["default_value_scenarios"] = {"basis": "enterprise value at default as a share of net PP&E ($56.8bn)",
                                     "low": round(0.35 * ppe_val), "central": round(0.55 * ppe_val), "high": round(0.75 * ppe_val)}

@@ -3804,5 +3804,188 @@
     "note": "CDS curve assumed flat at the 5Y par spread (only the 5Y point is documented)"
    }
   ]
+ },
+ "decomposition": {
+  "physical": {
+   "rating": "B",
+   "horizon": "3y",
+   "cohort": "December 31, 2022 through December 31, 2025",
+   "n": 704,
+   "default_rate": 0.0483,
+   "hazard": 0.016501806634613116
+  },
+  "rating_source": "FINRA TRACE security data for the senior notes, queried 2026-11-21",
+  "current": [
+   {
+    "z_spread_bp": 1136.830814293957,
+    "expected_loss_bp": 107.48506560088815,
+    "default_risk_premium_bp": null,
+    "non_default_bp": null,
+    "notes": [
+     "no CDS: default and non-default components not separable",
+     "z-spread minus expected loss mixes risk premium and non-default parts"
+    ],
+    "claim_id": "notes_2030",
+    "name": "9.25% Senior Notes due 2030",
+    "date": "2026-11-20",
+    "z_bp": 1087.7845625874488,
+    "pecs_bp": 1136.830814293957
+   },
+   {
+    "z_spread_bp": 1175.5101898103555,
+    "expected_loss_bp": 107.48506560088815,
+    "default_risk_premium_bp": null,
+    "non_default_bp": null,
+    "notes": [
+     "no CDS: default and non-default components not separable",
+     "z-spread minus expected loss mixes risk premium and non-default parts"
+    ],
+    "claim_id": "notes_2031a",
+    "name": "9.00% Senior Notes due 2031",
+    "date": "2026-11-20",
+    "z_bp": 1103.375204847332,
+    "pecs_bp": 1175.5101898103555
+   },
+   {
+    "z_spread_bp": 1220.2401835709952,
+    "expected_loss_bp": 107.48506560088815,
+    "default_risk_premium_bp": null,
+    "non_default_bp": null,
+    "notes": [
+     "no CDS: default and non-default components not separable",
+     "z-spread minus expected loss mixes risk premium and non-default parts"
+    ],
+    "claim_id": "notes_2031b",
+    "name": "9.75% Senior Notes due 2031",
+    "date": "2026-11-20",
+    "z_bp": 1137.2631050042419,
+    "pecs_bp": 1220.2401835709952
+   },
+   {
+    "z_spread_bp": 1191.099279305954,
+    "expected_loss_bp": 107.48506560088815,
+    "default_risk_premium_bp": null,
+    "non_default_bp": null,
+    "notes": [
+     "no CDS: default and non-default components not separable",
+     "z-spread minus expected loss mixes risk premium and non-default parts"
+    ],
+    "claim_id": "notes_2032",
+    "name": "9.625% Senior Notes due 2032",
+    "date": "2026-11-20",
+    "z_bp": 1096.9009430594122,
+    "pecs_bp": 1191.099279305954
+   }
+  ],
+  "dated": [
+   {
+    "z_spread_bp": 1026.695592065684,
+    "expected_loss_bp": 107.48506560088815,
+    "default_risk_premium_bp": 1033.0362534408268,
+    "non_default_bp": -113.82572697603108,
+    "notes": [],
+    "claim_id": "notes_2030",
+    "date": "2026-10-22",
+    "pecs_bp": 1026.695592065684,
+    "cds_bp": 1140.521319041715
+   },
+   {
+    "z_spread_bp": 1081.1975823381545,
+    "expected_loss_bp": 107.48506560088815,
+    "default_risk_premium_bp": 1033.0346552239162,
+    "non_default_bp": -59.32213848664991,
+    "notes": [],
+    "claim_id": "notes_2031a",
+    "date": "2026-10-22",
+    "pecs_bp": 1081.1975823381545,
+    "cds_bp": 1140.5197208248044
+   },
+   {
+    "z_spread_bp": 1109.1666102886445,
+    "expected_loss_bp": 107.48506560088815,
+    "default_risk_premium_bp": 1033.0872472189649,
+    "non_default_bp": -31.40570253120853,
+    "notes": [],
+    "claim_id": "notes_2031b",
+    "date": "2026-10-22",
+    "pecs_bp": 1109.1666102886445,
+    "cds_bp": 1140.572312819853
+   },
+   {
+    "z_spread_bp": 1074.2322288187634,
+    "expected_loss_bp": 107.48506560088815,
+    "default_risk_premium_bp": 1033.0951314208542,
+    "non_default_bp": -66.34796820297898,
+    "notes": [],
+    "claim_id": "notes_2032",
+    "date": "2026-10-22",
+    "pecs_bp": 1074.2322288187634,
+    "cds_bp": 1140.5801970217424
+   }
+  ]
+ },
+ "example_trade": {
+  "note": "notes_2031a",
+  "note_name": "9.00% Senior Notes due 2031",
+  "face_musd": 10.0,
+  "note_price": 78.375,
+  "recovery_central": 0.3486466786282995,
+  "put": {
+   "expiry": "2029-01-19",
+   "strike": 5.0,
+   "bid": 0.72,
+   "ask": 1.12,
+   "iv": 1.1813322463990488,
+   "iv_source": "implied volatility of the put's mid quote (sticky strike)",
+   "model": 0.9199999999999998
+  },
+  "contracts": 11214.003128136612,
+  "premium_musd": 1.2559683503513008,
+  "rows": [
+   {
+    "scenario": "Default now, recovery 21% (low)",
+    "bond": -5.716665510803683,
+    "puts": 4.351033213717006,
+    "total": -1.3656322970866768
+   },
+   {
+    "scenario": "Default now, recovery 35% (central)",
+    "bond": -4.351033213717005,
+    "puts": 4.351033213717006,
+    "total": 8.881784197001252e-16
+   },
+   {
+    "scenario": "Default now, recovery 50% (high)",
+    "bond": -2.8533831818711146,
+    "puts": 4.351033213717006,
+    "total": 1.4976500318458914
+   },
+   {
+    "scenario": "Equity -50%, no default",
+    "bond": -1.5537490658957154,
+    "puts": 0.5988807856809188,
+    "total": -0.9548682802147965,
+    "note_price_change": -15.537490658957154
+   },
+   {
+    "scenario": "Equity +50%, no default",
+    "bond": 1.0251475296689079,
+    "puts": -0.2817512434526506,
+    "total": 0.7433962862162573,
+    "note_price_change": 10.25147529668908
+   },
+   {
+    "scenario": "One year, nothing changes (coupon only)",
+    "bond": 0.8999999999999999,
+    "puts": -0.692949077060372,
+    "total": 0.2070509229396279
+   }
+  ],
+  "caveats": [
+   "puts bought at the ask, Black-Scholes (European) for the no-default repricing",
+   "stock assumed worthless at default (any recovery to equity weakens the hedge)",
+   "bond financed at no cost (repo and borrow not modelled)",
+   "last-trade bond price, not an executable quote"
+  ]
  }
 }
